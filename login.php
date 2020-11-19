@@ -51,7 +51,7 @@
                     </div>
                     <div class="mb-2 row" style="padding: 5%;">
                         <div><button type="submit" class="btn btn-secondary rounded" style="width: 100px;border-radius: .9rem!important;">Login</button>
-                        <button type="submit" class="btn btn-secondary rounded" style="width: 100px;border-radius: .9rem!important;">Register</button></div>
+                        <button type="submit" class="btn btn-secondary rounded" style="width: 100px;border-radius: .9rem!important;">Registers</button></div>
                     </div>
                 </div>
             </form>
