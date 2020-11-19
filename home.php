@@ -1,6 +1,9 @@
 <?php
  require 'php/loginB.php' ;
  session_start() ;
+
+?>
+
  ?>
 <!doctype html>
 <html lang="en">
@@ -75,9 +78,12 @@
             <div class="col top_and_bottom">
               <?php if (!$_SESSION['username']){ ?>
                        <a href="login.php" class="nav-link color">Login</a>
-              <?php }else {
-                      echo $_SESSION['username'];
-              } ?>
+              <?php }else { ?>
+                    
+                      <div>
+                        <img src="<?php echo $_SESSION['picture']; ?>" alt="Don't Know"/>
+                      </div>
+               <?php  } ?>
 
             </div>
         </div>
