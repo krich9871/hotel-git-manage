@@ -50,8 +50,6 @@
 }
 .move
 {
-  
-    margin-inline: ;
     margin-right:200px;
 }
 
@@ -89,3 +87,33 @@
     border-style: inset;
     border-width: 1px;
   }
+
+  .top_pad_1 {
+    padding-top: 350px;
+    color: aliceblue;
+}
+.img_2 {
+    background-image: url(image/reservation.png);
+    background-size: cover;
+    height: 60vh;
+    background-position: center;
+}
+.back_select {
+    background-color: rgba(202, 202, 202, 0.705);
+}
+.back_color_blue {
+    background-color: rgb(129, 213, 228);
+    color: white;
+    margin-top: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 50px;
+}
+.back_color_brown {
+    background-color: rgb(204, 181, 117);
+    color: white;
+    margin-top: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 50px;
+}
