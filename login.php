@@ -36,6 +36,9 @@
             </div>
         </div>
     </div>
+
+    <form  action="php/loginB.php" method="post">
+
     <div class="container-fluid img_1 top_pad">
         <div class=" container width_10">
             <form>
@@ -43,26 +46,29 @@
                     <h1 class="mb-4">Login</h1>
                     <div class="mb-2 row" style="padding: 1%; margin-left: 5px;">
                         <div class="col-md-4 text-right"><label for="name">Email:</label></div>
-                        <div class="col-md-3 text-left"> <input class="coolip" type="name" id="name" style="width: 250px;"></div>
+                        <div class="col-md-3 text-left"> <input class="coolip" name="customer_email" type="name" id="name" style="width: 250px;"></div>
                     </div>
                     <div class="mb-2 row" style="padding: 1%;margin-left: 5px;">
                         <div class="col-md-4 text-right"><label for="password">Password:</label></div>
-                        <div class="col-md-3 text-left"><input class="coolip" type="password" id="password" style="width: 250px;"><br></div>
+                        <div class="col-md-3 text-left"><input class="coolip" name="customer_password" type="password" id="password" style="width: 250px;"><br></div>
                     </div>
                     <div class="mb-2 row" style="padding: 5%;">
-                        <div><button type="submit" class="btn btn-secondary rounded" style="width: 100px;border-radius: .9rem!important;">Login</button>
-                        <button type="submit" class="btn btn-secondary rounded" style="width: 100px;border-radius: .9rem!important;">Registers</button></div>
+                        <div><button type="submit"name="submit_login" class="btn btn-secondary rounded" style="width: 100px;border-radius: .9rem!important;">Login</button>
+                            <a href="register.php"  class="btn btn-secondary rounded" style="width: 100px;border-radius: .9rem!important;">Register</a>
+                        </div>
+
                     </div>
                 </div>
             </form>
         </div>
     </div>
+    </form>
     <div class="container-fluid text-center bottom_page padding_top">
         <h6>Copyright 2020 Poginity Ltd. All Rights Reserved.</h6>
         <h6>POGINITY Hotel. นาจอมเทียน, พัทยา (คลิ๊กเพื่อดูแผนที่) 095-156-2654 Pogihotel@gmail.com</h6>
     </div>
 
-    
+
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper.js -->

@@ -1,3 +1,7 @@
+<?php
+ require 'php/loginB.php' ;
+ session_start() ;
+ ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -69,14 +73,19 @@
                 <a href="#" class="nav-link color">Contact Us</a>
             </div>
             <div class="col top_and_bottom">
-                <a href="#" class="nav-link color">Login</a>
+              <?php if (!$_SESSION['username']){ ?>
+                       <a href="login.php" class="nav-link color">Login</a>
+              <?php }else {
+                      echo $_SESSION['username'];
+              } ?>
+
             </div>
         </div>
     </div>
 
     <div class="container-fluid no-padding">
         <img src="image/brand.png" width="100%">
-        
+
     </div>
 
     <div class="container">
@@ -195,9 +204,9 @@
         <h6>POGINITY Hotel. นาจอมเทียน, พัทยา (คลิ๊กเพื่อดูแผนที่) 095-156-2654 Pogihotel@gmail.com</h6>
     </div>
 
-    
 
-    
+
+
 
 
 
