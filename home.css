@@ -41,7 +41,6 @@
 .img_1 {
     background-image: url(image/View2.jpg);
     background-size: cover;
-    position: relative;
     height: 83vh; 
     background-position: center;
 }
@@ -131,4 +130,9 @@
 .c {
     text-decoration-line: underline;
     text-decoration-style: double;
+  }
+
+  .lian
+  {
+      padding-bottom: 10%;
   }
