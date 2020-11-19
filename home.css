@@ -117,3 +117,8 @@
     padding-bottom: 30px;
     margin-bottom: 50px;
 }
+
+.blackcol{
+    border-bottom: 5px;
+    color: black;
+}
