@@ -101,7 +101,7 @@
 .img_3 {
     background-image: url(image/hallreservation.png);
     background-size: cover;
-    height: 70vh;
+    height: 60vh;
     background-position: center;
 }
 .back_select {
@@ -131,4 +131,35 @@
 .c {
     text-decoration-line: underline;
     text-decoration-style: double;
-  }
+}
+
+.width_1 {
+    width: 40%;
+}
+
+.back_color_green1 {
+    background-color: rgb(186, 206, 113);
+    color: white;
+    margin-top: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 50px;
+}
+
+.back_color_green2 {
+    background-color: rgb(90, 119, 67);
+    color: white;
+    margin-top: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 50px;
+}
+
+.back_color_green3 {
+    background-color: rgb(31, 49, 23);
+    color: white;
+    margin-top: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 50px;
+}
