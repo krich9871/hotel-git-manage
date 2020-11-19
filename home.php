@@ -1,7 +1,7 @@
 <?php
  require 'php/loginB.php' ;
  session_start() ;
-
+ 
 ?>
 
 
@@ -76,12 +76,13 @@
                 <a href="#" class="nav-link color">Contact Us</a>
             </div>
             <div class="col top_and_bottom">
-              <?php if (!$_SESSION['picture']){ ?>
+              <?php if (empty($_SESSION['picture'])){ ?>
                        <a href="login.php" class="nav-link color">Login</a>
               <?php }else { ?>
 
                       <div >
-                        <img src="<?php echo $_SESSION['picture']; ?>" style="width:50% ;" alt="Don't Know"/>
+                        <img src="<?php echo $_SESSION['picture'];  ?>" style="width:50% ;" alt="Don't Know"/>
+                    
                       </div>
                <?php  } ?>
 
