@@ -98,6 +98,12 @@
     height: 60vh;
     background-position: center;
 }
+.img_3 {
+    background-image: url(image/hallreservation.png);
+    background-size: cover;
+    height: 70vh;
+    background-position: center;
+}
 .back_select {
     background-color: rgba(202, 202, 202, 0.705);
 }
