@@ -8,10 +8,18 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-CuOF+2SnTUfTwSZjCXf01h7uYhfOBuxIhGKPbfEJ3+FqH/s6cIFN9bGr1HmAg4fQ" crossorigin="anonymous">
     <link rel="stylesheet" href="home.css">
-    <title>Login</title>
+    <title>Register </title>
+
+    <style>
+        .coolip{
+            border-radius: .9rem;
+            border-width: 0px;
+            background-color: gray ;
+        }
+        </style>
   </head>
-  <body>
-    <div class="container">
+  <body >
+    <div class="container ">
         <div class="row text-center align-items-center">
             <div class="col top_and_bottom border_right">
                 <a href="#" class="nav-link color">Room</a>
@@ -36,33 +44,45 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid img_1 top_pad">
+
+<form action="php/registerB.php" method="post">
+
+    <div class="container-fluid img_1 top_pad " >
         <div class=" container width_10">
             <form>
                 <div class="container-fluid text-center">
-                    <h1 class="mb-4">Login</h1>
-                    <div class="mb-2 row" style="padding: 1%; margin-left: 5px;">
-                        <div class="col-md-4 text-right"><label for="name">Email:</label></div>
-                        <div class="col-md-3 text-left"> <input class="coolip" type="name" id="name" style="width: 250px;"></div>
+                    <h1 class="mb-4 ">Register</h1>
+                    <div class="mb-2 row " style="padding: 1%;">
+                        <div class="col-md-2 text-right"><label for="name">First Name:</label></div>
+                        <div class="col-md-3 text-left" ><input class="coolip" name="customer_firstname" type="name" id="name" style="width: 250px;"></div> <div class="col-1"></div>
+                        <div class="col-md-2 text-right"><label for="name" >Last Name:</label></div>
+                        <div class="col-md-3 text-left"> <input class="coolip" name="customer_lastname" type="name" id="name" style="width: 250px;"></div>
                     </div>
-                    <div class="mb-2 row" style="padding: 1%;margin-left: 5px;">
-                        <div class="col-md-4 text-right"><label for="password">Password:</label></div>
-                        <div class="col-md-3 text-left"><input class="coolip" type="password" id="password" style="width: 250px;"><br></div>
+                    <div class="mb-2 row" style="padding: 1%;">
+                        <div class="col-md-2 text-right"><label for="Email"></label>Email:</label></div>
+                        <div class="col-md-3 text-left"><input class="coolip" name="customer_email" type="name" id="name" style="width: 250px;"></div> <div class="col-1"></div>
+                        <div class="col-md-2 text-right"><label for="password">Password:</label></div>
+                        <div class="col-md-3 text-left"><input class="coolip" name="customer_password" type="password" id="password" style="width: 250px;"><br></div>
+                    </div>
+                    <div class="mb-2" style="padding: 1%;">
+                        <label for="password">Phone Number:</label>
+                        <input class="coolip" name="customer_phone"type="Phone" id="password" style="width: 250px;border-radius: .9rem!important;"><br>
                     </div>
                     <div class="mb-2 row" style="padding: 5%;">
-                        <div><button type="submit" class="btn btn-secondary rounded" style="width: 100px;border-radius: .9rem!important;">Login</button>
-                        <button type="submit" class="btn btn-secondary rounded" style="width: 100px;border-radius: .9rem!important;">Register</button></div>
+                        <div><button type="submit" name="submitregister" class="btn btn-secondary rounded" style="width: 250px;border-radius: .9rem!important;">Confirm</button></div>
                     </div>
                 </div>
             </form>
         </div>
     </div>
+    </form>
     <div class="container-fluid text-center bottom_page padding_top">
         <h6>Copyright 2020 Poginity Ltd. All Rights Reserved.</h6>
         <h6>POGINITY Hotel. นาจอมเทียน, พัทยา (คลิ๊กเพื่อดูแผนที่) 095-156-2654 Pogihotel@gmail.com</h6>
     </div>
 
-    
+
+
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper.js -->
