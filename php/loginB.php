@@ -18,7 +18,10 @@
  if ($result_user -> num_rows == 1) {
      session_start();
      $row_user = mysqli_fetch_array($result_user,MYSQLI_ASSOC) ;
-     $_SESSION['username'] = "yoyo" ;
+
+
+      //STORING INTO SESSION VARIABLE
+       $_SESSION["picture"] = "icon/home.png" ;
      header('location: ../home.php') ;
  } else{
 

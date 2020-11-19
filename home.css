@@ -41,7 +41,6 @@
 .img_1 {
     background-image: url(image/View2.jpg);
     background-size: cover;
-    position: relative;
     height: 83vh; 
     background-position: center;
 }
@@ -131,6 +130,7 @@
 .c {
     text-decoration-line: underline;
     text-decoration-style: double;
+<<<<<<< HEAD
 }
 
 .width_1 {
@@ -163,3 +163,11 @@
     padding-bottom: 30px;
     margin-bottom: 50px;
 }
+=======
+  }
+
+  .lian
+  {
+      padding-bottom: 10%;
+  }
+>>>>>>> 360b5838954477ab9e8a17dc030c26498c3cab12
