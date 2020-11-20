@@ -1,7 +1,7 @@
 <?php
  require 'php/loginB.php' ;
  session_start() ;
-
+ 
 ?>
 
 
@@ -81,7 +81,8 @@
               <?php }else { ?>
 
                       <div >
-                        <img src="<?php echo $_SESSION['picture']; ?>" style="width:50% ;" alt="Don't Know"/>
+                        <img src="<?php echo $_SESSION['picture'];  ?>" style="width:50% ;" alt="Don't Know"/>
+                    
                       </div>
                <?php  } ?>
 
