@@ -18,11 +18,10 @@
  if ($result_user -> num_rows == 1) {
      session_start();
      $row_user = mysqli_fetch_array($result_user,MYSQLI_ASSOC) ;
-     $filename   =$_GET['image'] ;
-     echo '<img src ="../icon/"'.$filename.'.png">';
-     //save uploaded picture in your directory
-     $_SESSION['picture'] = 
-    // $_SESSION['username'] = "yoyo" ;
+
+
+      //STORING INTO SESSION VARIABLE
+       $_SESSION["picture"] = "icon/home.png" ;
      header('location: ../home.php') ;
  } else{
 

@@ -76,10 +76,10 @@
                 <a href="#" class="nav-link color">Contact Us</a>
             </div>
             <div class="col top_and_bottom">
-              <?php if (!$_SESSION['username']){ ?>
+              <?php if (!$_SESSION['picture']){ ?>
                        <a href="login.php" class="nav-link color">Login</a>
               <?php }else { ?>
-                    
+
                       <div>
                         <img src="<?php echo $_SESSION['picture']; ?>" alt="Don't Know"/>
                       </div>
