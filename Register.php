@@ -1,5 +1,6 @@
 <?php
-   require 'php/connect.php' ;
+   require 'php/registerB.php' ;
+   session_start();
  ?>
 <!doctype html>
 <html lang="en">
@@ -53,7 +54,11 @@
     <div class="container-fluid img_1 top_pad " >
         <div class=" container width_10">
             <form>
-                <h1></h1>
+
+                <h1><?php  if (isset($_SESSION['exists'])) :
+                  echo $_SESSION['exists'];
+                  unset($_SESSION['exists']) ;
+                   endif ?></h1>
                 <div class="container-fluid text-center">
                     <h1 class="mb-4 ">Register</h1>
                     <div class="mb-2 row " style="padding: 1%;">

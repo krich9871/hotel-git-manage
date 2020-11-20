@@ -24,7 +24,8 @@
       if ($row['customer_email'] == $email) {
 
           $_SESSION["exists"] ="Email is exists" ;
-         echo "Email is exists";
+          header('location: ../Register.php') ;
+        // echo "Email is exists";
       }
 
      else {
