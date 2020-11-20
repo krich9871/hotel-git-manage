@@ -4,7 +4,7 @@
 
 ?>
 
- ?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -80,8 +80,8 @@
                        <a href="login.php" class="nav-link color">Login</a>
               <?php }else { ?>
 
-                      <div>
-                        <img src="<?php echo $_SESSION['picture']; ?>" alt="Don't Know"/>
+                      <div >
+                        <img src="<?php echo $_SESSION['picture']; ?>" style="width:50% ;" alt="Don't Know"/>
                       </div>
                <?php  } ?>
 
