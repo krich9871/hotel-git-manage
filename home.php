@@ -76,7 +76,7 @@
                 <a href="#" class="nav-link color">Contact Us</a>
             </div>
             <div class="col top_and_bottom">
-              <?php if (!$_SESSION['picture']){ ?>
+              <?php if (empty($_SESSION['picture'])){ ?>
                        <a href="login.php" class="nav-link color">Login</a>
               <?php }else { ?>
 

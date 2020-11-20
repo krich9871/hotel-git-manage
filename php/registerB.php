@@ -12,16 +12,18 @@
 
 
 
-  $sqlre = "SELECT * FROM customers WHERE customer_firstname=? , customer_lastname=? , customer_email=? ,customer_password=? ,customer_phone=?  " ;
+  $sqlre = "SELECT * FROM customers WHERE  customer_email=? " ;
   $stmtr = mysqli_prepare($db,$sqlre) ;
 
-  mysqli_stmt_bind_param($stmtr,"ssssi",$firstname,$lastname,$email,$password,$phone) ; //ss มาจาก string ถ้าเปน int จะเปน //
+  mysqli_stmt_bind_param($stmtr,"s",$email) ; //ss มาจาก string ถ้าเปน int จะเปน //
   mysqli_execute($stmtr) ;
   $getresult = mysqli_stmt_get_result($stmtr) ;
 
       session_start();
       $row = mysqli_fetch_array($getresult,MYSQLI_ASSOC) ;
       if ($row['customer_email'] == $email) {
+
+          $_SESSION["exists"] ="Email is exists" ;
          echo "Email is exists";
       }
 

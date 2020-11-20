@@ -1,3 +1,6 @@
+<?php
+   require 'php/connect.php' ;
+ ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -50,6 +53,7 @@
     <div class="container-fluid img_1 top_pad " >
         <div class=" container width_10">
             <form>
+                <h1></h1>
                 <div class="container-fluid text-center">
                     <h1 class="mb-4 ">Register</h1>
                     <div class="mb-2 row " style="padding: 1%;">
@@ -66,7 +70,7 @@
                     </div>
                     <div class="mb-2" style="padding: 1%;">
                         <label for="password">Phone Number:</label>
-                        <input class="coolip" name="customer_phone"type="Phone" id="password" style="width: 250px;border-radius: .9rem!important;"><br>
+                        <input class="coolip" name="customer_phone" type="Phone" id="password" style="width: 250px;border-radius: .9rem!important;"><br>
                     </div>
                     <div class="mb-2 row" style="padding: 5%;">
                         <div><button type="submit" name="submitregister" class="btn btn-secondary rounded" style="width: 250px;border-radius: .9rem!important;">Confirm</button></div>
