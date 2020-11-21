@@ -55,8 +55,7 @@
                 <div class="mb-2 row" style="padding: 1%; align-items: center;">
                     <div class="col-md-2 text-right"><label for="Email"></label>Phone Number:</label></div>
                     <div class="col-md-3 text-left"><input class="coolip" type="name" id="name" style="width: 250px;"></div> <div class="col-1"></div>
-                    <div class="col-md-2 text-right"><label for="name" >Reward:</label></div>
-                    <div class="col-md-3 text-left"> <input class="form__field" type="name" id="name" style="width: 250px;"></div>
+                  
                 </div>
                 <div class="mb-2 row" style="padding: 5%;">
                     <div><button type="submit" class="btn btn-secondary rounded" style="width: 250px;border-radius: .9rem!important;">Confirm</button></div>
@@ -70,7 +69,7 @@
         <h6>POGINITY Hotel. นาจอมเทียน, พัทยา (คลิ๊กเพื่อดูแผนที่) 095-156-2654 Pogihotel@gmail.com</h6>
     </div>
 
-    
+
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper.js -->

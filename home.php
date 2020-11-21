@@ -1,7 +1,7 @@
 <?php
  require 'php/loginB.php' ;
  session_start() ;
- 
+
 ?>
 
 
@@ -76,13 +76,32 @@
                 <a href="#" class="nav-link color">Contact Us</a>
             </div>
             <div class="col top_and_bottom">
-              <?php if (empty($_SESSION['picture'])){ ?>
+              <?php if (empty($_SESSION['firstname'])){ ?>
                        <a href="login.php" class="nav-link color">Login</a>
               <?php }else { ?>
 
                       <div >
-                        <img src="<?php echo $_SESSION['picture'];  ?>" style="width:50% ;" alt="Don't Know"/>
-                    
+
+                        <div class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <?php echo $_SESSION['firstname'] ; ?>
+                              </a>
+                              <div class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
+                                <form action="php/profileB.php" method="post">
+                                <input type="hidden" name="customer_id" value="<?php echo $_SESSION['id']; ?>">
+                                <input type="submit" name="profile"  value="Profile" class="btn btn_light">
+                                </form>
+                                <form action="php/logout.php" method="post">
+                                  <div class="dropdown-divider"></div>
+                                  <input type="submit" name="logout" value="Logout">
+
+                                </div>
+                                </form>
+
+
+                            </div>
+
+
                       </div>
                <?php  } ?>
 
