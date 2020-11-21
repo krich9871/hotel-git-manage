@@ -52,11 +52,10 @@
                     <div class="col-md-2 text-right"><label for="password">Password:</label></div>
                     <div class="col-md-3 text-left"><input class="coolip" type="password" id="password" style="width: 250px;"><br></div>
                 </div>
-                <div class="mb-2 row" style="padding: 1%; align-items: center;">
-                    <div class="col-md-2 text-right"><label for="Email"></label>Phone Number:</label></div>
-                    <div class="col-md-3 text-left"><input class="coolip" type="name" id="name" style="width: 250px;"></div> <div class="col-1"></div>
-                  
-                </div>
+                <div class="mb-2" style="padding: 1%;">
+                        <label for="password">Phone Number:</label>
+                        <input class="coolip" name="customer_phone" type="Phone" id="password" style="width: 250px;border-radius: .9rem!important;"><br>
+                    </div>
                 <div class="mb-2 row" style="padding: 5%;">
                     <div><button type="submit" class="btn btn-secondary rounded" style="width: 250px;border-radius: .9rem!important;">Confirm</button></div>
                 </div>

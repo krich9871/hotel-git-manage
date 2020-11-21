@@ -56,11 +56,12 @@
                         <div class="col-md-3 text-left" class="form__field" ><?php echo $_SESSION['email_1']; ?></div> <div class="col-1"></div>
                         <div class="col-md-2 text-right"><label for="password">Password:</label></div>
                         <div class="col-md-3 text-left"class="form__field"><?php echo $_SESSION['password']; ?><br></div>
-                        <div class="col-md-2 text-right"><label for="name" >Reward:</label></div>
-                        <div class="col-md-3 text-left"> <input class="form__field" type="name" id="name" ></div>
+                    </div>
+                    <div class="mb-2 row align-items-center" style="margin-left:325px">
+                        <div class="col-md-1"><label for="name">Reward:</label></div>
+                        <div class="col-md-4"><input class="form__field" type="name" id="name"></div>
                     </div>
                     <div class="mb-2 row align-items-center" style="padding: 5%;">
-
                         <div> <a href="Editprofile.php"  class="btn btn-secondary rounded align-items-center" style="width: 250px;border-radius: .9rem!important;">Edit Profile</a>
                     </div>
                     <div class="align-items-center"><label for="name"><br></br>No Reservation</label></div>
