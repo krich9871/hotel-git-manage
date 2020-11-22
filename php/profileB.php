@@ -23,6 +23,7 @@
         $_SESSION['lastname'] = $row['customer_lastname'] ;
         $_SESSION['email_1'] = $row['customer_email'];
         $_SESSION['password'] = $row['customer_password'] ;
+        $_SESSION['id'] = $row['customer_id'] ;
         header('location: ../profile.php') ;
 
 

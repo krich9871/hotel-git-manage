@@ -47,13 +47,13 @@
                     <h1 class="mb-4">Login</h1>
                     <div class="mb-2 row" style="padding: 1%; margin-left: 5px;">
                         <div class="col-md-4 text-right"><label for="name">Email:</label></div>
-                        <div class="col-md-3 text-left"> <input class="coolip" name="customer_email" type="name" id="name" style="width: 250px;"></div>
+                        <div class="col-md-3 text-left"> <input class="coolip" name="customer_email" type="name" id="name" style="width: 250px;" required></div>
                     </div>
                     <div class="mb-2 row" style="padding: 1%;margin-left: 5px;">
                         <div class="col-md-4 text-right"><label for="password">Password:</label></div>
-                        <div class="col-md-3 text-left"><input class="coolip" name="customer_password" type="password" id="password" style="width: 250px;"><br></div>
+                        <div class="col-md-3 text-left"><input class="coolip" name="customer_password" type="password" id="password" style="width: 250px;"required><br></div>
                     </div>
-                  
+
                     <div class="mb-2 row" style="padding: 5%;">
                         <div><button type="submit"name="submit_login" class="btn btn-secondary rounded" style="width: 100px;border-radius: .9rem!important;">Login</button>
                             <a href="register.php"  class="btn btn-secondary rounded" style="width: 100px;border-radius: .9rem!important;">Register</a>
