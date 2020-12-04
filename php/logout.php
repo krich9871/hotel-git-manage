@@ -7,6 +7,8 @@ session_start();
      unset($_SESSION['firstname']) ;
      header('location: ../home.php') ;
 
+ }else {
+    header('location: ../home.php') ;
  }
 
 

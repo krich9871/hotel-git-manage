@@ -69,7 +69,7 @@
                     </div>
                     <div class="mb-2 row" style="padding: 1%;">
                         <div class="col-md-2 text-right"><label for="Email"></label>Email:</label></div>
-                        <div class="col-md-3 text-left"><input class="coolip" name="customer_email" type="name" id="name" style="width: 250px;"required></div> <div class="col-1"></div>
+                        <div class="col-md-3 text-left"><input class="coolip" name="customer_email" type="email" id="name" style="width: 250px;"required></div> <div class="col-1"></div>
                         <div class="col-md-2 text-right"><label for="password">Password:</label></div>
                         <div class="col-md-3 text-left"><input class="coolip" name="customer_password" type="password" id="password" style="width: 250px;"required><br></div>
                     </div>

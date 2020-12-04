@@ -47,7 +47,7 @@
                     <h1 class="mb-4">Login</h1>
                     <div class="mb-2 row" style="padding: 1%; margin-left: 5px;">
                         <div class="col-md-4 text-right"><label for="name">Email:</label></div>
-                        <div class="col-md-3 text-left"> <input class="coolip" name="customer_email" type="name" id="name" style="width: 250px;" required></div>
+                        <div class="col-md-3 text-left"> <input class="coolip" name="customer_email" type="email" id="name" style="width: 250px;" required></div>
                     </div>
                     <div class="mb-2 row" style="padding: 1%;margin-left: 5px;">
                         <div class="col-md-4 text-right"><label for="password">Password:</label></div>
