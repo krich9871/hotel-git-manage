@@ -14,7 +14,13 @@
 
    $calculate =strtotime("$checkin")-strtotime("$checkout");
    $summary=floor($calculate / 86400);
-   $summary = abs($summary) ;
+
+   $summarytest = $summary ;
+   if ($summarytest>0) {
+         header('location: reservation.html') ;
+   } else {
+       $summaryre = abs($summary) ;
+   }
 
 
 
@@ -115,7 +121,7 @@
 
    while ($row1 = mysqli_fetch_array($result1,MYSQLI_ASSOC)) {
 
-          $summary1 = $summary*$row1['price_room'] ;
+          $summary1 = $summaryre*$row1['price_room'] ;
 
    ?>
 
@@ -173,7 +179,7 @@
 
     while ($row2 = mysqli_fetch_array($result2,MYSQLI_ASSOC)) {
 
-      $summary2 = $summary*$row2['price_room'] ;
+      $summary2 = $summaryre*$row2['price_room'] ;
 
 
     ?>
