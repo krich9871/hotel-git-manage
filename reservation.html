@@ -39,15 +39,15 @@
 
     <div class="container-fluid img_2">
         <div class="container text-center top_pad_1">
-            <form>
+            <form action="roomtestsearch.php" method="post" >
                 <div class="row justify-content-md-center align-items-center">
                     <div class="col-auto">
                         <b><label for="checkin">CHECK IN</label></b>
-                        <input type="date" id="checkin">
+                        <input type="date" name="checkin" id="checkin">
                     </div>
                     <div class="col-auto">
                         <b><label for="checkout">CHECK OUT</label></b>
-                        <input type="date" id="checkout" class="form_field">
+                        <input type="date" name="checkout" id="checkout" class="form_field">
                     </div>
                     <div class="col-auto">
                         <button type="submit" class="btn btn-light" >SEARCH</button>
