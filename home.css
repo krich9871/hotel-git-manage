@@ -103,6 +103,14 @@
     height: 60vh;
     background-position: center;
 }
+
+.img_4 {
+    background-image: url(image/foodreser.png);
+    background-size: cover;
+    height: 65vh;
+    background-position: center;
+}
+
 .back_select {
     background-color: rgba(202, 202, 202, 0.705);
 }
