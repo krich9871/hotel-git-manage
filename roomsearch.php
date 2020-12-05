@@ -3,13 +3,21 @@
    $checkin = $_POST['checkin'] ;
    $checkout = $_POST['checkout'] ;
 
-   $qroom1 = " SELECT room_type.room , testtype.typename , room_type.person_amount , room_type.count_room , room_type.image , room_type.price_room FROM room_type  INNER JOIN testtype ON room_type.type_id11 = testtype.type_id11 WHERE room_type.type_id11 LIKE 1 " ; //สามารถ SELECT room.roomid,roomtype.roomtype
+   $qroom1 = " SELECT room_type.room , type.typename , room_type.person_amount , room_type.count_room , room_type.image , room_type.price_room FROM room_type  INNER JOIN type ON room_type.type_id11 = type.type_id11 WHERE room_type.type_id11 LIKE 1 " ; //สามารถ SELECT room.roomid,roomtype.roomtype
 
    $result1 = mysqli_query($db,$qroom1) ;
 
-   $qroom2 = " SELECT room_type.room , testtype.typename , room_type.person_amount , room_type.count_room , room_type.image , room_type.price_room FROM room_type  INNER JOIN testtype ON room_type.type_id11 = testtype.type_id11 WHERE room_type.type_id11 LIKE 2 " ; //สามารถ SELECT room.roomid,roomtype.roomtype
+   $qroom2 = " SELECT room_type.room , type.typename , room_type.person_amount , room_type.count_room , room_type.image , room_type.price_room FROM room_type  INNER JOIN type ON room_type.type_id11 = type.type_id11 WHERE room_type.type_id11 LIKE 2 " ; //สามารถ SELECT room.roomid,roomtype.roomtype
 
    $result2 = mysqli_query($db,$qroom2) ;
+
+
+   $calculate =strtotime("$checkin")-strtotime("$checkout");
+   $summary=floor($calculate / 86400);
+   $summary = abs($summary) ;
+
+
+
 
  ?>
 
@@ -85,6 +93,7 @@
                     <div class="col-auto">
                         <b><label for="checkin">CHECK IN</label></b>
                         <input type="date" id="checkin" value="<?php echo $checkin ; ?>">
+                        <input type="name" id="checkin" value="<?php echo $summary ; ?>">
                     </div>
                     <div class="col-auto">
                         <b><label for="checkout">CHECK OUT</label></b>
@@ -106,7 +115,7 @@
 
    while ($row1 = mysqli_fetch_array($result1,MYSQLI_ASSOC)) {
 
-
+          $summaryall = $summary*$row1['price_room'] ;
 
    ?>
 
@@ -120,7 +129,7 @@
                 <img src="image/<?php echo $row1['image']; ?>" width="400px">
             </div>
             <div class="col-auto p-2 text-left align-items-center">
-              <h3><?php echo $row1['room'] ; ?></h3>
+              <h3><?php echo $row1['room']  ; ?></h3>
                 <h5>จำนวนห้องที่เหลือ: <?php echo $row1['count_room']; ?></h5>
                 <h5>สำหรับผู้เข้าพัก: <?php echo $row1['person_amount']; ?> คน</h5>
 
@@ -141,7 +150,7 @@
     }
 
     mysqli_free_result($result1) ;
-        mysqli_close($db) ;
+
 
      ?>
 
@@ -152,6 +161,7 @@
 
     while ($row2 = mysqli_fetch_array($result2,MYSQLI_ASSOC)) {
 
+      $summaryal2 = $summary*$row2['price_room'] ;
 
 
     ?>
@@ -186,7 +196,7 @@
      }
 
      mysqli_free_result($result2) ;
-         mysqli_close($db) ;
+
 
       ?>
 
