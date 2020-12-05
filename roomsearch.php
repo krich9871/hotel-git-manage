@@ -92,8 +92,8 @@
                 <div class="row justify-content-md-center align-items-center">
                     <div class="col-auto">
                         <b><label for="checkin">CHECK IN</label></b>
-                        <input type="date" id="checkin" value="<?php echo $checkin ; ?>">
-                        <input type="name" id="checkin" value="<?php echo $summary ; ?>">
+                        <input type="date" id="checkin" name="checkin1" value="<?php echo $checkin ; ?>">
+                        <input type="hidden" id="checkin"name="checkout1" value="<?php echo $summary ; ?>">
                     </div>
                     <div class="col-auto">
                         <b><label for="checkout">CHECK OUT</label></b>
@@ -115,9 +115,10 @@
 
    while ($row1 = mysqli_fetch_array($result1,MYSQLI_ASSOC)) {
 
-          $summaryall = $summary*$row1['price_room'] ;
+          $summary1 = $summary*$row1['price_room'] ;
 
    ?>
+
 
 
 
@@ -136,15 +137,26 @@
 
                 <div class="row pt-5">
                     <div class="col">
-                      <h2><?php echo $row1['price_room']; ?> THB</h2>
+                      <h2><?php echo $row1['price_room']; ?>THB</h2>
                     </div>
+
+
                     <div class="col pt-1">
-                        <button type="button" class="btn btn-light rounded" style="width: 200px;border-radius: .9rem!important;">More Detail</button>
+                       <form action="room_booking.php" method="post">
+                        <input type="hidden" id="checkin" name="summary1"  value="<?php echo $summary1 ; ?>">
+                          <input type="hidden" id="checkin" name="checkin1" value="<?php echo $checkin ; ?>">
+                          <input type="hidden" id="checkout" class="form_field" name="checkout1" value="<?php echo $checkout ; ?>">
+                        <button type="submit" name="more1" class="btn btn-light rounded" style="width: 200px;border-radius: .9rem!important;">More Detail</button>
+                          </form>
                     </div>
+
+
+
                 </div>
             </div>
         </div>
     </div>
+
 
     <?php
     }
@@ -161,10 +173,11 @@
 
     while ($row2 = mysqli_fetch_array($result2,MYSQLI_ASSOC)) {
 
-      $summaryal2 = $summary*$row2['price_room'] ;
+      $summary2 = $summary*$row2['price_room'] ;
 
 
     ?>
+
 
 
 
@@ -184,13 +197,25 @@
                      <div class="col">
                        <h2><?php echo $row2['price_room']; ?> THB</h2>
                      </div>
+
+
                      <div class="col pt-1">
-                         <button type="button" class="btn btn-light rounded" style="width: 200px;border-radius: .9rem!important;">More Detail</button>
+                           <form action="room_booking.php" method="post">
+                          <input type="hidden" id="checkin" name="summary2"  value="<?php echo $summary2 ; ?>">
+                            <input type="hidden" id="checkin"name="checkin1" value="<?php echo $checkin ; ?>">
+                            <input type="hidden" id="checkout" class="form_field"name="checkout1" value="<?php echo $checkout ; ?>">
+                         <button type="submit" name="more1" class="btn btn-light rounded" style="width: 200px;border-radius: .9rem!important;">More Detail</button>
+                            </form>
                      </div>
+
+
+
                  </div>
              </div>
          </div>
      </div>
+
+
 
      <?php
      }

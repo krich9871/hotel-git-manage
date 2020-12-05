@@ -1,3 +1,23 @@
+<?php
+
+
+  if (empty($_POST['summary1'])) {
+  $summaryprice2 = $_POST['summary2'] ;
+}
+if (empty($_POST['summary2'])) {
+  $summaryprice1 = $_POST['summary1'] ;
+}
+
+
+
+
+  $checkin = $_POST['checkin1'] ;
+  $checkout = $_POST['checkout1'] ;
+
+
+
+
+ ?>
 
 <!doctype html>
 <html lang="en">
@@ -144,7 +164,12 @@
           </div>
           <div class="row mt-3 text-right">
             <div class="col">
-              <h2>xxxxxx THB</h2>
+                <?php if (empty($summaryprice2)) {?>
+                     <h2><?php echo $summaryprice1;  ?> THB</h2>
+              <?php }elseif(empty($summaryprice1)) { ?>
+                     <h2><?php echo $summaryprice2;  ?> THB</h2>
+             <?php }  ?>
+
             </div>
             <div class="col">
                 <button type="button" class="btn btn-light rounded border" style="width: 200px;border-radius: .9rem!important;">Book Now</button>
