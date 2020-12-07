@@ -56,10 +56,15 @@
   </head>
   <body>
     <div class="container">
+        <form  action="reservation.php" method="post">
         <div class="row text-center align-items-center">
+
             <div class="col top_and_bottom border_right">
-                <a href="#" class="nav-link color">Room</a>
+               <input type="hidden" name="customer_id" value="<?php echo $_SESSION['id']; ?>">
+               <button type="submit" class="nav-link color btn btn_light"  name="button">Room</button>
             </div>
+            </form>
+
             <div class="col top_and_bottom border_right">
                 <a href="#" class="nav-link color">Restaurant</a>
             </div>
@@ -75,6 +80,7 @@
             <div class="col top_and_bottom border_right">
                 <a href="#" class="nav-link color">Contact Us</a>
             </div>
+
             <div class="col top_and_bottom">
               <?php if (empty($_SESSION['firstname'])){ ?>
                        <a href="login.php" class="nav-link color">Login</a>

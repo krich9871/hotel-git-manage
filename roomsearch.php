@@ -2,6 +2,7 @@
    require 'php/connect.php' ;
    $checkin = $_POST['checkin'] ;
    $checkout = $_POST['checkout'] ;
+   $idcus =$_POST['customer_id'] ;
 
    $qroom1 = " SELECT room_type.room , type.typename , room_type.person_amount , room_type.count_room , room_type.image , room_type.price_room FROM room_type  INNER JOIN type ON room_type.type_id11 = type.type_id11 WHERE room_type.type_id11 LIKE 1 " ; //สามารถ SELECT room.roomid,roomtype.roomtype
 
@@ -17,7 +18,7 @@
 
    $summarytest = $summary ;
    if ($summarytest>0) {
-         header('location: reservation.html') ;
+         header('location: reservation.php') ;
    } else {
        $summaryre = abs($summary) ;
    }
@@ -149,9 +150,10 @@
 
                     <div class="col pt-1">
                        <form action="room_booking.php" method="post">
-                        <input type="hidden" id="checkin" name="summary1"  value="<?php echo $summary1 ; ?>">
+                        <input type="hidden" name="summary1"  value="<?php echo $summary1 ; ?>">
                           <input type="hidden" id="checkin" name="checkin1" value="<?php echo $checkin ; ?>">
                           <input type="hidden" id="checkout" class="form_field" name="checkout1" value="<?php echo $checkout ; ?>">
+                           <input type="hidden" name="customer_id" value="<?php echo $idcus; ?>">
                         <button type="submit" name="more1" class="btn btn-light rounded" style="width: 200px;border-radius: .9rem!important;">More Detail</button>
                           </form>
                     </div>
@@ -210,6 +212,7 @@
                           <input type="hidden" id="checkin" name="summary2"  value="<?php echo $summary2 ; ?>">
                             <input type="hidden" id="checkin"name="checkin1" value="<?php echo $checkin ; ?>">
                             <input type="hidden" id="checkout" class="form_field"name="checkout1" value="<?php echo $checkout ; ?>">
+                             <input type="hidden" name="customer_id" value="<?php echo $idcus; ?>">
                          <button type="submit" name="more1" class="btn btn-light rounded" style="width: 200px;border-radius: .9rem!important;">More Detail</button>
                             </form>
                      </div>

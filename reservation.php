@@ -1,3 +1,8 @@
+<?php
+
+  $idcus = $_POST['customer_id']  ;
+
+ ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -48,6 +53,7 @@
                     <div class="col-auto">
                         <b><label for="checkout">CHECK OUT</label></b>
                         <input type="date" name="checkout" id="checkout" class="form_field">
+                       <input type="hidden" name="customer_id" value="<?php echo $idcus; ?>">
                     </div>
                     <div class="col-auto">
                         <button type="submit" class="btn btn-light" >SEARCH</button>

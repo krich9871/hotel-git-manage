@@ -1,21 +1,16 @@
 <?php
 
 
-  if (empty($_POST['summary1'])) {
+if (empty($_POST['summary1'])) {
   $summaryprice2 = $_POST['summary2'] ;
-}
+        }
 if (empty($_POST['summary2'])) {
   $summaryprice1 = $_POST['summary1'] ;
 }
 
-
-
-
   $checkin = $_POST['checkin1'] ;
   $checkout = $_POST['checkout1'] ;
-
-
-
+  $idcus = $_POST['customer_id']  ;
 
  ?>
 
@@ -104,7 +99,7 @@ if (empty($_POST['summary2'])) {
                         <input type="date" id="checkout" class="form_field" value="<?php echo $checkout ; ?>">
                     </div>
                     <div class="col-auto">
-                      <a href="reservation.html" class="btn btn-light">Back</a>
+                      <a href="reservation.php" class="btn btn-light">Back</a>
 
                     </div>
                 </div>
@@ -134,6 +129,8 @@ if (empty($_POST['summary2'])) {
         </a>
       </div>
 
+<form action="php/booking_B.php" method="post">
+
       <div class="container text-center mt-5 mb-5 border p-5 set_width">
           <h1 class="text-left">Duplex Ocean View</h1>
           <div class="row mt-3 p-1">
@@ -145,20 +142,28 @@ if (empty($_POST['summary2'])) {
               <div class="col text-left p-3">
                 <h5>Special Request</h5>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="check1"></input>
-                    <label class="form-check=label" for="check1">หมอนเพิ่ม 1 ใบ</label>
+                    <label class="form-check=label" for="check1">
+                    <input class="form-check-input" name="mon" value="หมอนเพิ่ม 1 ใบ" type="checkbox" id="check1"></input>
+                    หมอนเพิ่ม 1 ใบ
+                   </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="check2"></input>
-                    <label class="form-check=label" for="check2">ผ้าห่มเพิ่ม 1 ผืน</label>
+                    <label class="form-check=label" for="check2">
+                    <input class="form-check-input" name="pahom" value="ผ้าห่มเพิ่ม 1 ใบ" type="checkbox" id="check2"></input>
+                    ผ้าห่มเพิ่ม 1 ผืน
+                    </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="check3"></input>
-                    <label class="form-check=label" for="check3">อาหารมื้อเช้า</label>
+                    <label class="form-check=label" for="check3">
+                    <input class="form-check-input" name="food" value="อาหารมื้อเช้า" type="checkbox" id="check3"></input>
+                    อาหารมื้อเช้า
+                    </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="check4"></input>
-                    <label class="form-check=label" for="check4">รถรับส่ง</label>
+                    <label class="form-check=label" for="check4">
+                    <input class="form-check-input" name="car" value="รถรับส่ง" type="checkbox" id="check4"></input>
+                    รถรับส่ง
+                    </label>
                 </div>
               </div>
           </div>
@@ -166,16 +171,22 @@ if (empty($_POST['summary2'])) {
             <div class="col">
                 <?php if (empty($summaryprice2)) {?>
                      <h2><?php echo $summaryprice1;  ?> THB</h2>
+                     <input type="hidden" name="summary1" value="<?php echo $summaryprice1;  ?>">
               <?php }elseif(empty($summaryprice1)) { ?>
                      <h2><?php echo $summaryprice2;  ?> THB</h2>
+                     <input type="hidden" name="summary2" value="<?php echo $summaryprice2;  ?>">
              <?php }  ?>
 
             </div>
             <div class="col">
-                <button type="button" class="btn btn-light rounded border" style="width: 200px;border-radius: .9rem!important;">Book Now</button>
+                <input type="hidden" name="customer_id" value="<?php echo $idcus; ?>">
+                  <input type="hidden" name="checkin" value="<?php echo $checkin ; ?>">
+                  <input type="hidden" name="checkout" id="checkout" class="form_field" value="<?php echo $checkout ; ?>">
+                <button type="submit" class="btn btn-light rounded border" name="booking" style="width: 200px;border-radius: .9rem!important;">Book Now</button>
             </div>
         </div>
       </div>
+      </form>
 
     <div class="container-fluid text-center bottom_page padding_top">
         <h6>Copyright 2020 Poginity Ltd. All Rights Reserved.</h6>
