@@ -40,8 +40,8 @@
         </div>
     </div>
 </div>
-<div class="container-fluid img_1 top_pad">
-    <div class=" container width_10">
+<div class="container-fluid img_1 top_pad" style="padding-bottom: 150px;">
+    <div class=" container width_10" >
         <form  action="php/editprofile_cus.php" method="post">
 
             <div class="container-fluid text-center">

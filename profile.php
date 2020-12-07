@@ -40,7 +40,7 @@
         </div>
     </div>
 </div>
-    <div class="container-fluid img_1 top_pad">
+    <div class="container-fluid img_1 top_pad" style="padding-bottom:50px;">
         <div class=" container width_10">
             <form>
                 <div class="container-fluid text-center">
@@ -58,14 +58,10 @@
                         <div class="col-md-3 text-left"class="form__field"><?php echo $_SESSION['password']; ?><br></div>
                     </div>
               
-                      <div class="mb-2 row align-items-center" style="padding: 1%;">
-                        <div class="col-md-2 text-right"><label for="name" >Reward:</label></div>
-                        <div class="col-md-3 text-left"> <input class="form__field" type="name" id="name" value="0"></div>
-                        </div>
                     <div class="mb-2 row align-items-center" style="padding: 5%;">
                         <div> <a href="Editprofile.php"  class="btn btn-secondary rounded align-items-center" style="width: 250px;border-radius: .9rem!important;">Edit Profile</a>
-                    </div>
-                    <div class="align-items-center"><label for="name"><br></br>No Reservation</label></div>
+                    </div></div>
+                    <div class="align-items-center"><label for="name"><br>No Reservation</label></div>
                     <div class="mb-2 row align-items-center" style="padding: 5%; margin-left: 0.5px;">
                         <div><button type="submit" class="btn btn-secondary rounded align-items-center" style="width: 250px;border-radius: .9rem!important;">Edit Reservation</button></div>
                     </div>

@@ -41,11 +41,11 @@
 .img_1 {
     background-image: url(image/View2.jpg);
     background-size: cover;
-    height: 83vh; 
+    height: auto; 
     background-position: center;
 }
 .top_pad {
-    padding-top: 150px; 
+    padding-top: 50px; 
 }
 .move
 {
@@ -142,6 +142,7 @@
 
 .width_1 {
     width: 40%;
+    height: auto;
 }
 
 .back_color_green1 {
