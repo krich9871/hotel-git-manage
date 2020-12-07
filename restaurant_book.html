@@ -28,7 +28,7 @@ if (empty($_POST['summary2'])) {
     <style>
         
 .img_10 {
-    background-image: url(image/meetingroom.png);
+    background-image: url(image/restauranttop.png);
     background-size: cover;
     height: 50vh;
     background-position: center;
@@ -59,21 +59,16 @@ if (empty($_POST['summary2'])) {
     background-color: hsl(217, 100%, 97%);
 }
 
-.crop {
-            width: 100%; 
-            height: 1250px; 
-            object-fit: cover;
-        }
 
     </style>
   </head>
   <body>
     <div class="container">
         <div class="row text-center align-items-center">
-            <div class="col top_and_bottom border_right back_select">
+            <div class="col top_and_bottom border_right">
                 <a href="#" class="nav-link color">Room</a>
             </div>
-            <div class="col top_and_bottom border_right">
+            <div class="col top_and_bottom border_right back_select">
                 <a href="#" class="nav-link color">Restaurant</a>
             </div>
             <div class="col top_and_bottom">
@@ -140,35 +135,35 @@ if (empty($_POST['summary2'])) {
 <form action="php/booking_B.php" method="post">
 
       <div class="container text-center mt-5 mb-5 border p-5 set_width">
-          <h1 class="text-left">Small Meeting Room</h1>
+          <h1 class="text-left">Innovative Food Buffet</h1>
           <div class="row mt-3 p-1">
               <div class="col border-right text-left p-3">
-                <h6>จำนวนห้องที่เหลือ : </h6>
-                <h6>จำนวนคน : </h6>
+                <h6>รายละเอียด :</h6>
+                <h6>จำนวนที่ว่างเหลือ : </h6>
               </div>
               <div class="col text-left p-3">
                 <h5>Special Request</h5>
                 <div class="form-check">
                     <label class="form-check=label" for="check1">
-                    <input class="form-check-input" name="mon" value="ปากกาดิจิตอล 1 แท่ง" type="checkbox" id="check1"></input>
+                    <input class="form-check-input" name="mon" checked value="หมอนเพิ่ม 1 ใบ" type="checkbox" id="check1"></input>
                     ปากกาดิจิตอล 1 แท่ง
                    </label>
                 </div>
                 <div class="form-check">
                     <label class="form-check=label" for="check2">
-                    <input class="form-check-input" name="pahom" value="ปลั๊กราง 1 แผง" type="checkbox" id="check2"></input>
+                    <input class="form-check-input" name="pahom" value="ผ้าห่มเพิ่ม 1 ใบ" type="checkbox" id="check2"></input>
                     ปลั๊กราง 1 แผง
                     </label>
                 </div>
                 <div class="form-check">
                     <label class="form-check=label" for="check3">
-                    <input class="form-check-input" name="food" value="ปากกาไวท์บอร์ด 1 แท่ง" type="checkbox" id="check3"></input>
+                    <input class="form-check-input" name="food" value="อาหารมื้อเช้า" type="checkbox" id="check3"></input>
                     ปากกาไวท์บอร์ด 1 แท่ง
                     </label>
                 </div>
                 <div class="form-check">
                     <label class="form-check=label" for="check4">
-                    <input class="form-check-input" name="car" value="ใช้โปรเจกเตอร์" type="checkbox" id="check4"></input>
+                    <input class="form-check-input" name="car" value="รถรับส่ง" type="checkbox" id="check4"></input>
                     ใช้โปรเจกเตอร์
                     </label>
                 </div>
@@ -206,8 +201,8 @@ if (empty($_POST['summary2'])) {
                     <img src="image/Room1.jpg" width="100%px">
                   </div>
                   <div class="col">
-                    <h6>จำนวนห้องที่เหลือ : </h6>
-                    <h6>จำนวนคน : </h6>
+                    <h6>รายละเอียด :</h6>
+                    <h6>จำนวนที่ว่างเหลือ : </h6>
                   </div>
               </div>
             </div>
