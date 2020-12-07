@@ -182,8 +182,34 @@ if (empty($_POST['summary2'])) {
                 <input type="hidden" name="customer_id" value="<?php echo $idcus; ?>">
                   <input type="hidden" name="checkin" value="<?php echo $checkin ; ?>">
                   <input type="hidden" name="checkout" id="checkout" class="form_field" value="<?php echo $checkout ; ?>">
-                <button type="submit" class="btn btn-light rounded border" name="booking" style="width: 200px;border-radius: .9rem!important;">Book Now</button>
+                <button type="submit" class="btn btn-light rounded border" data-toggle="modal" data-target="#example1" name="booking" style="width: 200px;border-radius: .9rem!important;">Book Now</button>
             </div>
+        </div>
+      </div>
+      <div class="modal fade" id="example1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel" >CONFIRMATION</h5>
+              <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row align-items-center">
+                  <div class="col">
+                    <img src="image/Room1.jpg" width="100%px">
+                  </div>
+                  <div class="col">
+                    <h6>ประเภทห้อง:</h6>
+                    <h6>จำนวนห้องที่เหลือ: </h6>
+                    <h6>สำหรับผู้เข้าพัก: </h6>
+                  </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Confirm</button>
+            </div>
+          </div>
         </div>
       </div>
       </form>
