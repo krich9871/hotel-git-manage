@@ -40,7 +40,7 @@
 
     <form  action="php/loginB.php" method="post">
 
-    <div class="container-fluid img_1 top_pad">
+    <div class="container-fluid img_1 top_pad" style="padding-bottom:95px;">
         <div class=" container width_10">
             <form action="php/profile.php" method="post">
                 <div class="container-fluid text-center">
