@@ -4,11 +4,11 @@
    $checkout = $_POST['checkout'] ;
    $idcus =$_POST['customer_id'] ;
 
-   $qroom1 = " SELECT room_type.room , type.typename , room_type.person_amount , room_type.count_room , room_type.image , room_type.price_room FROM room_type  INNER JOIN type ON room_type.type_id11 = type.type_id11 WHERE room_type.type_id11 LIKE 1 " ; //สามารถ SELECT room.roomid,roomtype.roomtype
+   $qroom1 = " SELECT room_type.room , type.typename , room_type.person_amount , room_type.count_room , room_type.image , room_type.price_room, room_type.image1, room_type.image2 FROM room_type  INNER JOIN type ON room_type.type_id11 = type.type_id11 WHERE room_type.type_id11 LIKE 1 " ; //สามารถ SELECT room.roomid,roomtype.roomtype
 
    $result1 = mysqli_query($db,$qroom1) ;
 
-   $qroom2 = " SELECT room_type.room , type.typename , room_type.person_amount , room_type.count_room , room_type.image , room_type.price_room FROM room_type  INNER JOIN type ON room_type.type_id11 = type.type_id11 WHERE room_type.type_id11 LIKE 2 " ; //สามารถ SELECT room.roomid,roomtype.roomtype
+   $qroom2 = " SELECT room_type.room , type.typename , room_type.person_amount , room_type.count_room , room_type.image , room_type.price_room, room_type.image1, room_type.image2 FROM room_type  INNER JOIN type ON room_type.type_id11 = type.type_id11 WHERE room_type.type_id11 LIKE 2 " ; //สามารถ SELECT room.roomid,roomtype.roomtype
 
    $result2 = mysqli_query($db,$qroom2) ;
 
@@ -124,6 +124,7 @@
 
           $summary1 = $summaryre*$row1['price_room'] ;
 
+
    ?>
 
 
@@ -135,6 +136,7 @@
         <div class="row justify-content-md-center align-items-center border ">
             <div class="col-auto">
                 <img src="image/<?php echo $row1['image']; ?>" width="400px">
+
             </div>
             <div class="col-auto p-2 text-left align-items-center">
               <h3><?php echo $row1['room']  ; ?></h3>
@@ -151,9 +153,15 @@
                     <div class="col pt-1">
                        <form action="room_booking.php" method="post">
                         <input type="hidden" name="summary1"  value="<?php echo $summary1 ; ?>">
-                          <input type="hidden" id="checkin" name="checkin1" value="<?php echo $checkin ; ?>">
-                          <input type="hidden" id="checkout" class="form_field" name="checkout1" value="<?php echo $checkout ; ?>">
-                           <input type="hidden" name="customer_id" value="<?php echo $idcus; ?>">
+                        <input type="hidden" id="checkin" name="checkin1" value="<?php echo $checkin ; ?>">
+                        <input type="hidden" id="checkout" class="form_field" name="checkout1" value="<?php echo $checkout ; ?>">
+                        <input type="hidden" name="customer_id" value="<?php echo $idcus; ?>">
+                        <input type="hidden" name="room_t" value="<?php echo $row1['room']; ?>">
+                        <input type="hidden" name="number_of_guest" value="<?php echo $row1['person_amount']; ?>">
+                        <input type="hidden" name="count" value="<?php echo $row1['count_room']; ?>">
+                        <input type="hidden" name="image" value="<?php echo $row1['image']; ?>">
+                        <input type="hidden" name="image1" value="<?php echo $row1['image1']; ?>">
+                        <input type="hidden" name="image2" value="<?php echo $row1['image2']; ?>">
                         <button type="submit" name="more1" class="btn btn-light rounded" style="width: 200px;border-radius: .9rem!important;">More Detail</button>
                           </form>
                     </div>
@@ -210,9 +218,15 @@
                      <div class="col pt-1">
                            <form action="room_booking.php" method="post">
                           <input type="hidden" id="checkin" name="summary2"  value="<?php echo $summary2 ; ?>">
-                            <input type="hidden" id="checkin"name="checkin1" value="<?php echo $checkin ; ?>">
-                            <input type="hidden" id="checkout" class="form_field"name="checkout1" value="<?php echo $checkout ; ?>">
-                             <input type="hidden" name="customer_id" value="<?php echo $idcus; ?>">
+                          <input type="hidden" id="checkin"name="checkin1" value="<?php echo $checkin ; ?>">
+                          <input type="hidden" id="checkout" class="form_field"name="checkout1" value="<?php echo $checkout ; ?>">
+                          <input type="hidden" name="customer_id" value="<?php echo $idcus; ?>">
+                          <input type="hidden" name="room_t" value="<?php echo $row2['room']; ?>">
+                          <input type="hidden" name="number_of_guest" value="<?php echo $row2['person_amount']; ?>">
+                          <input type="hidden" name="count" value="<?php echo $row2['count_room']; ?>">
+                          <input type="hidden" name="image" value="<?php echo $row2['image']; ?>">
+                          <input type="hidden" name="image1" value="<?php echo $row2['image1']; ?>">
+                          <input type="hidden" name="image2" value="<?php echo $row2['image2']; ?>">
                          <button type="submit" name="more1" class="btn btn-light rounded" style="width: 200px;border-radius: .9rem!important;">More Detail</button>
                             </form>
                      </div>

@@ -1,6 +1,10 @@
 <?php
+if (empty($_POST['customer_id'])) {
 
+}else {
   $idcus = $_POST['customer_id']  ;
+}
+
 
  ?>
 <!doctype html>

@@ -1,3 +1,7 @@
+<?php
+$idcus = $_POST['customer_id']  ;
+ ?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -39,15 +43,15 @@
 
     <div class="container-fluid img_4">
         <div class="container text-center top_pad_1 width_1">
-            <form>
+            <form action="restaurantsearch.php " method="post">
                 <div class="row justify-content-md-center align-items-center">
                     <div class="col">
                         <b><label for="checkin">DATE</label></b>
-                        <input type="date" id="checkin">
+                        <input type="date" name="checkin" id="checkin">
                     </div>
                     <div class="col">
                         <b><label for="time">TIME</label></b>
-                        <select id="time" class="p-1">
+                        <select id="time" name="time_h" class="p-1">
                         <option>08.00-10.00</option>
                         <option>10.00-12.00</option>
                         <option>12.00-14.00</option>
@@ -58,6 +62,7 @@
                     </div>
                 </div>
                 <div class="col-auto p-4">
+                    <input type="hidden" name="customer_id" value="<?php echo $idcus; ?>">
                     <button type="submit" class="btn btn-light">SEARCH</button>
                 </div>
             </form>

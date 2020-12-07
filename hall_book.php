@@ -1,19 +1,18 @@
+
 <?php
+  $fh_name = $_POST['fh_name'] ;
+  $fh_price = $_POST['fh_price'] ;
+  $fh_count = $_POST['fh_count'] ;
+  $fh_number_guest = $_POST['fh_number_guest'] ;
+  $fh_image = $_POST['fh_image'] ;
+  $fh_image1 = $_POST['fh_image1'] ;
+  $fh_image2 = $_POST['fh_image2'] ;
+  $checkin = $_POST['checkin'] ;
+  $time_s = $_POST['time_s'] ;
+  $idcus= $_POST['customer_id'] ;
 
-
-if (empty($_POST['summary1'])) {
-  $summaryprice2 = $_POST['summary2'] ;
-        }
-if (empty($_POST['summary2'])) {
-  $summaryprice1 = $_POST['summary1'] ;
-}
-
-  $checkin = $_POST['checkin1'] ;
-  $checkout = $_POST['checkout1'] ;
-  $idcus = $_POST['customer_id']  ;
 
  ?>
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -26,11 +25,11 @@ if (empty($_POST['summary2'])) {
     <link rel="stylesheet" href="home.css">
     <title>Result</title>
     <style>
-        
+
 .img_10 {
-    background-image: url(image/meetingroom.jpg);
+    background-image: url(image/meetingroom.png);
     background-size: cover;
-    height: 30vh;
+    height: 50vh;
     background-position: center;
 }
 
@@ -58,6 +57,13 @@ if (empty($_POST['summary2'])) {
     width: 60%;
     background-color: hsl(217, 100%, 97%);
 }
+
+.crop {
+            width: 100%;
+            height: 1250px;
+            object-fit: cover;
+        }
+
     </style>
   </head>
   <body>
@@ -96,8 +102,10 @@ if (empty($_POST['summary2'])) {
                         <input type="date" id="checkin" value="<?php echo $checkin ; ?>">
                     </div>
                     <div class="col-auto">
-                        <b><label for="checkout">CHECK OUT</label></b>
-                        <input type="date" id="checkout" class="form_field" value="<?php echo $checkout ; ?>">
+                      <b><label for="time">TIME</label></b>
+                      <select id="time" class="p-1">
+                      <option><?php echo $time_s ?></option>
+                      </select>
                     </div>
                     <div class="col-auto">
                       <a href="reservation.php" class="btn btn-light">Back</a>
@@ -114,10 +122,10 @@ if (empty($_POST['summary2'])) {
             <img src="image/hallre1.jpg" class="d-block w-100 top_bottom">
           </div>
           <div class="carousel-item">
-            <img src="image/hallre1_2.jpg" class="d-block w-100 top_bottom " >
+            <img src="image/hallre1_1.jpg" class="d-block w-100 top_bottom" >
           </div>
           <div class="carousel-item">
-            <img src="image/hallre1_1.jpg" class="d-block w-100 top_bottom" >
+            <img src="image/hallre1_2.jpg" class="d-block w-100 top_bottom" >
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -130,39 +138,39 @@ if (empty($_POST['summary2'])) {
         </a>
       </div>
 
-<form action="php/booking_B.php" method="post">
+<form action="php/booking_bhall.php" method="post">
 
       <div class="container text-center mt-5 mb-5 border p-5 set_width">
-          <h1 class="text-left">Small Meeting Room</h1>
+          <h1 class="text-left"><?php echo $fh_name; ?></h1>
           <div class="row mt-3 p-1">
               <div class="col border-right text-left p-3">
-                <h6>ประเภทห้อง :</h6>
-                <h6>จำนวนห้องที่เหลือ : </h6>
-                <h6>สำหรับจำนวนคน : </h6>
+
+                <h6>จำนวนห้องที่เหลือ : <?php echo $fh_count; ?> </h6>
+                <h6>สำหรับจำนวนคน : <?php echo $fh_number_guest ?></h6>
               </div>
               <div class="col text-left p-3">
                 <h5>Special Request</h5>
                 <div class="form-check">
                     <label class="form-check=label" for="check1">
-                    <input class="form-check-input" name="mon" value="หมอนเพิ่ม 1 ใบ" type="checkbox" id="check1"></input>
+                    <input class="form-check-input" name="pen" value="ปากกาดิจิตอล 1 แท่ง" type="checkbox" id="check1"></input>
                     ปากกาดิจิตอล 1 แท่ง
                    </label>
                 </div>
                 <div class="form-check">
                     <label class="form-check=label" for="check2">
-                    <input class="form-check-input" name="pahom" value="ผ้าห่มเพิ่ม 1 ใบ" type="checkbox" id="check2"></input>
+                    <input class="form-check-input" name="puk" value="ปลั๊กราง 1 แผง" type="checkbox" id="check2"></input>
                     ปลั๊กราง 1 แผง
                     </label>
                 </div>
                 <div class="form-check">
                     <label class="form-check=label" for="check3">
-                    <input class="form-check-input" name="food" value="อาหารมื้อเช้า" type="checkbox" id="check3"></input>
+                    <input class="form-check-input" name="penw" value="ปากกาไวท์บอร์ด 1 แท่ง" type="checkbox" id="check3"></input>
                     ปากกาไวท์บอร์ด 1 แท่ง
                     </label>
                 </div>
                 <div class="form-check">
                     <label class="form-check=label" for="check4">
-                    <input class="form-check-input" name="car" value="รถรับส่ง" type="checkbox" id="check4"></input>
+                    <input class="form-check-input" name="por" value="ใช้โปรเจกเตอร์" type="checkbox" id="check4"></input>
                     ใช้โปรเจกเตอร์
                     </label>
                 </div>
@@ -170,19 +178,16 @@ if (empty($_POST['summary2'])) {
           </div>
           <div class="row mt-3 text-right">
             <div class="col">
-                <?php if (empty($summaryprice2)) {?>
-                     <h2><?php echo $summaryprice1;  ?> THB</h2>
-                     <input type="hidden" name="summary1" value="<?php echo $summaryprice1;  ?>">
-              <?php }elseif(empty($summaryprice1)) { ?>
-                     <h2><?php echo $summaryprice2;  ?> THB</h2>
-                     <input type="hidden" name="summary2" value="<?php echo $summaryprice2;  ?>">
-             <?php }  ?>
-
+                     <h2><?php echo $fh_price ;  ?> THB</h2>
             </div>
-            <div class="col">
-                <input type="hidden" name="customer_id" value="<?php echo $idcus; ?>">
-                  <input type="hidden" name="checkin" value="<?php echo $checkin ; ?>">
-                  <input type="hidden" name="checkout" id="checkout" class="form_field" value="<?php echo $checkout ; ?>">
+                <div class="col">
+                <input type="hidden" name="fh_count" value="<?php echo $fh_count ; ?>">
+                <input type="hidden" name="fh_number_guest" value="<?php echo $fh_number_guest; ?>">
+                <input type="hidden" name="fh_price" value="<?php echo $fh_price; ?>">
+                  <input type="hidden" name="fh_name" value="<?php echo $fh_name ; ?>">
+                  <input type="hidden" name="customer_id" value="<?php echo $idcus; ?>">
+                    <input type="hidden" name="checkin" value="<?php echo $checkin ; ?>">
+                  <input type="hidden" name="time_s"  class="form_field" value="<?php echo $time_s ; ?>">
                 <button type="submit" class="btn btn-light rounded border" data-toggle="modal" data-target="#example1" name="booking" style="width: 200px;border-radius: .9rem!important;">Book Now</button>
             </div>
         </div>
