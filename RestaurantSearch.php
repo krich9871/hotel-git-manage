@@ -1,7 +1,7 @@
 <?php
 require 'php/connect.php' ;
 $checkin = $_POST['checkin'] ;
-$time_h = $_POST['time_h'] ;
+$time_s = $_POST['time_s'] ;
 $idcus =$_POST['customer_id'] ;
 
 $qroom1 = " SELECT * FROM food_and_hall  WHERE fh_type LIKE 2 " ; //สามารถ SELECT room.roomid,roomtype.roomtype
@@ -118,7 +118,7 @@ $result1 = mysqli_query($db,$qroom1) ;
                     <div class="col-auto">
                       <b><label for="time">TIME</label></b>
                       <select id="time" class="p-1">
-                      <option><?php echo $time_h ?></option>
+                      <option><?php echo $time_s ?></option>
                       </select>
                     </div>
                     <div class="col-auto">
@@ -157,8 +157,21 @@ $result1 = mysqli_query($db,$qroom1) ;
                         <h2><?php echo $row1['fh_price']; ?> THB</h2>
                     </div>
                     <div class="col pt-1">
-                      <form  action="index.html" method="post">
-                        <button type="button" class="btn btn-light rounded" style="width: 200px;border-radius: .9rem!important;">More Detail</button>
+                      <form  action="restaurant_book.php" method="post">
+                        <input type="hidden" name="fh_name" value="<?php echo $row1['fh_name']; ?>">
+                        <input type="hidden" name="fh_price" value="<?php echo $row1['fh_price']; ?>">
+                        <input type="hidden" name="fh_price1" value="<?php echo $row1['fh_price']*2; ?>">
+                        <input type="hidden" name="fh_price2" value="<?php echo $row1['fh_price']*3; ?>">
+                        <input type="hidden" name="fh_price3" value="<?php echo $row1['fh_price']*4; ?>">
+                        <input type="hidden" name="fh_count" value="<?php echo $row1['fh_count']; ?>">
+                        <input type="hidden" name="fh_number_guest" value="<?php echo $row1['fh_number_guest']; ?>">
+                        <input type="hidden" name="fh_image" value="<?php echo $row1['fh_image']; ?>">
+                        <input type="hidden" name="fh_image1" value="<?php echo $row1['fh_image1']; ?>">
+                        <input type="hidden" name="fh_image2" value="<?php echo $row1['fh_image2']; ?>">
+                        <input type="hidden" name="checkin" value="<?php echo $checkin; ?>">
+                        <input type="hidden" name="time_s" value="<?php echo $time_s; ?>">
+                        <input type="hidden" name="customer_id" value="<?php echo $idcus; ?>">
+                        <button type="submit" class="btn btn-light rounded" style="width: 200px;border-radius: .9rem!important;">More Detail</button>
                       </form>
 
                     </div>

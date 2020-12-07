@@ -189,7 +189,7 @@
 
     while ($row2 = mysqli_fetch_array($result2,MYSQLI_ASSOC)) {
 
-      $summary2 = $summaryre*$row2['price_room'] ;
+      $summary1 = $summaryre*$row2['price_room'] ;
 
 
     ?>
@@ -217,7 +217,7 @@
 
                      <div class="col pt-1">
                            <form action="room_booking.php" method="post">
-                          <input type="hidden" id="checkin" name="summary2"  value="<?php echo $summary2 ; ?>">
+                          <input type="hidden" id="checkin" name="summary1"  value="<?php echo $summary1 ; ?>">
                           <input type="hidden" id="checkin"name="checkin1" value="<?php echo $checkin ; ?>">
                           <input type="hidden" id="checkout" class="form_field"name="checkout1" value="<?php echo $checkout ; ?>">
                           <input type="hidden" name="customer_id" value="<?php echo $idcus; ?>">

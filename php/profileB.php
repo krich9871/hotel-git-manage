@@ -11,9 +11,6 @@
      $q =mysqli_query($db,$sqlre) ;
 
      $row = mysqli_fetch_array($q,MYSQLI_ASSOC) ;
- /*$sql = "SELECT * FROM customers  " ;
- $result_p = mysqli_query($db,$sql) ;
-  while($row = mysqli_fetch_array($result_p,MYSQLI_ASSOC) )*/
 
 
 

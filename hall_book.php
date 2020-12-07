@@ -188,7 +188,7 @@
                   <input type="hidden" name="customer_id" value="<?php echo $idcus; ?>">
                     <input type="hidden" name="checkin" value="<?php echo $checkin ; ?>">
                   <input type="hidden" name="time_s"  class="form_field" value="<?php echo $time_s ; ?>">
-                <button type="submit" class="btn btn-light rounded border" data-toggle="modal" data-target="#example1" name="booking" style="width: 200px;border-radius: .9rem!important;">Book Now</button>
+                <button type="button" class="btn btn-light rounded border" data-toggle="modal" data-target="#example1" name="booking" style="width: 200px;border-radius: .9rem!important;">Book Now</button>
             </div>
         </div>
       </div>
@@ -205,15 +205,16 @@
                     <img src="image/Room1.jpg" width="100%px">
                   </div>
                   <div class="col">
-                    <h6>ประเภทห้อง:</h6>
-                    <h6>จำนวนห้องที่เหลือ: </h6>
-                    <h6>สำหรับผู้เข้าพัก: </h6>
+                    <h6>ประเภทห้อง: ><?php echo $fh_name; ?></h6>
+                    <h6>จำนวนห้องที่เหลือ: <?php echo $fh_count; ?> ห้อง</h6>
+                    <h6>สำหรับผู้เข้าพัก: <?php echo $fh_number_guest; ?> คน</h6>
+                    <h6>จำนวนเงิน: <?php echo $fh_price; ?> THB</h6>
                   </div>
               </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Confirm</button>
+              <button type="submit" class="btn btn-primary" name="booking">Confirm</button>
             </div>
           </div>
         </div>

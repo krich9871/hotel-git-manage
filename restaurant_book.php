@@ -1,16 +1,21 @@
 <?php
 
 
-if (empty($_POST['summary1'])) {
-  $summaryprice2 = $_POST['summary2'] ;
-        }
-if (empty($_POST['summary2'])) {
-  $summaryprice1 = $_POST['summary1'] ;
-}
 
-  $checkin = $_POST['checkin1'] ;
-  $checkout = $_POST['checkout1'] ;
-  $idcus = $_POST['customer_id']  ;
+$fh_name = $_POST['fh_name'] ;
+$fh_price = $_POST['fh_price'] ;
+$fh_count = $_POST['fh_count'] ;
+$fh_number_guest = $_POST['fh_number_guest'] ;
+$fh_image = $_POST['fh_image'] ;
+$fh_image1 = $_POST['fh_image1'] ;
+$fh_image2 = $_POST['fh_image2'] ;
+$checkin = $_POST['checkin'] ;
+$time_s = $_POST['time_s'] ;
+$idcus= $_POST['customer_id'] ;
+
+$fh_price1 = $fh_price*2 ;
+$fh_price2 = $fh_price*3 ;
+$fh_price3 = $fh_price*4 ;
 
  ?>
 
@@ -26,7 +31,7 @@ if (empty($_POST['summary2'])) {
     <link rel="stylesheet" href="home.css">
     <title>Result</title>
     <style>
-        
+
 .img_10 {
     background-image: url(image/restauranttop.png);
     background-size: cover;
@@ -69,7 +74,7 @@ if (empty($_POST['summary2'])) {
                 <a href="#" class="nav-link color">Room</a>
             </div>
             <div class="col top_and_bottom border_right back_select">
-                <a href="#" class="nav-link color">Restaurant</a>
+                <a href="#" class="nav-link color back_select">Restaurant</a>
             </div>
             <div class="col top_and_bottom">
                 <a href="#" class="nav-link color">Hall</a>
@@ -88,28 +93,23 @@ if (empty($_POST['summary2'])) {
             </div>
         </div>
     </div>
-    
+
     <div class="container-fluid img_10" style="margin-bottom :50px">
         <div class="container text-center top_pad_1 back_color_blues">
             <form>
                 <div class="row justify-content-md-center align-items-center">
                     <div class="col-auto">
                         <b><label for="checkin">CHECK IN</label></b>
-                        <input type="date" id="checkin">
+                        <input type="date" value="<?php echo $checkin; ?>" id="checkin">
                     </div>
                     <div class="col-auto">
-                        <b><label for="time">TIME</label></b>
-                        <select id="time" class="p-1">
-                        <option>08.00-10.00</option>
-                        <option>10.00-12.00</option>
-                        <option>12.00-14.00</option>
-                        <option>14.00-16.00</option>
-                        <option>16.00-18.00</option>
-                        <option>18.00-20.00</option>
-                        </select>
+                      <b><label for="time">TIME</label></b>
+                      <select id="time" class="p-1">
+                      <option><?php echo $time_s ?></option>
+                      </select>
                     </div>
                     <div class="col-auto">
-                        <button type="submit" class="btn btn-light">SEARCH</button>
+                          <a href="food.php" class="btn btn-light">Back</a>
                     </div>
                 </div>
             </form>
@@ -138,38 +138,38 @@ if (empty($_POST['summary2'])) {
         </a>
       </div>
 
-<form action="php/booking_B.php" method="post">
+<form action="php/booking_resturant.php" method="post">
 
       <div class="container text-center mt-5 mb-5 border p-5 set_width">
-          <h1 class="text-left">Innovative Food Buffet</h1>
+          <h1 class="text-left"><?php echo $fh_name; ?></h1>
           <div class="row mt-3 p-1">
               <div class="col border-right text-left p-3">
-                <h6>รายละเอียด :</h6>
-                <h6>จำนวนที่ว่างเหลือ : </h6>
+                <h6>จำนวนที่นั่งคงเหลือ :<?php echo $fh_count; ?></h6>
+                <h6>สำหรับผู้จอง : <?php echo $fh_number_guest; ?></h6>
               </div>
               <div class="col text-left p-3">
                 <h5>Number of People</h5>
                 <div class="form-check">
                     <label class="form-check=label" for="check1">
-                    <input class="form-check-input" name="optradio" checked value="1" type="radio" id="check1"></input>
+                    <input class="form-check-input" name="optradio" checked value="<?php echo $fh_price; ?>" type="radio" id="check1"></input>
                     1 Person
                    </label>
                 </div>
                 <div class="form-check">
                     <label class="form-check=label" for="check2">
-                    <input class="form-check-input" name="optradio" value="2" type="radio" id="check2"></input>
+                    <input class="form-check-input" name="optradio" value="<?php echo $fh_price1; ?>" type="radio" id="check2"></input>
                     2 Persons
                     </label>
                 </div>
                 <div class="form-check">
                     <label class="form-check=label" for="check3">
-                    <input class="form-check-input" name="optradio" value="3" type="radio" id="check3"></input>
+                    <input class="form-check-input" name="optradio" value="<?php echo $fh_price2; ?>" type="radio" id="check3"></input>
                     3 Persons
                     </label>
                 </div>
                 <div class="form-check">
                     <label class="form-check=label" for="check4">
-                    <input class="form-check-input" name="optradio" value="4" type="radio" id="check4"></input>
+                    <input class="form-check-input" name="optradio" value="<?php echo $fh_price3; ?>" type="radio" id="check4"></input>
                     4 Persons
                     </label>
                 </div>
@@ -177,13 +177,17 @@ if (empty($_POST['summary2'])) {
           </div>
           <div class="row mt-3 text-right">
             <div class="col">
-               <h1>THB</h1>
+               <h1><?php echo $fh_price ; ?> THB</h1>
             </div>
             <div class="col">
-                <input type="hidden" name="customer_id" value="<?php echo $idcus; ?>">
-                  <input type="hidden" name="checkin" value="<?php echo $checkin ; ?>">
-                  <input type="hidden" name="checkout" id="checkout" class="form_field" value="<?php echo $checkout ; ?>">
-                <button type="submit" class="btn btn-light rounded border" data-toggle="modal" data-target="#example1" name="booking" style="width: 200px;border-radius: .9rem!important;">Book Now</button>
+              <input type="hidden" name="fh_count" value="<?php echo $fh_count ; ?>">
+              <input type="hidden" name="fh_number_guest" value="<?php echo $fh_number_guest; ?>">
+              <input type="hidden" name="fh_price" value="<?php echo $fh_price; ?>">
+              <input type="hidden" name="fh_name" value="<?php echo $fh_name ; ?>">
+              <input type="hidden" name="customer_id" value="<?php echo $idcus; ?>">
+              <input type="hidden" name="checkin" value="<?php echo $checkin ; ?>">
+              <input type="hidden" name="time_s"  class="form_field" value="<?php echo $time_s ; ?>">
+                <button type="button" class="btn btn-light rounded border" data-toggle="modal" data-target="#example1" name="bookingres" style="width: 200px;border-radius: .9rem!important;">Book Now</button>
             </div>
         </div>
       </div>
@@ -200,14 +204,15 @@ if (empty($_POST['summary2'])) {
                     <img src="image/buff1.jpg" width="100%px">
                   </div>
                   <div class="col">
-                    <h6>รายละเอียด :</h6>
-                    <h6>จำนวนที่ว่างเหลือ : </h6>
+                    <h6>จำนวนที่นั่งคงเหลือ :<?php echo $fh_count; ?></h6>
+                    <h6>สำหรับผู้จอง : <?php echo $fh_number_guest; ?> </h6>
+                    <h6>เช็คยอดที่ Profile</h6>
                   </div>
               </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Confirm</button>
+              <button type="submit" class="btn btn-primary" name="bookingres" >Confirm</button>
             </div>
           </div>
         </div>

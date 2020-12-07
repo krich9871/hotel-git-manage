@@ -5,13 +5,7 @@
 
   if (isset($_POST['booking'])) {
 
-    if (empty($_POST['summary1'])) {
-      $summaryprice = $_POST['summary2'] ;
-            }
-    if (empty($_POST['summary2'])) {
-      $summaryprice = $_POST['summary1'] ;
-    }
-
+      $summaryprice =$_POST['summaryprice1'] ;
       $idcus = $_POST['customer_id'] ;
       $car = $_POST['car'] ;
       $food = $_POST['food'] ;
@@ -32,7 +26,7 @@
       $result = mysqli_query($db,$query) ;
 
 
-      
+
 
       if ($result) {
 

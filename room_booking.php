@@ -1,13 +1,8 @@
 <?php
 
 
-if (empty($_POST['summary1'])) {
-  $summaryprice2 = $_POST['summary2'] ;
-        }
-if (empty($_POST['summary2'])) {
-  $summaryprice1 = $_POST['summary1'] ;
-}
 
+  $summaryprice1 = $_POST['summary1'] ;
   $checkin = $_POST['checkin1'] ;
   $checkout = $_POST['checkout1'] ;
   $idcus = $_POST['customer_id']  ;
@@ -176,13 +171,7 @@ if (empty($_POST['summary2'])) {
           </div>
           <div class="row mt-3 text-right">
             <div class="col">
-                <?php if (empty($summaryprice2)) {?>
-                     <h2><?php echo $summaryprice1;  ?> THB</h2>
-                     <input type="hidden" name="summary1" value="<?php echo $summaryprice1;  ?>">
-              <?php }elseif(empty($summaryprice1)) { ?>
-                     <h2><?php echo $summaryprice2;  ?> THB</h2>
-                     <input type="hidden" name="summary2" value="<?php echo $summaryprice2;  ?>">
-             <?php }  ?>
+                <h2><?php echo $summaryprice1; ?> THB</h2>
 
             </div>
             <div class="col">
@@ -192,9 +181,10 @@ if (empty($_POST['summary2'])) {
                   <input type="hidden" name="room_t" value="<?php echo $room; ?>">
                    <input type="hidden" name="number_of_guest" value="<?php echo $number_of_guest; ?>">
                     <input type="hidden" name="count" value="<?php echo $count; ?>">
-                  
+                    <input type="hidden" name="summaryprice1" value="<?php echo $summaryprice1; ?>">
 
-                <button type="submit" class="btn btn-light rounded border"  name="booking" style="width: 200px;border-radius: .9rem!important;">Book Now</button>
+
+                <button type="button" class="btn btn-light rounded border" data-toggle="modal" data-target="#example1" name="booking" style="width: 200px;border-radius: .9rem!important;">Book Now</button>
             </div>
         </div>
       </div>
@@ -211,15 +201,16 @@ if (empty($_POST['summary2'])) {
                     <img src="image/Room1.jpg" width="100%px">
                   </div>
                   <div class="col">
-                    <h6>ประเภทห้อง:</h6>
-                    <h6>จำนวนห้องที่เหลือ: </h6>
-                    <h6>สำหรับผู้เข้าพัก: </h6>
+                    <h6>ประเภทห้อง: <?php echo $room; ?></h6>
+                    <h6>จำนวนห้องที่เหลือ: <?php echo $count; ?> ห้อง</h6>
+                    <h6>สำหรับผู้เข้าพัก: <?php echo $number_of_guest; ?> คน</h6>
+                    <h6>จำนวนเงิน: <?php echo $summaryprice1 ;?> THB</h6>
                   </div>
               </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary">Confirm</button>
+              <button type="submit" class="btn btn-primary" name="booking" >Confirm</button>
             </div>
           </div>
         </div>

@@ -51,7 +51,7 @@ $idcus = $_POST['customer_id']  ;
                     </div>
                     <div class="col">
                         <b><label for="time">TIME</label></b>
-                        <select id="time" name="time_h" class="p-1">
+                        <select id="time" name="time_s" class="p-1">
                         <option>08.00-10.00</option>
                         <option>10.00-12.00</option>
                         <option>12.00-14.00</option>

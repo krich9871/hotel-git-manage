@@ -36,10 +36,11 @@
             <a href="#" class="nav-link color">Contact Us</a>
         </div>
         <div class="col top_and_bottom">
-            <a href="#" class="nav-link color">Login</a>
+            <a href="#" class="nav-link color">  <?php echo $_SESSION['firstname'] ; ?></a>
         </div>
     </div>
 </div>
+    <form action="Look_Ereservation.php" method="post">
     <div class="container-fluid img_1 top_pad" style="padding-bottom:50px;">
         <div class=" container width_10">
             <form>
@@ -64,14 +65,21 @@
                     <div class="mb-2 row align-items-center" style="padding: 5%;">
                         <div> <a href="Editprofile.php"  class="btn btn-secondary rounded align-items-center" style="width: 250px;border-radius: .9rem!important;">Edit Profile</a>
                     </div></div>
-                    <div class="align-items-center"><label for="name"><br>No Reservation</label></div>
+
                     <div class="mb-2 row align-items-center" style="padding: 5%; margin-left: 0.5px;">
-                        <div><button type="submit" class="btn btn-secondary rounded align-items-center" style="width: 250px;border-radius: .9rem!important;">Edit Reservation</button></div>
+
+                     <div>
+                       <input type="hidden" name="customer_id" value="<?php echo $_SESSION['id']; ?>">
+                       <button type="submit" name="list" class="btn btn-secondary rounded align-items-center" style="width: 250px;border-radius: .9rem!important;"  >Your Reservation</button>
                     </div>
+
                 </div>
-            </form>
+
         </div>
     </div>
+
+
+    </form>
     <div class="container-fluid text-center bottom_page padding_top">
         <h6>Copyright 2020 Poginity Ltd. All Rights Reserved.</h6>
         <h6>POGINITY Hotel. นาจอมเทียน, พัทยา (คลิ๊กเพื่อดูแผนที่) 095-156-2654 Pogihotel@gmail.com</h6>
