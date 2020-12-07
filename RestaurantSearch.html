@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="home.css">
     <title>Restaurant Search Result</title>
     <style>
-        .img_6 {
+
+.img_6 {
     background-image: url(image/restauranttop.png);
     background-size: cover;
     height: 60vh;
@@ -30,7 +31,7 @@
 }
 
 .back_color_blues1 {
-    background-color: rgb(59, 175, 241);
+    background-color: rgb(164, 215, 245);
     color: white;
     padding-top: 30px;
     padding-bottom: 30px;
@@ -52,7 +53,7 @@
 }
 
 .back_color_blues {
-    background-color: rgb(129, 213, 228);
+    background-color: rgb(179, 244, 255);
     color: white;
     padding-top: 30px;
     padding-bottom: 30px;
@@ -73,11 +74,11 @@
             <div class="col top_and_bottom border_right">
                 <a href="#" class="nav-link color">Room</a>
             </div>
-            <div class="col top_and_bottom border_right">
+            <div class="col top_and_bottom border_right back_select">
                 <a href="#" class="nav-link color">Restaurant</a>
             </div>
             <div class="col top_and_bottom">
-                <a href="#" class="nav-link color back_select">Hall</a>
+                <a href="#" class="nav-link color">Hall</a>
             </div>
             <div class="col top_and_bottom">
                 <a href="#" class="nav-link color"><b>POGINITY HOTEL</b></a>
@@ -103,8 +104,15 @@
                         <input type="date" id="checkin">
                     </div>
                     <div class="col-auto">
-                        <b><label for="checkout">CHECK OUT</label></b>
-                        <input type="date" id="checkout" class="form_field">
+                        <b><label for="time">TIME</label></b>
+                        <select id="time" class="p-1">
+                        <option>08.00-10.00</option>
+                        <option>10.00-12.00</option>
+                        <option>12.00-14.00</option>
+                        <option>14.00-16.00</option>
+                        <option>16.00-18.00</option>
+                        <option>18.00-20.00</option>
+                        </select>
                     </div>
                     <div class="col-auto">
                         <button type="submit" class="btn btn-light">SEARCH</button>
