@@ -23,7 +23,7 @@
       $row = mysqli_fetch_array($getresult,MYSQLI_ASSOC) ;
       if ($row['customer_email'] == $email) {
 
-          $_SESSION["exists"] ="Email is exists" ;
+          $_SESSION["exists"] ="This Email is already exists." ;
           header('location: ../Register.php') ;
         // echo "Email is exists";
       }

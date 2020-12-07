@@ -57,7 +57,10 @@
                         <div class="col-md-2 text-right"><label for="password">Password:</label></div>
                         <div class="col-md-3 text-left"class="form__field"><?php echo $_SESSION['password']; ?><br></div>
                     </div>
-              
+                    <div class="mb-2 row align-items-center" style="padding: 1%;">
+                    <div class="col-md-5 text-right"><label for="phone">Phone Number:</label></div>
+                        <div class="col-md-3 text-left"class="form__field"><?php echo $_SESSION['phone']; ?></div>
+                    </div>
                     <div class="mb-2 row align-items-center" style="padding: 5%;">
                         <div> <a href="Editprofile.php"  class="btn btn-secondary rounded align-items-center" style="width: 250px;border-radius: .9rem!important;">Edit Profile</a>
                     </div></div>

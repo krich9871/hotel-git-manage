@@ -48,23 +48,23 @@
                 <h1 class="mb-4 ">Profile</h1>
                 <div class="mb-2 row " style="padding: 1%; align-items: center">
                     <div class="col-md-2 text-right"><label for="name">First Name:</label></div>
-                    <div class="col-md-3 text-left" ><input class="coolip" name="customer_firstname" type="name" id="name" require style="width: 250px; "required></div> <div class="col-1"></div>
+                    <div class="col-md-3 text-left" ><input class="coolip" name="customer_firstname" type="name" id="name" require style="width: 220px; "required></div> <div class="col-1"></div>
                     <div class="col-md-2 text-right"><label for="name" >Last Name:</label></div>
-                    <div class="col-md-3 text-left"> <input class="coolip" name="customer_lastname" type="name" id="name" require  style="width: 250px;"required></div>
+                    <div class="col-md-3 text-left"> <input class="coolip" name="customer_lastname" type="name" id="name" require  style="width: 220px;"required></div>
                 </div>
                 <div class="mb-2 row" style="padding: 1%; align-items: center">
                     <div class="col-md-2 text-right"><label for="Email"></label>Email:</label></div>
-                    <div class="col-md-3 text-left"><input class="coolip" name="customer_email" type="name" id="name" require  style="width: 250px;"required></div> <div class="col-1"></div>
+                    <div class="col-md-3 text-left"><input class="coolip" name="customer_email" type="name" id="name" require  style="width: 220px;"required></div> <div class="col-1"></div>
                     <div class="col-md-2 text-right"><label for="password">Password:</label></div>
-                    <div class="col-md-3 text-left"><input class="coolip" name="customer_password" type="password" id="password" require  style="width: 250px;"required><br></div>
+                    <div class="col-md-3 text-left"><input class="coolip" name="customer_password" type="password" id="password" require  style="width: 220px;"required><br></div>
                 </div>
                 <div class="mb-2 row" style="padding: 1%; align-items: center;">
                     <div class="col-md-2 text-right"><label for="Email"></label>Phone Number:</label></div>
-                    <div class="col-md-3 text-left"><input class="coolip" name="customer_phone" type="name" id="name" style="width: 250px;"required></div> <div class="col-1"></div>
+                    <div class="col-md-3 text-left"><input class="coolip" name="customer_phone" type="name" id="name" style="width: 220px;" pattern="[0-9]{1,}" title="Phone Number must be only number." required></div> <div class="col-1"></div>
                     <input type="hidden" name="customer_id" value="<?php echo $_SESSION['id']; ?>">
                 </div>
                 <div class="mb-2 row" style="padding: 5%;">
-                    <div><button type="submit" name="edit_cus" class="btn btn-secondary rounded" style="width: 250px;border-radius: .9rem!important;">Confirm</button></div>
+                    <div><button type="submit" name="edit_cus" class="btn btn-secondary rounded" style="width: 220px;border-radius: .9rem!important;">Confirm</button></div>
                 </div>
             </div>
         </form>

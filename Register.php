@@ -75,7 +75,7 @@
                     </div>
                     <div class="mb-2" style="padding: 1%;">
                         <label for="password">Phone Number:</label>
-                        <input class="coolip" name="customer_phone" type="Phone" id="password" style="width: 220px;border-radius: .9rem!important;"required><br>
+                        <input class="coolip" name="customer_phone" type="Phone" id="password" style="width: 220px;border-radius: .9rem!important;" pattern="[0-9]{1,}" title="Phone Number must be only number." required><br>
                     </div>
                     <div class="mb-2 row" style="padding: 5%;">
                         <div><button type="submit" name="submitregister" class="btn btn-secondary rounded" style="width: 250px;border-radius: .9rem!important;">Confirm</button></div>
