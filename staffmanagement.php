@@ -388,7 +388,7 @@
                             <td><?php echo $row_staff['staff_address']; ?></td>
                             <td><?php echo $row_staff['staff_phone']; ?></td>
                             <td ><a href="php/delete3.php?staff_id=<?php echo $row_staff['staff_id'] ; ?>" class="center btn btn-light">Delete</a></td>
-                            <td ><a href="php/updates.php?staff_id=<?php echo $row_staff['staff_id'] ; ?>" class="center btn btn-light">Edit</a></td>
+                            <td ><a href="editstaff.php?staff_id=<?php echo $row_staff['staff_id'] ; ?>" class="center btn btn-light">Edit</a></td>
                         </tr>
 
                     </tbody>

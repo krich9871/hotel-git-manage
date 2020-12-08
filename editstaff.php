@@ -1,4 +1,12 @@
-﻿<!doctype html>
+<?php
+   require 'php/connect.php' ;
+   $staff_id = $_GET['staff_id'] ;
+   $qs = "SELECT * FROM staffs WHERE staff_id LIKE '$staff_id' " ;
+   $res = mysqli_query($db,$qs) ;
+   $row = mysqli_fetch_array($res,MYSQLI_ASSOC) ;
+   $staff_id = $_GET['staff_id'] ;
+ ?>
+<!doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -12,22 +20,22 @@
     <title>Edit Staff Profile | POGINITY HOTEL</title>
 
     <style>
-        
+
         .nolinkline{
             text-decoration: none;
-            
+
         }
 
         .padding_top {
             padding-top: 10%;
-            
+
         }
         .coolip{
             border-radius: .9rem;
             border-width: 0px;
             background-color: gray ;
         }
-        
+
         .staffhead {
             background-image: url("image/mang01.jpg");
             margin: auto;
@@ -36,10 +44,10 @@
             background-size: cover;
             position: relative;
             background-position: center;
-            
+
         }
 
-        
+
         .topicbox {
             border-radius: .9rem;
             text-align: center;
@@ -62,13 +70,13 @@
             margin: auto;
             background-position: center;
             width: 80%;
-        } 
+        }
         .menubutt{
             width: 150px;
             height: 80px;
             background-color: white;
         }
-        
+
         .linkgray{
             text-decoration: none;
             border-bottom: 2px solid rgb(117, 117, 117) ;
@@ -103,7 +111,7 @@
             padding-left:30px;
             width: 150px;
             height: 80px;
-            text-decoration: none;     
+            text-decoration: none;
             margin: auto;
             border-bottom: 2px solid rgb(33, 47, 61) ;
             color: rgb(33, 47, 61);
@@ -118,18 +126,18 @@
             color: rgb(36, 73, 110);
         }
 
-        
+
         .menubody {
             padding-top: 30px;
             padding-left: 30px;
             padding-right: 30px;
             padding-bottom: 100px;
             background-size: cover;
-            position: relative; 
+            position: relative;
             background-position: center;
             margin: auto;
             width: 1000px;
-            
+
         }
 
         .topic_head{
@@ -165,8 +173,8 @@
         }
 
         .crop {
-            width: 197px; 
-            height:197px; 
+            width: 197px;
+            height:197px;
             object-fit: cover;
             border-radius: 7rem;
         }
@@ -206,18 +214,18 @@
             font-size: 12px;
             font-weight: bolder;
             color: #0F3A62;
-            line-height: 15px; 
-                     
+            line-height: 15px;
+
         }
         .formfont{
             font-size: 15px;
             color: gray;
-            
+
         }
         .formfont input[type=text] , .formfont input[type=tel]{
             border: 0px;
             border-bottom: 1px solid gray;
-            width: 300px; 
+            width: 300px;
         }
         .idfont{
             font-size: 25px;
@@ -233,7 +241,7 @@
         }
         .servicetab{
             width:850px;
-            
+
         }
         .servicetab td{
             width:180px;
@@ -276,15 +284,15 @@
         }
         .durationtab td:nth-child(1){
             width:80px;
-            
+
         }
         .durationtab td:nth-child(2){
             width:50px;
-            
+
         }
         .durationtab td:nth-child(3){
             width:100px;
-            
+
         }
         .durationtab input{
             border: 1px solid #0F3A62;
@@ -355,7 +363,7 @@
         }
         .calc hr{
             color:#0F3A62 ;
-            
+
         }
         .calc button{
             color:#0F3A62 ;
@@ -384,7 +392,7 @@
             border: 1px solid #0F3A62;
             border-radius: 7rem;
             float: right;
-            
+
         }
         .small-cc{
             width: 50px;
@@ -395,13 +403,13 @@
             right: 570px;
             bottom: 160px;
             position: absolute;
-            
+
         }
-        .registerform{        
+        .registerform{
             width: 415px;
-            
+
             float: left;
-            
+
         }
         .registerform input{
             background-color: #E5E7E9;
@@ -420,7 +428,7 @@
             padding: 5px;
             margin: 3px;
             width: 15px;
-            
+
         }
         .register-left{
             margin-right: 80px;
@@ -434,7 +442,7 @@
             color: #0F3A62;
             margin: auto;
             border:0px;
-        
+
             }
         .imgupload img:hover{
             opacity: 50%;
@@ -475,13 +483,13 @@
             </div>
         </div>
     </div>
-    
+
     <div class="container-fluid staffhead" style="text-align: center;" >
         <div class="topicbox">
             <a href="#" class="nolinkline">
                 <div class="p">Manager</div>
             </a>
-        </div>  
+        </div>
     </div>
     <div class="container-fluid" >
         <div class="tabmenu">
@@ -492,7 +500,7 @@
                     </a>
                 </span>
                 <span class="linkgray" >
-                    <a href="staffmanagement.html">
+                    <a href="staffmanagement.php">
                         Staff Management
                     </a>
                 </span>
@@ -504,7 +512,7 @@
             </span>
         </div>
     </div>
-   
+
     <div class="container-fluid" style="background-color: #E5E7E9;">
         <div class="menubody">
             <div class="editbbox">
@@ -514,41 +522,27 @@
                             <div class="al-right register-left">
                                 <p class="headfont">Edit Staff Profile</p>
                                 <span class="descfont ">by Maranee Imphilomlak, Manager position</span>
-                                <div class="circle" style="margin-top:20px">
-                                   
-                                        <div class="imgupload">
-                                            <image src="image/mang02.jpg" class="crop"></image>
-                                            
-                                                <i class="fas fa-plus ontop-center" style="width:80px;height:auto;padding-top: 50px;z-index: 9;"></i>
-                                            
-                                        </div>
-                                    
-                                    <div class="small-cc">
-                                        <i class="fas fa-camera" style="width:35px;height:auto;padding-top: 12px;padding-right: 12px;color:#0F3A62;"></i>
-                                    </div>
-                                </div>
-                                
-                            </div>
+
                         </td>
+                        <form action="php/edit_staff.php" method="post">
                         <td class="registerform">
                             <br>
-                            <form>
-                                <input type="text" placeholder="Name" style="width: 195px;"><input type="text" placeholder="Lastname" style="width: 198px;"><br>
-                                <input type="email" placeholder="E-mail"><br>
-                                <input type="password" placeholder="Password"><br>
-                                <input type="tel" placeholder="Tel."><br>
-                                <input type="text" placeholder="Address"><br>
-                            </form>
+
+                                <input type="text" name="staff_firstname" value="<?php echo $row['staff_firstname'] ?>" style="width: 195px;"><input type="text" name="staff_lastname" value="<?php echo $row['staff_lastname'] ?>" style="width: 198px;"><br>
+                                <input type="email" name="staff_email"value="<?php echo $row['staff_email'] ?>"><br>
+                                <input type="password" name="staff_password" placeholder="Password"><br>
+                                <input type="tel" name="staff_phone" value="<?php echo $row['staff_phone'] ?>"><br>
+                                <input type="text" name="staff_address" value="<?php echo $row['staff_address'] ?>"><br>
+                                <input type="hidden" name="staff_id" value="<?php echo $staff_id ;?>"><br>
+
                             <div class="descfont">
-                                <label>
-                                    <input type="checkbox" style="filter: grayscale(1) ;">
-                                    Maranee Imphilomlak, Manager position is agree to Poginity Ltd Terms, Data Policy and Cookies Policy
-                                </label>
+
                             </div><br>
                             <div class="al-right" style="margin-right: 10px;">
-                                <button class="savebut">Save</button>
+                                <button type="submit" name="edits" class="savebut">Save</button>
                             </div>
                         </td>
+                      </form>
                     </tr>
                 </table>
             </div>
@@ -559,7 +553,7 @@
         <h6>Copyright 2020 Poginity Ltd. All Rights Reserved.</h6>
         <h6>POGINITY Hotel. นาจอมเทียน, พัทยา (คลิ๊กเพื่อดูแผนที่) 095-156-2654 Pogihotel@gmail.com</h6>
     </div>
-    
+
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper.js -->
