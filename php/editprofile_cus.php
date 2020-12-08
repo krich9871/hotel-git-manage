@@ -16,14 +16,12 @@
 
      header('location: ../login.php') ;
 
-   }else {
+   }
+   else {
       echo "ไม่สามารถแก้ไขได้" ;
    }
-
-
 
  }
 mysqli_close($db) ;
 
-
- ?>
+?>
