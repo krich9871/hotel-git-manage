@@ -591,9 +591,6 @@ $result1 = mysqli_query($db,$qroom1) ;
         <h6>Copyright 2020 Poginity Ltd. All Rights Reserved.</h6>
         <h6>POGINITY Hotel. นาจอมเทียน, พัทยา (คลิ๊กเพื่อดูแผนที่) 095-156-2654 Pogihotel@gmail.com</h6>
     </div>
-    <div class="newbooking">
-        <a href="newbooking.html" style="text-decoration: none;"><button class="newbut"><i class="fas fa-plus" style="width:30px;height:auto;"></i></button></a>
-    </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
