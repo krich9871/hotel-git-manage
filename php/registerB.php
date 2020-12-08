@@ -29,11 +29,9 @@
       }
 
      else {
-
       $query = "INSERT INTO customers(customer_firstname,customer_lastname,customer_email,customer_password,customer_phone) VALUES('$firstname','$lastname','$email','$password','$phone')" ;
       $result = mysqli_query($db,$query) ;
       
-
       if ($result) {
          header('location: ../login.php') ;
       } else {
