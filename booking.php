@@ -556,7 +556,7 @@ $result1 = mysqli_query($db,$qroom1) ;
 
 
                      ?>
-
+         
                     <tr class="center">
                       <td><?php echo $row['booking_id']; ?></td>
                       <td><?php echo $row['customer_id']; ?></td>

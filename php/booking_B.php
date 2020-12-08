@@ -17,8 +17,9 @@
       $number_of_guest = $_POST['number_of_guest'] ;
       $count = $_POST['count'] ;
 
-
-
+      $count = $count-1 ;
+      $qcount = "UPDATE room_type SET count_room='$count' WHERE room LIKE '$room' " ;
+      $rescount = mysqli_query($db,$qcount) ;
 
 
       $query = "INSERT INTO bookings(Price_r,number_of_guest,room_t,special_req1,special_req2,special_req3,special_req4,checkin,checkout,customer_id) VALUES('$summaryprice','$number_of_guest','$room','$car','$food','$pahom','$mon','$checkin','$checkout','$idcus')" ;
@@ -30,7 +31,9 @@
 
       if ($result) {
 
-               header('location: ../home.php') ;
+                  header('location: ../home.php') ;
+
+
 
       } else {
 
