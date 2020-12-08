@@ -51,7 +51,7 @@
         </div>
     </div>
 </div>
-<div class="container-fluid img_1 top_pad" style="padding-bottom: 138px;">
+<div class="container-fluid img_1 top_pad" style="padding-bottom: 135px;">
     <div class=" container width_10" >
         <form  action="php/editprofile_cus.php" method="post">
 
@@ -65,9 +65,9 @@
                 </div>
                 <div class="mb-2 row" style="padding: 1%; align-items: center">
                     <div class="col-md-2 text-right"><label for="Email"></label>Email:</label></div>
-                    <div class="col-md-3 text-left"><input class="coolip" name="customer_email" type="name" id="name" require  style="width: 220px;"required></div> <div class="col-1"></div>
+                    <div class="col-md-3 text-left" class="form__field" ><?php echo $_SESSION['email_1']; ?></div> <div class="col-1"></div>
                     <div class="col-md-2 text-right"><label for="password">Password:</label></div>
-                    <div class="col-md-3 text-left"><input class="coolip" name="customer_password" type="password" id="password" require  style="width: 220px;"required><br></div>
+                    <div class="col-md-3 text-left"><input class="coolip" name="customer_password" type="password" id="password" style="width: 220px;" pattern="(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])[A-Za-z0-9]{8,32}" title="Password length must be 8-32 and contain at least one 'A-Z', 'a-z' and 'number'. (exclude special characters.)" required><br></div>
                 </div>
                 <div class="mb-2 row" style="padding: 1%; align-items: center;">
                     <div class="col-md-2 text-right"><label for="Email"></label>Phone Number:</label></div>

@@ -6,13 +6,10 @@
    $id = $_POST['customer_id'] ;
    $firstname = $_POST['customer_firstname'] ;
    $lastname = $_POST['customer_lastname'] ;
-   $email = $_POST['customer_email'] ;
    $password = $_POST['customer_password'] ;
    $phone_number = $_POST['customer_phone'] ;
 
-  
-
-   $qupdate =  "UPDATE customers SET customer_firstname='$firstname' , customer_lastname='$lastname' , customer_email = '$email' ,  customer_password = '$password' ,  customer_phone ='$phone_number' WHERE customer_id='$id' ";
+   $qupdate =  "UPDATE customers SET customer_firstname='$firstname' , customer_lastname='$lastname' ,  customer_password = '$password' ,  customer_phone ='$phone_number' WHERE customer_id='$id' ";
    $resultup = mysqli_query($db,$qupdate) ;
 
    if ($resultup) {
