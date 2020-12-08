@@ -12,10 +12,6 @@
 
      $row = mysqli_fetch_array($q,MYSQLI_ASSOC) ;
 
-
-
-
-
         $_SESSION['firstname'] = $row['customer_firstname'] ;
         $_SESSION['lastname'] = $row['customer_lastname'] ;
         $_SESSION['email_1'] = $row['customer_email'];

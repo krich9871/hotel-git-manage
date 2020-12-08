@@ -238,12 +238,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div><br>
 
-    <div class="container-fluid no-padding top_height">
+    <div class="container-fluid no-padding">
         <img src="image/View1.jpg" width="100%">
     </div>
-
     <div class="container-fluid text-center bottom_page padding_top">
         <h6>Copyright 2020 Poginity Ltd. All Rights Reserved.</h6>
         <h6>POGINITY Hotel. นาจอมเทียน, พัทยา (คลิ๊กเพื่อดูแผนที่) 095-156-2654 Pogihotel@gmail.com</h6>
