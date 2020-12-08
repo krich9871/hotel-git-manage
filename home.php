@@ -93,7 +93,7 @@
             <div class="col top_and_bottom">
               <?php if (empty($_SESSION['firstname'])){ ?>
                        <a href="login.php" class="nav-link color">Login</a>
-              <?php }elseif($_SESSION['firstname']) { ?>
+              <?php }else if($_SESSION['firstname']) { ?>
 
                       <div >
 
