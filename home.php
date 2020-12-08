@@ -55,22 +55,31 @@
     </style>
   </head>
   <body>
+    <form  method="post">
     <div class="container">
-        <form  action="reservation.php" method="post">
         <div class="row text-center align-items-center">
 
-            <div class="col top_and_bottom border_right">
+            <div class="col top_and_bottom border_right ">
                <input type="hidden" name="customer_id" value="<?php echo $_SESSION['id']; ?>">
-               <button type="submit" class="nav-link color btn btn_light"  name="button">Room</button>
+               <button type="submit" class="nav-link color btn btn_light" formaction="reservation.php" name="button">Room</button>
             </div>
-            </form>
 
-            <div class="col top_and_bottom border_right">
-                <a href="#" class="nav-link color">Restaurant</a>
-            </div>
-            <div class="col top_and_bottom">
-                <a href="#" class="nav-link color">Hall</a>
-            </div>
+
+        <div class="col top_and_bottom border_right">
+          <input type="hidden" name="customer_id" value="<?php echo $_SESSION['id']; ?>">
+          <button type="submit" class="nav-link color btn btn_light" formaction="food.php"  name="button">Restaurant</button>
+        </div>
+
+
+
+          <div class="col top_and_bottom border_right">
+             <input type="hidden" name="customer_id" value="<?php echo $_SESSION['id']; ?>">
+             <button type="submit" class="nav-link color btn btn_light" formaction="hallreservation.php" name="button">Hall</button>
+          </div>
+
+
+
+
             <div class="col top_and_bottom">
                 <a href="#" class="nav-link color"><b>POGINITY HOTEL</b></a>
             </div>
@@ -84,7 +93,7 @@
             <div class="col top_and_bottom">
               <?php if (empty($_SESSION['firstname'])){ ?>
                        <a href="login.php" class="nav-link color">Login</a>
-              <?php }else { ?>
+              <?php }elseif($_SESSION['firstname']) { ?>
 
                       <div >
 
@@ -93,27 +102,31 @@
                                 <?php echo $_SESSION['firstname'] ; ?>
                               </a>
                               <div class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
-                                <form action="php/profileB.php" method="post">
+
                                 <input type="hidden" name="customer_id" value="<?php echo $_SESSION['id']; ?>">
-                                <input type="submit" name="profile"  value="Profile" class="btn btn_light">
-                                </form>
-                                <form action="php/logout.php" method="post">
+                                <input type="submit" name="profile" formaction="php/profileB.php" value="Profile" class="btn btn_light">
+
+
                                   <div class="dropdown-divider"></div>
-                                  <input type="submit" name="logout" value="Logout">
+                                  <input type="submit" name="logout" formaction="php/logout.php" value="Logout">
 
                                 </div>
-                                </form>
+
 
 
                             </div>
 
 
                       </div>
-               <?php  } ?>
+               <?php  }  ?>
+
+
 
             </div>
         </div>
+
     </div>
+      </form>
 
     <div class="container-fluid no-padding">
         <img src="image/brand.png" width="100%">

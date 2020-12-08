@@ -1,3 +1,16 @@
+<?php
+require 'php/connect.php' ;
+$checkin = $_POST['checkin'] ;
+$time_s = $_POST['time_s'] ;
+$idcus =$_POST['customer_id'] ;
+
+$qroom1 = " SELECT * FROM food_and_hall  WHERE fh_type LIKE 2 " ; //สามารถ SELECT room.roomid,roomtype.roomtype
+
+$result1 = mysqli_query($db,$qroom1) ;
+
+
+ ?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -8,10 +21,10 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-CuOF+2SnTUfTwSZjCXf01h7uYhfOBuxIhGKPbfEJ3+FqH/s6cIFN9bGr1HmAg4fQ" crossorigin="anonymous">
     <link rel="stylesheet" href="home.css">
-    <title>Meeting Room Search Result</title>
+    <title>Restaurant Search Result</title>
     <style>
-        .img_5 {
-    background-image: url(image/meetingroom.png);
+        .img_6 {
+    background-image: url(image/restauranttop.png);
     background-size: cover;
     height: 60vh;
     background-position: center;
@@ -21,32 +34,16 @@
     background-image: url(image/Room2.jpg);
 }
 
-.back_color_blues {
-    background-color: rgb(129, 213, 228);
+.back_color_yellow {
+    background-color:rgb(213, 226, 96);
     color: white;
     padding-top: 30px;
     padding-bottom: 30px;
 
 }
 
-.back_color_green {
-    background-color: rgb(95, 141, 95);
-    color: white;
-    padding-top: 30px;
-    padding-bottom: 30px;
-
-}
-
-.back_color_green2 {
-    background-color: rgb(43, 70, 43);
-    color: white;
-    padding-top: 30px;
-    padding-bottom: 30px;
-
-}
-
-.back_color_green3 {
-    background-color: rgb(22, 41, 22);
+.back_color_blues1 {
+    background-color: rgb(59, 175, 241);
     color: white;
     padding-top: 30px;
     padding-bottom: 30px;
@@ -59,6 +56,28 @@
     border-radius: 30px;
     padding: 25px;
 }
+
+.img_7 {
+    background-image: url(image/buff1.jpg);
+    background-size: cover;
+    height: 60vh;
+    background-position: center;
+}
+
+.back_color_blues {
+    background-color: rgb(129, 213, 228);
+    color: white;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+}
+
+    .mix{
+            border-style: solid;
+             border-radius: 10px;
+             border : solid green;
+             background-color:rgb(207, 233, 156);
+    }
     </style>
   </head>
   <body>
@@ -68,10 +87,10 @@
                 <a href="#" class="nav-link color">Room</a>
             </div>
             <div class="col top_and_bottom border_right">
-                <a href="#" class="nav-link color">Restaurant</a>
+                <a href="#" class="nav-link color back_select">Restaurant</a>
             </div>
             <div class="col top_and_bottom">
-                <a href="#" class="nav-link color back_select">Hall</a>
+                <a href="#" class="nav-link color ">Hall</a>
             </div>
             <div class="col top_and_bottom">
                 <a href="#" class="nav-link color"><b>POGINITY HOTEL</b></a>
@@ -88,103 +107,83 @@
         </div>
     </div>
 
-    <div class="container-fluid img_5" style="margin-bottom :50px">
+    <div class="container-fluid img_6" style="margin-bottom :50px">
         <div class="container text-center top_pad_1 back_color_blues">
             <form>
                 <div class="row justify-content-md-center align-items-center">
                     <div class="col-auto">
                         <b><label for="checkin">CHECK IN</label></b>
-                        <input type="date" id="checkin">
+                        <input type="date" value="<?php echo $checkin; ?>" id="checkin">
                     </div>
                     <div class="col-auto">
-                        <b><label for="checkout">CHECK OUT</label></b>
-                        <input type="date" id="checkout" class="form_field">
+                      <b><label for="time">TIME</label></b>
+                      <select id="time" class="p-1">
+                      <option><?php echo $time_s ?></option>
+                      </select>
                     </div>
                     <div class="col-auto">
-                        <button type="submit" class="btn btn-light">SEARCH</button>
+                        <a href="food.php" class="btn btn-light">Back</a>
                     </div>
                 </div>
             </form>
         </div>
     </div>
 
-    <div class="alert back_color_green">
-        <h1>Small Meeting Room</h1>
+    <?php
+
+     while ($row1 = mysqli_fetch_array($result1,MYSQLI_ASSOC)) {
+
+
+
+
+     ?>
+
+    <div class="alert back_color_yellow">
+        <h1><?php echo $row1['fh_name'] ?></h1>
     </div>
 
     <div class="container width_2 text-center align-items-center" style="margin-bottom :50px">
         <div class="row justify-content-md-center" style="border-style:solid; border-color:gray">
             <div class="col-auto">
-                <img src="image/hallre1.jpg" width="700px">
+                <img src="image/buff1.jpg" width="400px">
             </div>
             <div class="col-auto p-2 text-left">
-                <h3>Small Meeting Room</h3>
-                <h5>XXXXXXXXXXXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</h5>
-                <h5>XXXXXXXXXXXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</h5>
-                <h5>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</h5>
+                <h3><?php echo $row1['fh_name'] ?></h3>
+                <h5>จำนวนนั่งคง่เหลือ: <?php echo $row1['fh_count']; ?></h5>
+                <h5>สำหรับผู้จอง: <?php echo $row1['fh_number_guest']; ?> คน</h5>
+
                 <div class="row pt-5">
                     <div class="col">
-                        <h2>300 THB</h2>
+                        <h2><?php echo $row1['fh_price']; ?> THB</h2>
                     </div>
                     <div class="col pt-1">
-                        <button type="button" class="btn btn-light rounded" style="width: 200px;border-radius: .9rem!important;">More Detail</button>
+                      <form  action="restaurant_book.php" method="post">
+                        <input type="hidden" name="fh_name" value="<?php echo $row1['fh_name']; ?>">
+                        <input type="hidden" name="fh_price" value="<?php echo $row1['fh_price']; ?>">
+                        <input type="hidden" name="fh_price1" value="<?php echo $row1['fh_price']*2; ?>">
+                        <input type="hidden" name="fh_price2" value="<?php echo $row1['fh_price']*3; ?>">
+                        <input type="hidden" name="fh_price3" value="<?php echo $row1['fh_price']*4; ?>">
+                        <input type="hidden" name="fh_count" value="<?php echo $row1['fh_count']; ?>">
+                        <input type="hidden" name="fh_number_guest" value="<?php echo $row1['fh_number_guest']; ?>">
+                        <input type="hidden" name="fh_image" value="<?php echo $row1['fh_image']; ?>">
+                        <input type="hidden" name="fh_image1" value="<?php echo $row1['fh_image1']; ?>">
+                        <input type="hidden" name="fh_image2" value="<?php echo $row1['fh_image2']; ?>">
+                        <input type="hidden" name="checkin" value="<?php echo $checkin; ?>">
+                        <input type="hidden" name="time_s" value="<?php echo $time_s; ?>">
+                        <input type="hidden" name="customer_id" value="<?php echo $idcus; ?>">
+                        <button type="submit" class="btn btn-light rounded" style="width: 200px;border-radius: .9rem!important;">More Detail</button>
+                      </form>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <?php
+  }
+     ?>
 
-    <div class="alert back_color_green2">
-        <h1>Medium Meeting Room</h1>
-    </div>
 
-    <div class="container width_2 text-center align-items-center" style="margin-bottom :50px">
-        <div class="row justify-content-md-center" style="border-style:solid; border-color:gray">
-            <div class="col-auto">
-                <img src="image/hallre2.jpg" width="700px">
-            </div>
-            <div class="col-auto p-2 text-left">
-                <h3>Medium Meeting Room</h3>
-                <h5>XXXXXXXXXXXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</h5>
-                <h5>XXXXXXXXXXXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</h5>
-                <h5>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</h5>
-                <div class="row pt-5">
-                    <div class="col">
-                        <h2>600 THB</h2>
-                    </div>
-                    <div class="col pt-1">
-                        <button type="button" class="btn btn-light rounded" style="width: 200px;border-radius: .9rem!important;">More Detail</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="alert back_color_green3">
-        <h1>Large Meeting Room</h1>
-    </div>
-
-    <div class="container width_2 text-center align-items-center" style="margin-bottom :50px">
-        <div class="row justify-content-md-center" style="border-style:solid; border-color:gray">
-            <div class="col-auto">
-                <img src="image/hallre3.jpg" width="700px">
-            </div>
-            <div class="col-auto p-2 text-left">
-                <h3>Large Meeting Room</h3>
-                <h5>XXXXXXXXXXXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</h5>
-                <h5>XXXXXXXXXXXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</h5>
-                <h5>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</h5>
-                <div class="row pt-5">
-                    <div class="col">
-                        <h2>1,000 THB</h2>
-                    </div>
-                    <div class="col pt-1">
-                        <button type="button" class="btn btn-light rounded" style="width: 200px;border-radius: .9rem!important;">More Detail</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <div class="container-fluid text-center bottom_page padding_top">
         <h6>Copyright 2020 Poginity Ltd. All Rights Reserved.</h6>

@@ -1,16 +1,18 @@
 <?php
 
 
-if (empty($_POST['summary1'])) {
-  $summaryprice2 = $_POST['summary2'] ;
-        }
-if (empty($_POST['summary2'])) {
-  $summaryprice1 = $_POST['summary1'] ;
-}
 
+  $summaryprice1 = $_POST['summary1'] ;
   $checkin = $_POST['checkin1'] ;
   $checkout = $_POST['checkout1'] ;
   $idcus = $_POST['customer_id']  ;
+  $room = $_POST['room_t'];
+  $number_of_guest = $_POST['number_of_guest'] ;
+  $count = $_POST['count'] ;
+  $image =$_POST['image'] ;
+  $image1 = $_POST['image1'] ;
+  $image2 = $_POST['image2'] ;
+
 
  ?>
 
@@ -110,13 +112,13 @@ if (empty($_POST['summary2'])) {
     <div id="carouselExampleControls" class="carousel slide pt-5" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="image/Room1.jpg" class="d-block w-100 top_bottom">
+            <img src="image/<?php echo $image; ?>" class="d-block w-100 top_bottom">
           </div>
           <div class="carousel-item">
-            <img src="image/Bath1_1.jpg" class="d-block w-100 top_bottom " >
+            <img  src="image/<?php echo $image1; ?>" class="d-block w-100 top_bottom " >
           </div>
           <div class="carousel-item">
-            <img src="image/Bath5_1.jpg" class="d-block w-100 top_bottom" >
+            <img src="image/<?php echo $image2; ?>" class="d-block w-100 top_bottom" >
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -132,12 +134,12 @@ if (empty($_POST['summary2'])) {
 <form action="php/booking_B.php" method="post">
 
       <div class="container text-center mt-5 mb-5 border p-5 set_width">
-          <h1 class="text-left">Duplex Ocean View</h1>
+          <h1 class="text-left"><?php echo $room; ?></h1>
           <div class="row mt-3 p-1">
               <div class="col border-right text-left p-3">
-                <h6>ประเภทห้อง :</h6>
-                <h6>จำนวนห้องที่เหลือ : </h6>
-                <h6>สำหรับผู้เข้าพัก : </h6>
+
+                <h6>จำนวนห้องที่เหลือ : <?php echo $count ; ?> </h6>
+                <h6>สำหรับผู้เข้าพัก : <?php echo $number_of_guest; ?></h6>
               </div>
               <div class="col text-left p-3">
                 <h5>Special Request</h5>
@@ -169,20 +171,20 @@ if (empty($_POST['summary2'])) {
           </div>
           <div class="row mt-3 text-right">
             <div class="col">
-                <?php if (empty($summaryprice2)) {?>
-                     <h2><?php echo $summaryprice1;  ?> THB</h2>
-                     <input type="hidden" name="summary1" value="<?php echo $summaryprice1;  ?>">
-              <?php }elseif(empty($summaryprice1)) { ?>
-                     <h2><?php echo $summaryprice2;  ?> THB</h2>
-                     <input type="hidden" name="summary2" value="<?php echo $summaryprice2;  ?>">
-             <?php }  ?>
+                <h2><?php echo $summaryprice1; ?> THB</h2>
 
             </div>
             <div class="col">
                 <input type="hidden" name="customer_id" value="<?php echo $idcus; ?>">
                   <input type="hidden" name="checkin" value="<?php echo $checkin ; ?>">
                   <input type="hidden" name="checkout" id="checkout" class="form_field" value="<?php echo $checkout ; ?>">
-                <button type="submit" class="btn btn-light rounded border" data-toggle="modal" data-target="#example1" name="booking" style="width: 200px;border-radius: .9rem!important;">Book Now</button>
+                  <input type="hidden" name="room_t" value="<?php echo $room; ?>">
+                   <input type="hidden" name="number_of_guest" value="<?php echo $number_of_guest; ?>">
+                    <input type="hidden" name="count" value="<?php echo $count; ?>">
+                    <input type="hidden" name="summaryprice1" value="<?php echo $summaryprice1; ?>">
+
+
+                <button type="button" class="btn btn-light rounded border" data-toggle="modal" data-target="#example1" name="booking" style="width: 200px;border-radius: .9rem!important;">Book Now</button>
             </div>
         </div>
       </div>
@@ -199,15 +201,16 @@ if (empty($_POST['summary2'])) {
                     <img src="image/Room1.jpg" width="100%px">
                   </div>
                   <div class="col">
-                    <h6>ประเภทห้อง:</h6>
-                    <h6>จำนวนห้องที่เหลือ: </h6>
-                    <h6>สำหรับผู้เข้าพัก: </h6>
+                    <h6>ประเภทห้อง: <?php echo $room; ?></h6>
+                    <h6>จำนวนห้องที่เหลือ: <?php echo $count; ?> ห้อง</h6>
+                    <h6>สำหรับผู้เข้าพัก: <?php echo $number_of_guest; ?> คน</h6>
+                    <h6>จำนวนเงิน: <?php echo $summaryprice1 ;?> THB</h6>
                   </div>
               </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Confirm</button>
+              <button type="submit" class="btn btn-primary" name="booking" >Confirm</button>
             </div>
           </div>
         </div>
