@@ -63,10 +63,10 @@
                         <div class="col-md-3 text-left"class="form__field"><?php echo $_SESSION['phone']; ?></div>
                     </div>
                     <div class="mb-2 row align-items-center" style="padding: 5%;">
-                        <div> <a href="Editprofile.php"  class="btn btn-secondary rounded align-items-center" style="width: 250px;border-radius: .9rem!important;">Edit Profile</a>
-                    </div></div>
+                        <div> <a href="Editprofile.php"  class="btn btn-secondary rounded align-items-center" style="width: 250px;border-radius: .9rem!important;">Edit Profile</a></div>
+                    </div>
 
-                    <div class="mb-2 row align-items-center" style="padding: 5%; margin-left: 0.5px;">
+                    <div class="mb-2 row align-items-center" style="padding: 5%; margin-left: 0.5px;"></div>
 
                      <div>
                        <input type="hidden" name="customer_id" value="<?php echo $_SESSION['id']; ?>">
