@@ -71,7 +71,7 @@
                         <div class="col-md-2 text-right"><label for="Email"></label>Email:</label></div>
                         <div class="col-md-3 text-left"><input class="coolip" name="customer_email" type="email" id="name" style="width: 220px;"required></div> <div class="col-1"></div>
                         <div class="col-md-2 text-right"><label for="password">Password:</label></div>
-                        <div class="col-md-3 text-left"><input class="coolip" name="customer_password" type="password" id="password" style="width: 220px; border-radius: .9rem!important;" pattern="[A-Za-z0-9]{8,32}" title="Password length must be 8-32 and contain at least one 'A-Z', 'a-z' and 'number'." required><br></div>
+                        <div class="col-md-3 text-left"><input class="coolip" name="customer_password" type="password" id="password" style="width: 220px; border-radius: .9rem!important;" pattern="(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])[A-Za-z0-9]{8,32}" title="Password length must be 8-32 and contain at least one 'A-Z', 'a-z' and 'number'. (exclude special characters.)" required><br></div>
                     </div>
                     <div class="mb-2" style="padding: 1%;">
                         <label for="password">Phone Number:</label>
