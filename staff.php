@@ -191,6 +191,7 @@
 
   </head>
   <body>
+    <form method="post">
     <div class="container-fluid">
         <div class="row text-center align-items-center">
             <div class="col top_and_bottom border_right">
@@ -211,7 +212,7 @@
             <div class="col top_and_bottom border_right">
                 <a href="#" class="nav-link color">Contact Us</a>
             </div>
-            <div class="col top_and_bottom">
+            <div class="col top_and_bottom">  
               <?php 
               if (empty($_SESSION['firstname'])){ ?>
                        <a href="login.php" class="nav-link color">Login</a>
