@@ -212,8 +212,8 @@
             <div class="col top_and_bottom border_right">
                 <a href="#" class="nav-link color">Contact Us</a>
             </div>
-            <div class="col top_and_bottom">  
-              <?php 
+            <div class="col top_and_bottom">
+              <?php
               if (empty($_SESSION['firstname'])){ ?>
                        <a href="login.php" class="nav-link color">Login</a>
               <?php }
@@ -225,8 +225,8 @@
                                 <?php echo $_SESSION['firstname'] ; ?>
                               </a>
                                 <div class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
-                                    <div class="dropdown-divider"></div>
-                                    <input type="submit" name="logout" formaction="php/logout.php" value="Logout">
+
+                                    <input type="submit" name="logout" class="btn btn-light" formaction="php/logout.php" value="Logout">
                                 </div>
                             </div>
                       </div>
