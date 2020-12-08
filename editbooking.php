@@ -1,4 +1,5 @@
-﻿<!doctype html>
+
+<!doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -11,22 +12,22 @@
     <title>Edit Booking | POGINITY HOTEL</title>
 
     <style>
-        
+
         .nolinkline{
             text-decoration: none;
-            
+
         }
 
         .padding_top {
             padding-top: 10%;
-            
+
         }
         .coolip{
             border-radius: .9rem;
             border-width: 0px;
             background-color: gray ;
         }
-        
+
         .staffhead {
             background-image: url("image/staff01.jpg");
             margin: auto;
@@ -35,10 +36,10 @@
             background-size: cover;
             position: relative;
             background-position: center;
-            
+
         }
 
-        
+
         .topicbox {
             border-radius: .9rem;
             text-align: center;
@@ -61,13 +62,13 @@
             margin: auto;
             background-position: center;
             width: 80%;
-        } 
+        }
         .menubutt{
             width: 150px;
             height: 80px;
             background-color: white;
         }
-        
+
         .linkgray{
             text-decoration: none;
             border-bottom: 2px solid rgb(117, 117, 117) ;
@@ -102,7 +103,7 @@
             padding-left:30px;
             width: 150px;
             height: 80px;
-            text-decoration: none;     
+            text-decoration: none;
             margin: auto;
             border-bottom: 2px solid rgb(33, 47, 61) ;
             color: rgb(33, 47, 61);
@@ -123,7 +124,7 @@
             padding-right: 30px;
             padding-bottom: 100px;
             background-size: cover;
-            position: relative; 
+            position: relative;
             background-position: center;
             margin: auto;
             width: 1000px;
@@ -164,8 +165,8 @@
         }
 
         .crop {
-            width: 100%; 
-            height: 100px; 
+            width: 100%;
+            height: 100px;
             object-fit: cover;
             border-top-left-radius: .9rem;
             border-top-right-radius: .9rem;
@@ -215,12 +216,12 @@
         .formfont{
             font-size: 15px;
             color: gray;
-            
+
         }
         .formfont input[type=text] , .formfont input[type=tel]{
             border: 0px;
             border-bottom: 1px solid gray;
-            width: 300px; 
+            width: 300px;
         }
         .idfont{
             font-size: 25px;
@@ -236,7 +237,7 @@
         }
         .servicetab{
             width:850px;
-            
+
         }
         .servicetab td{
             width:180px;
@@ -279,15 +280,15 @@
         }
         .durationtab td:nth-child(1){
             width:80px;
-            
+
         }
         .durationtab td:nth-child(2){
             width:50px;
-            
+
         }
         .durationtab td:nth-child(3){
             width:100px;
-            
+
         }
         .durationtab input{
             border: 1px solid #0F3A62;
@@ -358,7 +359,7 @@
         }
         .calc hr{
             color:#0F3A62 ;
-            
+
         }
         .calc button{
             color:#0F3A62 ;
@@ -417,7 +418,7 @@
             <a href="#" class="nolinkline">
                 <div class="p">Staff</div>
             </a>
-        </div>  
+        </div>
     </div>
     <div class="container-fluid" >
         <div class="tabmenu">
@@ -437,7 +438,7 @@
                         Edit Booking
                     </a>
                 </span>
-                
+
             </span>
         </div>
     </div>
@@ -449,14 +450,14 @@
                 <span class="idfont">ID : R2152843</span><br/>
                 <hr style="color: white;"/>
                 <div class="formfont text-center">
-                    <form class="al-left">                        
+                    <form class="al-left">
                         <label for="name">Customer : </label>
-                        <input type="text" id="name">          
+                        <input type="text" id="name">
 
-                        <label for="tel">Tel. : </label>                                
+                        <label for="tel">Tel. : </label>
                         <input type="tel" id="tel" class="al-left"> <br/>
-                               
-                        <label for="service_type" style="padding-top: 5px ;">Service Type</label><br/>  
+
+                        <label for="service_type" style="padding-top: 5px ;">Service Type</label><br/>
                         <table class="servicetab">
                             <tr>
                                 <form action="#">
@@ -465,22 +466,22 @@
                                         <label for="room">Room</label><br>
                                     </td>
                                     <td>
-                                        <form>      
+                                        <form>
                                             <select id="view" name="view">
                                                 <option value="" disabled selected>--View--</option>
                                                 <option value="town">Town View</option>
-                                                <option value="ocean">Ocean View</option>            
+                                                <option value="ocean">Ocean View</option>
                                             </select>
                                         </form>
                                     </td>
                                     <td>
-                                        <form>      
+                                        <form>
                                             <select id="view" name="room_type">
                                                 <option value="" disabled selected>--Room Type--</option>
                                                 <option value="std">Standard Room</option>
-                                                <option value="suite">Suite Room</option>       
-                                                <option value="deluxe">Deluxe Room</option>      
-                                            </select> 
+                                                <option value="suite">Suite Room</option>
+                                                <option value="deluxe">Deluxe Room</option>
+                                            </select>
                                         </form>
                                     </td>
                                     <td>
@@ -516,34 +517,30 @@
                         <div style="padding-top: 5px ;">
                             <table class="durationtab" >
                                 <tr>
-                                
+
                                         <td>
-                                            Duration : 
+                                            Duration :
                                         </td>
                                         <td>
-                                            from 
+                                            from
                                         </td>
                                         <td>
-                                            <input type="date"> 
+                                            <input type="date">
                                         </td>
-                                        <td>
-                                            <input type="time"> 
-                                        </td>
+
                                 </tr>
                                 <tr>
                                         <td>
-                                            
+
                                         </td>
                                         <td>
-                                            to 
+                                            to
                                         </td>
                                         <td>
-                                            <input type="date" value=""> 
+                                            <input type="date" value="">
                                         </td>
-                                        <td>
-                                            <input type="time" value=""> 
-                                        </td>
-                                    
+
+
                                 </tr>
                             </table>
                         </div>
@@ -568,14 +565,14 @@
 
                 <div class="al-right savelayout">
                     <button class="savebut">Save</button>
-                    <button class="ccbut">Cancle Booking</button>
+                    <button class="ccbut">Cancel Booking</button>
                     <button class="closebut">Close</button><br>
                     <div class="descfont" style="float:right;">
                         <input type="checkbox" style="filter: grayscale(1) ;">
                         Dararat Kamphasuk, Staff position is agree to Poginity Ltd Terms, Data Policy and Cookies Policy
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div>
@@ -583,7 +580,7 @@
         <h6>Copyright 2020 Poginity Ltd. All Rights Reserved.</h6>
         <h6>POGINITY Hotel. นาจอมเทียน, พัทยา (คลิ๊กเพื่อดูแผนที่) 095-156-2654 Pogihotel@gmail.com</h6>
     </div>
-    
+
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper.js -->

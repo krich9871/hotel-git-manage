@@ -1,4 +1,14 @@
-﻿<!doctype html>
+<?php
+require 'php/connect.php' ;
+
+
+$qroom1 = " SELECT  * FROM bookings  " ; //สามารถ SELECT room.roomid,roomtype.roomtype
+
+$result1 = mysqli_query($db,$qroom1) ;
+
+ ?>
+
+<!doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -12,21 +22,21 @@
     <title>Booking | POGINITY HOTEL</title>
 
     <style>
-        
+
         .nolinkline{
             text-decoration: none;
         }
 
         .padding_top {
             padding-top: 10%;
-            
+
         }
         .coolip{
             border-radius: .9rem;
             border-width: 0px;
             background-color: gray ;
         }
-        
+
         .staffhead {
             background-image: url("image/staff01.jpg");
             margin: auto;
@@ -35,10 +45,10 @@
             background-size: cover;
             position: relative;
             background-position: center;
-            
+
         }
 
-        
+
         .topicbox {
             border-radius: .9rem;
             text-align: center;
@@ -61,13 +71,13 @@
             margin: auto;
             background-position: center;
             width: 80%;
-        } 
+        }
         .menubutt{
             width: 150px;
             height: 80px;
             background-color: white;
         }
-        
+
         .linkgray{
             text-decoration: none;
             border-bottom: 2px solid rgb(117, 117, 117) ;
@@ -102,7 +112,7 @@
             padding-left:30px;
             width: 150px;
             height: 80px;
-            text-decoration: none;     
+            text-decoration: none;
             margin: auto;
             border-bottom: 2px solid rgb(33, 47, 61) ;
             color: rgb(33, 47, 61);
@@ -123,7 +133,7 @@
             padding-right: 30px;
             padding-bottom: 100px;
             background-size: cover;
-            position: relative; 
+            position: relative;
             background-position: center;
             margin: auto;
             width: 80%;
@@ -163,8 +173,8 @@
         }
 
         .crop {
-            width: 100%; 
-            height: 100px; 
+            width: 100%;
+            height: 100px;
             object-fit: cover;
             border-top-left-radius: .9rem;
             border-top-right-radius: .9rem;
@@ -192,7 +202,7 @@
             background-color: white;
         }
         .searchbox form input[type="search"] {
-            outline: 0; 
+            outline: 0;
             width: 80%;
             padding-left: 20px;
             background: white;
@@ -245,13 +255,13 @@
            padding-left:20px;
            padding-right:20px;
            padding-bottom:20px;
-           
+
        }
 
        .filterbox p{
            font-family: 'Cordia New';
            color: gray;
-           
+
        }
 
        .fl-right{
@@ -315,11 +325,11 @@
             border-collapse: collapse;
             width: 100%;
             background-color: white;
-            border-radius:.5rem;            
+            border-radius:.5rem;
             }
 
         .tab table td, .tab table th {
-            
+
             text-align: left;
             padding: 8px;
             }
@@ -361,7 +371,7 @@
         .ft_tab{
             color:gray;
             font-size: 12px;
-            
+
         }
         input[type="checkbox"] { /* change "blue" browser chrome to yellow */
             filter: grayscale(1) ;
@@ -371,10 +381,10 @@
             position: fixed;
             bottom: 100px;
             left: 80px;
-            
+
         }
         .newbut{
-            
+
             height:80px;
             width:80px;
             background-color: #0F3A62;
@@ -383,13 +393,21 @@
             color:white;
             border-radius: 4rem;
             border:0px;
-            
+
         }
-        .newbut:hover{  
+        .newbut:hover{
             background-color: #04233F;
         }
+        .center
+        {
 
-        
+          margin: 0 auto;
+          text-align: center;
+          width: 100% ;
+
+        }
+
+
     </style>
 
   </head>
@@ -425,13 +443,13 @@
             <a href="#" class="nolinkline">
                 <div class="p">Staff</div>
             </a>
-        </div>  
+        </div>
     </div>
     <div class="container-fluid" >
         <div class="tabmenu">
             <span class="menubutt">
                 <span class="linkgray" >
-                    <a href="staff.html">
+                    <a href="staff.php">
                         Home
                     </a>
                 </span>
@@ -445,7 +463,7 @@
     </div>
     <div class="container-fluid" >
         <div class="tabmenu">
-            
+
         </div>
     </div>
     <div class="container-fluid" style="background-color:gray;">
@@ -454,14 +472,14 @@
                 <form onsubmit="#" role="search_booking" style="width: 100%;">
                     <input id="search" type="search" placeholder="Reservation Search" autofocus required style="width: 95%;" />
                     <button class="searchbt">
-                        <i class="fas fa-search"></i>  
+                        <i class="fas fa-search"></i>
                     </button>
                   </form>
             </div>
         </div>
     </div>
     <div class="fl clear">
-        
+
         <div class="fl-left" >
             <div class="filterbox">
                     <p>
@@ -479,21 +497,21 @@
                                         <td><input type="checkbox" id="customer_name"></td>
                                         <td><label for="customer_name">Customer Name</label></td>
                                         <td><input type="checkbox" id="service"></td>
-                                        <td><label for="service">Service Tyepe</label></td> 
+                                        <td><label for="service">Service Tyepe</label></td>
                                     </tr>
                                     <tr>
                                         <td><input type="checkbox" id="room_no"></td>
                                         <td><label for="room_no">Room No.</label></td>
                                         <td><input type="checkbox" id="price"></td>
-                                        <td><label for="price">Price</label></td> 
+                                        <td><label for="price">Price</label></td>
                                     </tr>
                                     <tr>
                                         <td><input type="checkbox" id="room_type"></td>
                                         <td><label for="room_type">Room Type</label></td>
                                         <td><input type="checkbox" id="tel"></td>
-                                        <td><label for="tel">Tel.</label></td> 
+                                        <td><label for="tel">Tel.</label></td>
                                     </tr>
-                                </table> 
+                                </table>
                             </form>
                         </div>
                     <hr/>
@@ -507,7 +525,7 @@
                             <td style="padding-left:10px;"><input  type="date" id="birthday" onfocus="(this.placeholder='')" class="datebox" style="padding-left:10px" >
                         </tr>
                     </table>
-                
+
             </div>
         </div>
 
@@ -515,128 +533,56 @@
             <div  class="tab">
                 <table>
                     <tr>
-                        <th>Room Nom.</th>
-                        <th>Reservation id</th>
-                        <th>Customer Name</th>
-                        <th>Tel.</th>
-                        <th>Service Type</th>
-                        <th>Check In</th>
-                        <th>Check Out</th>
-                        <th>Price</th>
-                        <th>Edit</th>
+                      <th>ID</th>
+                      <th>customer_id</th>
+                      <th>ทำการจอง</th>
+                      <th>จำนวนเงิน</th>
+                      <th>สำหรับจำนวน</th>
+                      <th>เพิ่มเติม1</th>
+                      <th>เพิ่มเติม2</th>
+                      <th>เพิ่มเติม3</th>
+                      <th>เพิ่มเติม4</th>
+                      <th>Check IN</th>
+                      <th>Check OUT</th>
+                      <th>TIME</th>
+                      <th>DELETE</th>
+
                     </tr>
-                    <tr>
-                        <td>256</td>
-                        <td>R8896552</td>
-                        <td>Miss Janet Vandype</td>
-                        <td>089-444-4444</td>
-                        <td>Room:Ocean:Srandard</td>
-                        <td>28/12/63</td>
-                        <td>12/01/64</td>
-                        <td>18,980.-</td>
-                        <td><button class="editbut">Edit</button></td>
+                    <?php
+
+
+                      while($row = mysqli_fetch_array($result1,MYSQLI_ASSOC)) {
+
+
+
+                     ?>
+
+                    <tr class="center">
+                      <td><?php echo $row['booking_id']; ?></td>
+                      <td><?php echo $row['customer_id']; ?></td>
+                      <td><?php echo $row['room_t']; ?></td>
+                      <td><?php echo $row['Price_r']; ?></td>
+                      <td><?php echo $row['number_of_guest']; ?></td>
+                      <td><?php echo $row['special_req1']; ?></td>
+                      <td><?php echo $row['special_req2']; ?></td>
+                      <td><?php echo $row['special_req3']; ?></td>
+                      <td><?php echo $row['special_req4']; ?></td>
+                      <td><?php echo $row['checkin']; ?></td>
+                      <td><?php echo $row['checkout']; ?></td>
+                      <td><?php echo $row['time1']; ?></td>
+                      <td ><a href="php/delete2.php?booking_id=<?php echo $row['booking_id'] ; ?>" class="center btn btn-light">ลบ</a></td>
+
                     </tr>
-                    <tr>
-                        <td>256</td>
-                        <td>R8896552</td>
-                        <td>Miss Janet Vandype</td>
-                        <td>089-444-4444</td>
-                        <td>Room:Ocean:Srandard</td>
-                        <td>28/12/63</td>
-                        <td>12/01/64</td>
-                        <td>18,980.-</td>
-                        <td><button class="editbut">Edit</button></td>
-                    </tr>
-                    <tr>
-                        <td>256</td>
-                        <td>R8896552</td>
-                        <td>Miss Janet Vandype</td>
-                        <td>089-444-4444</td>
-                        <td>Room:Ocean:Srandard</td>
-                        <td>28/12/63</td>
-                        <td>12/01/64</td>
-                        <td>18,980.-</td>
-                        <td><button class="editbut">Edit</button></td>
-                    </tr>
-                    <tr>
-                        <td>256</td>
-                        <td>R8896552</td>
-                        <td>Miss Janet Vandype</td>
-                        <td>089-444-4444</td>
-                        <td>Room:Ocean:Srandard</td>
-                        <td>28/12/63</td>
-                        <td>12/01/64</td>
-                        <td>18,980.-</td>
-                        <td><button class="editbut">Edit</button></td>
-                    </tr>
-                    <tr>
-                        <td>256</td>
-                        <td>R8896552</td>
-                        <td>Miss Janet Vandype</td>
-                        <td>089-444-4444</td>
-                        <td>Room:Ocean:Srandard</td>
-                        <td>28/12/63</td>
-                        <td>12/01/64</td>
-                        <td>18,980.-</td>
-                        <td><button class="editbut">Edit</button></td>
-                    </tr>
-                    <tr>
-                        <td>256</td>
-                        <td>R8896552</td>
-                        <td>Miss Janet Vandype</td>
-                        <td>089-444-4444</td>
-                        <td>Room:Ocean:Srandard</td>
-                        <td>28/12/63</td>
-                        <td>12/01/64</td>
-                        <td>18,980.-</td>
-                        <td><button class="editbut">Edit</button></td>
-                    </tr>
-                    <tr>
-                        <td>256</td>
-                        <td>R8896552</td>
-                        <td>Miss Janet Vandype</td>
-                        <td>089-444-4444</td>
-                        <td>Room:Ocean:Srandard</td>
-                        <td>28/12/63</td>
-                        <td>12/01/64</td>
-                        <td>18,980.-</td>
-                        <td><button class="editbut">Edit</button></td>
-                    </tr>
-                    <tr>
-                        <td>256</td>
-                        <td>R8896552</td>
-                        <td>Miss Janet Vandype</td>
-                        <td>089-444-4444</td>
-                        <td>Room:Ocean:Srandard</td>
-                        <td>28/12/63</td>
-                        <td>12/01/64</td>
-                        <td>18,980.-</td>
-                        <td><button class="editbut">Edit</button></td>
-                    </tr>
-                    <tr>
-                        <td>256</td>
-                        <td>R8896552</td>
-                        <td>Miss Janet Vandype</td>
-                        <td>089-444-4444</td>
-                        <td>Room:Ocean:Srandard</td>
-                        <td>28/12/63</td>
-                        <td>12/01/64</td>
-                        <td>18,980.-</td>
-                        <td><button class="editbut">Edit</button></td>
-                    </tr>
-                    <tr>
-                        <td>256</td>
-                        <td>R8896552</td>
-                        <td>Miss Janet Vandype</td>
-                        <td>089-444-4444</td>
-                        <td>Room:Ocean:Srandard</td>
-                        <td>28/12/63</td>
-                        <td>12/01/64</td>
-                        <td>18,980.-</td>
-                        <td><button class="editbut">Edit</button></td>
-                    </tr>
+                  <?php
+
+                   }
+                   mysqli_free_result($result1) ;
+
+
+                   ?>
+
                 </table>
-                
+
             </div>
             <p style="font-family:Cordia New;font-size:20px;color:gray;text-align:center;">หน้า 1 จาก 5</p>
         </div>
@@ -648,7 +594,7 @@
     <div class="newbooking">
         <a href="newbooking.html" style="text-decoration: none;"><button class="newbut"><i class="fas fa-plus" style="width:30px;height:auto;"></i></button></a>
     </div>
-    
+
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper.js -->

@@ -12,22 +12,22 @@
     <title>Register Staff | POGINITY HOTEL</title>
 
     <style>
-        
+
         .nolinkline{
             text-decoration: none;
-            
+
         }
 
         .padding_top {
             padding-top: 10%;
-            
+
         }
         .coolip{
             border-radius: .9rem;
             border-width: 0px;
             background-color: gray ;
         }
-        
+
         .staffhead {
             background-image: url("image/mang01.jpg");
             margin: auto;
@@ -36,10 +36,10 @@
             background-size: cover;
             position: relative;
             background-position: center;
-            
+
         }
 
-        
+
         .topicbox {
             border-radius: .9rem;
             text-align: center;
@@ -62,13 +62,13 @@
             margin: auto;
             background-position: center;
             width: 80%;
-        } 
+        }
         .menubutt{
             width: 150px;
             height: 80px;
             background-color: white;
         }
-        
+
         .linkgray{
             text-decoration: none;
             border-bottom: 2px solid rgb(117, 117, 117) ;
@@ -103,7 +103,7 @@
             padding-left:30px;
             width: 150px;
             height: 80px;
-            text-decoration: none;     
+            text-decoration: none;
             margin: auto;
             border-bottom: 2px solid rgb(33, 47, 61) ;
             color: rgb(33, 47, 61);
@@ -118,18 +118,18 @@
             color: rgb(36, 73, 110);
         }
 
-        
+
         .menubody {
             padding-top: 30px;
             padding-left: 30px;
             padding-right: 30px;
             padding-bottom: 100px;
             background-size: cover;
-            position: relative; 
+            position: relative;
             background-position: center;
             margin: auto;
             width: 1000px;
-            
+
         }
 
         .topic_head{
@@ -165,8 +165,8 @@
         }
 
         .crop {
-            width: 100%; 
-            height: 100px; 
+            width: 100%;
+            height: 100px;
             object-fit: cover;
             border-top-left-radius: .9rem;
             border-top-right-radius: .9rem;
@@ -207,18 +207,18 @@
             font-size: 12px;
             font-weight: bolder;
             color: #0F3A62;
-            line-height: 15px; 
-                     
+            line-height: 15px;
+
         }
         .formfont{
             font-size: 15px;
             color: gray;
-            
+
         }
         .formfont input[type=text] , .formfont input[type=tel]{
             border: 0px;
             border-bottom: 1px solid gray;
-            width: 300px; 
+            width: 300px;
         }
         .idfont{
             font-size: 25px;
@@ -234,7 +234,7 @@
         }
         .servicetab{
             width:850px;
-            
+
         }
         .servicetab td{
             width:180px;
@@ -277,15 +277,15 @@
         }
         .durationtab td:nth-child(1){
             width:80px;
-            
+
         }
         .durationtab td:nth-child(2){
             width:50px;
-            
+
         }
         .durationtab td:nth-child(3){
             width:100px;
-            
+
         }
         .durationtab input{
             border: 1px solid #0F3A62;
@@ -356,7 +356,7 @@
         }
         .calc hr{
             color:#0F3A62 ;
-            
+
         }
         .calc button{
             color:#0F3A62 ;
@@ -385,7 +385,7 @@
             border: 1px solid #0F3A62;
             border-radius: 7rem;
             float: right;
-            
+
         }
         .small-cc{
             width: 50px;
@@ -396,13 +396,13 @@
             right: 570px;
             bottom: 160px;
             position: absolute;
-            
+
         }
-        .registerform{        
+        .registerform{
             width: 415px;
-            
+
             float: left;
-            
+
         }
         .registerform input{
             background-color: #E5E7E9;
@@ -421,7 +421,7 @@
             padding: 5px;
             margin: 3px;
             width: 15px;
-            
+
         }
         .register-left{
             margin-right: 80px;
@@ -464,13 +464,13 @@
             </div>
         </div>
     </div>
-    
+
     <div class="container-fluid staffhead" style="text-align: center;" >
         <div class="topicbox">
             <a href="#" class="nolinkline">
                 <div class="p">Manager</div>
             </a>
-        </div>  
+        </div>
     </div>
     <div class="container-fluid" >
         <div class="tabmenu">
@@ -493,7 +493,7 @@
             </span>
         </div>
     </div>
-   
+
     <div class="container-fluid" style="background-color: #E5E7E9;">
         <div class="menubody">
             <div class="editbbox">
@@ -503,36 +503,29 @@
                             <div class="al-right register-left">
                                 <p class="headfont">Register Staff</p>
                                 <span class="descfont ">by Maranee Imphilomlak, Manager position</span>
-                                <div class="circle" style="margin-top:20px">
-                                    <div class="imgupload">
-                                        <i class="fas fa-plus" style="width:80px;height:auto;padding-top: 50px;"></i>
-                                    </div>
-                                    <div class="small-cc">
-                                        <i class="fas fa-camera" style="width:35px;height:auto;padding-top: 12px;padding-right: 12px;color:#0F3A62;"></i>
+
+
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </td>
+                          <form action="php/staff_register.php" method="post">
                         <td class="registerform">
                             <br>
-                            <form>
-                                <input type="text" placeholder="Name" style="width: 195px;"><input type="text" placeholder="Lastname" style="width: 198px;"><br>
-                                <input type="email" placeholder="E-mail"><br>
-                                <input type="password" placeholder="Password"><br>
-                                <input type="tel" placeholder="Tel."><br>
-                                <input type="text" placeholder="Address"><br>
-                            </form>
-                            <div class="descfont">
-                                <label>
-                                    <input type="checkbox" style="filter: grayscale(1) ;">
-                                    Maranee Imphilomlak, Manager position is agree to Poginity Ltd Terms, Data Policy and Cookies Policy
-                                </label>
-                            </div><br>
-                            <div class="al-right" style="margin-right: 10px;">
-                                <button class="savebut">Register</button>
+
+                                <input type="text" name="staff_firstname" placeholder="Name" style="width: 195px;"><input type="text" name="staff_lastname" placeholder="Lastname" style="width: 198px;"><br>
+                                <input type="email" name="staff_email" placeholder="E-mail"><br>
+                                <input type="password"  name="staff_password" placeholder="Password"><br>
+                                <input type="tel" name="staff_phone" placeholder="Tel."><br>
+                                <input type="text" name="staff_address" placeholder="Address"><br>
+
+
+                            <div class="al-right pt-3 text-center " style="margin-right: 10px;">
+                                <button type="submit" name="staffcheck" class="savebut" >Register</button>
                             </div>
                         </td>
+                          </form>
                     </tr>
                 </table>
             </div>
@@ -543,7 +536,7 @@
         <h6>Copyright 2020 Poginity Ltd. All Rights Reserved.</h6>
         <h6>POGINITY Hotel. นาจอมเทียน, พัทยา (คลิ๊กเพื่อดูแผนที่) 095-156-2654 Pogihotel@gmail.com</h6>
     </div>
-    
+
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper.js -->

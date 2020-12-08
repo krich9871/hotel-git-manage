@@ -20,6 +20,7 @@
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-CuOF+2SnTUfTwSZjCXf01h7uYhfOBuxIhGKPbfEJ3+FqH/s6cIFN9bGr1HmAg4fQ" crossorigin="anonymous">
      <link rel="stylesheet" href="home.css">
      <title>Edit Profile</title>
+
      <style >
      table,th,td
      {
@@ -35,6 +36,58 @@
        width: 100% ;
 
      }
+
+            .fl-right{
+                float: right;
+                width: 75%;
+                padding: 20px;
+                background-color:#E5E7E9;
+            }
+            .tab{
+                border-radius:.5rem;
+                border:1px solid gray;
+                color:gray;
+            }
+            .tab table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+                background-color: white;
+                border-radius:.5rem;
+                }
+
+            .tab table td, .tab table th {
+
+                text-align: left;
+                padding: 8px;
+                }
+            .tab table th{
+                font-size:15px;
+                font-weight: normal;
+                text-align:center;
+                height: 50px;
+            }
+            .tab table td{
+                font-size:13px;
+                border-top:1px solid gray;
+                text-align:center;
+            }
+            .tab table td:nth-child(3),.tab table td:nth-child(5),.tab table td:nth-child(6){
+                text-align:left;
+            }
+            .tab table td:nth-child(8){
+                text-align:right;
+            }
+            .tab table tr:nth-child(even) {
+                background-color: #dddddd;
+                }
+
+                        .ft_tab{
+                            color:gray;
+                            font-size: 12px;
+
+                        }
+
   </style>
    </head>
    <div class="container">
@@ -62,10 +115,13 @@
          </div>
      </div>
  </div>
+
      <div class="container-fluid img_1 top_pad" style="padding-bottom:50px;" >
          <div class=" container width_10"  style="width :100%">
 
-               <h1>ข้อมูลการจอง</h1>
+                <div  class="tab ">
+               <h1 class="center pb-3 pt-2">ข้อมูลการจอง</h1>
+
        <table  style="width:100%">
           <tr class="center">
              <th>ID</th>
@@ -115,6 +171,8 @@
 
           ?>
        </table>
+
+   </div>
          </div>
      </div>
      <div class="container-fluid text-center bottom_page padding_top">
