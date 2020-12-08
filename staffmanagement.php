@@ -1,3 +1,12 @@
+<?php
+  require 'php/connect.php' ;
+
+  $qstaff = " SELECT  * FROM staffs  " ; //สามารถ SELECT room.roomid,roomtype.roomtype
+
+  $results = mysqli_query($db,$qstaff) ;
+
+ ?>
+
 ﻿<!doctype html>
 <html lang="en">
   <head>
@@ -12,22 +21,22 @@
     <title>Staff Management | POGINITY HOTEL</title>
 
     <style>
-        
+
         .nolinkline{
             text-decoration: none;
-            
+
         }
 
         .padding_top {
             padding-top: 10%;
-            
+
         }
         .coolip{
             border-radius: .9rem;
             border-width: 0px;
             background-color: gray ;
         }
-        
+
         .staffhead {
             background-image: url("image/mang01.jpg");
             margin: auto;
@@ -36,10 +45,10 @@
             background-size: cover;
             position: relative;
             background-position: center;
-            
+
         }
 
-        
+
         .topicbox {
             border-radius: .9rem;
             text-align: center;
@@ -62,13 +71,13 @@
             margin: auto;
             background-position: center;
             width: 80%;
-        } 
+        }
         .menubutt{
             width: 150px;
             height: 80px;
             background-color: white;
         }
-        
+
         .linkgray{
             text-decoration: none;
             border-bottom: 2px solid rgb(117, 117, 117) ;
@@ -103,7 +112,7 @@
             padding-left:30px;
             width: 150px;
             height: 80px;
-            text-decoration: none;     
+            text-decoration: none;
             margin: auto;
             border-bottom: 2px solid rgb(33, 47, 61) ;
             color: rgb(33, 47, 61);
@@ -124,7 +133,7 @@
             padding-right: 30px;
             padding-bottom: 100px;
             background-size: cover;
-            position: relative; 
+            position: relative;
             background-position: center;
             margin: auto;
             width: 80%;
@@ -164,8 +173,8 @@
         }
 
         .crop {
-            width: 100%; 
-            height: 100px; 
+            width: 100%;
+            height: 100px;
             object-fit: cover;
             border-top-left-radius: .9rem;
             border-top-right-radius: .9rem;
@@ -183,29 +192,29 @@
            items-align:left;
         }
         .staff-tab{
-           width:802px;  
+           width:1000px;
            height:auto;
             margin:auto;
-            border-radius:6px; 
+            border-radius:6px;
             border:1px solid gray;
             background-color: white;
         }
         .staff-tab thead{
             background: #E1FAFE;
-            
+
         }
         .staff-tab table {
-            
+
             font-family: arial, sans-serif;
             margin: auto;
-            border-radius:5px;  
+            border-radius:5px;
             border-collapse: collapse;
-             
-            width:800px;        
+
+            width:1000px;
             }
 
         .staff-tab table tr{
-            
+
             text-align: left;
             padding: 8px;
             }
@@ -213,7 +222,7 @@
             font-size:20px;
             font-weight: normal;
             text-align:center;
-            height: 50px;  
+            height: 50px;
         }
         .staff-tab table td{
             font-size:20px;
@@ -226,16 +235,12 @@
             text-align:center;
         }
 
-         .staff-tab table td:nth-child(1){
-             text-align:left;
-             padding-left : 100px;
-             width: 840px;
-         }
+
         }
         .staff-tab table td:nth-child(2),.staff-tab table td:nth-child(2){
             text-align:center;
-            width: 80px; 
-        }    
+            width: 80px;
+        }
 
         .staff-tab thead tr th:first-child {
             -moz-border-top-left-radius: 5px;
@@ -281,7 +286,7 @@
             position: absolute;
             top: 370px;
             right: 220px;
-            
+
         }
         .newbut{
             height:80px;
@@ -292,12 +297,12 @@
             color:white;
             border-radius: 4rem;
             border:0px;
-            
+
         }
-        .newbut:hover{  
+        .newbut:hover{
             background-color: #04233F;
         }
-        
+
 
     </style>
 
@@ -338,7 +343,7 @@
             <a href="#" class="nolinkline">
                 <div class="p">Manager</div>
             </a>
-        </div>  
+        </div>
     </div>
     <div class="container-fluid" >
         <div class="tabmenu">
@@ -361,43 +366,43 @@
             <div class="staff-tab">
                 <table>
                     <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Edit</th>
+                        <tr >
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            <th>Address</th>
+                            <th>Phone</th>
                             <th>Delete</th>
+                            <th>Edit</th>
+
                         </tr>
                     </thead>
+                    <?php
+                    while ($row_staff=mysqli_fetch_array($results,MYSQLI_ASSOC)) {
+
+
+                     ?>
                     <tbody>
-                        <tr>
-                            <td>Naruemon Kawkla</td>
-                            <td><button class="blue-but">Edit</td>
-                            <td><button class="red-but">Delete</td>
+                        <tr class="text-center">
+                            <td ><?php echo $row_staff['staff_firstname'];  ?></td>
+                            <td ><?php echo $row_staff['staff_lastname'];  ?></td>
+                            <td><?php echo $row_staff['staff_address']; ?></td>
+                            <td><?php echo $row_staff['staff_phone']; ?></td>
+                            <td ><a href="php/delete3.php?staff_id=<?php echo $row_staff['staff_id'] ; ?>" class="center btn btn-light">Delete</a></td>
+                            <td ><a href="php/updates.php?staff_id=<?php echo $row_staff['staff_id'] ; ?>" class="center btn btn-light">Edit</a></td>
                         </tr>
-                        <tr>
-                            <td>Naruemon Kawkla</td>
-                            <td><button class="blue-but">Edit</td>
-                            <td><button class="red-but">Delete</td>
-                        </tr>
-                        <tr>
-                            <td>Naruemon Kawkla</td>
-                            <td><button class="blue-but">Edit</td>
-                            <td><button class="red-but">Delete</td>
-                        </tr>
-                        <tr>
-                            <td>Naruemon Kawkla</td>
-                            <td><button class="blue-but">Edit</td>
-                            <td><button class="red-but">Delete</td>
-                        </tr>
+
                     </tbody>
-                </table> 
-            </div>    
-        </div>       
+
+                  <?php } ?>
+                </table>
+            </div>
+        </div>
     </div>
     <div class="text-center bottom_page" style="padding-top: 20px;padding-bottom: 20px;">
         <h6>Copyright 2020 Poginity Ltd. All Rights Reserved.</h6>
         <h6>POGINITY Hotel. นาจอมเทียน, พัทยา (คลิ๊กเพื่อดูแผนที่) 095-156-2654 Pogihotel@gmail.com</h6>
     </div>
-    
+
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper.js -->

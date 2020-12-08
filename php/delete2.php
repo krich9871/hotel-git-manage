@@ -11,7 +11,7 @@
 
     if ($resultd) {
 
-      header('location: ../profile.php') ;
+      header('location: ../booking.php') ;
 
     }else {
       echo "ไม่่สามารถแก้ไขได้ได้";

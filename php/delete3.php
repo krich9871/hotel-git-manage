@@ -3,15 +3,15 @@
    require 'connect.php' ;
 
 
-   $booking_id = $_GET['booking_id'] ;
+   $staff_id = $_GET['staff_id'] ;
 
 
-    $qdel =  "DELETE  FROM bookings  WHERE booking_id ='$booking_id' " ;
+    $qdel =  "DELETE  FROM staffs  WHERE staff_id ='$staff_id' " ;
     $resultd = mysqli_query($db,$qdel) ;
 
     if ($resultd) {
 
-      header('location: ../profile.php') ;
+      header('location: ../manager.html') ;
 
     }else {
       echo "ไม่่สามารถแก้ไขได้ได้";

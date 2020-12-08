@@ -1,6 +1,17 @@
 
 <?php
   require 'php/profileB.php';
+  $booking_id = $_GET['booking_id'] ;
+
+
+
+  $q = " SELECT customers.firstname , customers.customer_phone , bookings.room_t FROM customers  INNER JOIN bookings ON customers.customer_id = bookings.customer_id WHERE booking_id LIKE $booking_id " ; //สามารถ SELECT room.roomid,roomtype.roomtype
+
+  $resulto = mysqli_query($db,$q) ;
+
+  $rowcus_i = mysqli_fetch_array($resulto,MYSQLI_ASSOC) ;
+
+
 
  ?>
 <!doctype html>
