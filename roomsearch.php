@@ -118,13 +118,17 @@
     <div class="alert back_color_blue">
        <h1>Ocean view</h1>
     </div>
+
   <?php
 
    while ($row1 = mysqli_fetch_array($result1,MYSQLI_ASSOC)) {
 
           $summary1 = $summaryre*$row1['price_room'] ;
-
-
+          if ($row1['count_room'] == 0) {
+            echo '<script type="text/javascript">';
+            echo ' alert("ห้องเต็มแล้ว")';
+            echo '</script>';
+          }else{
    ?>
 
 
@@ -175,7 +179,7 @@
 
 
     <?php
-    }
+  }  }
 
     mysqli_free_result($result1) ;
 
@@ -191,6 +195,11 @@
 
       $summary1 = $summaryre*$row2['price_room'] ;
 
+      if ($row2['count_room'] == 0) {
+        echo '<script type="text/javascript">';
+        echo ' alert("ห้องเต็มแล้ว")';
+        echo '</script>';
+      }else{
 
     ?>
 
@@ -241,7 +250,7 @@
 
 
      <?php
-     }
+  }   }
 
      mysqli_free_result($result2) ;
 

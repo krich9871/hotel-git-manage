@@ -15,8 +15,14 @@
       $fh_count = $_POST['fh_count'] ;
       $fh_price = $_POST['fh_price'] ;
 
-
-
+      if ($fh_price == 1599) {
+          $count = $optradio/1599 ;
+      } elseif ($fh_price == 999) {
+          $count = $optradio/999 ;
+      }
+      $count = $fh_count-$count ;
+      $qcount = "UPDATE food_and_hall SET fh_count='$count' WHERE fh_name LIKE '$fh_name' " ;
+      $rescount = mysqli_query($db,$qcount) ;
 
 
       $queryf = "INSERT INTO bookings(Price_r,room_t,number_of_guest,checkin,time1,customer_id) VALUES('$optradio','$fh_name','$fh_number_guest','$checkin','$time_s','$idcus')" ;
