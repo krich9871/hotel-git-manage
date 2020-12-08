@@ -64,21 +64,15 @@
                <button type="submit" class="nav-link color btn btn_light" formaction="reservation.php" name="button">Room</button>
             </div>
 
-
         <div class="col top_and_bottom border_right">
           <input type="hidden" name="customer_id" value="<?php echo $_SESSION['id']; ?>">
           <button type="submit" class="nav-link color btn btn_light" formaction="food.php"  name="button">Restaurant</button>
         </div>
 
-
-
           <div class="col top_and_bottom border_right">
              <input type="hidden" name="customer_id" value="<?php echo $_SESSION['id']; ?>">
              <button type="submit" class="nav-link color btn btn_light" formaction="hallreservation.php" name="button">Hall</button>
           </div>
-
-
-
 
             <div class="col top_and_bottom">
                 <a href="#" class="nav-link color"><b>POGINITY HOTEL</b></a>
@@ -93,7 +87,7 @@
             <div class="col top_and_bottom">
               <?php if (empty($_SESSION['firstname'])){ ?>
                        <a href="login.php" class="nav-link color">Login</a>
-              <?php }elseif($_SESSION['firstname']) { ?>
+              <?php }else if($_SESSION['firstname']) { ?>
 
                       <div >
 

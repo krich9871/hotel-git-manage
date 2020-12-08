@@ -1,4 +1,7 @@
-
+<?php
+    require 'php/loginB.php' ;
+    session_start() ;
+?>
 
 ﻿<!doctype html>
 <html lang="en">
@@ -188,6 +191,7 @@
 
   </head>
   <body>
+    <form method="post">
     <div class="container-fluid">
         <div class="row text-center align-items-center">
             <div class="col top_and_bottom border_right">
@@ -208,8 +212,25 @@
             <div class="col top_and_bottom border_right">
                 <a href="#" class="nav-link color">Contact Us</a>
             </div>
-            <div class="col top_and_bottom">
-                <a href="#" class="nav-link color">Login</a>
+            <div class="col top_and_bottom">  
+              <?php 
+              if (empty($_SESSION['firstname'])){ ?>
+                       <a href="login.php" class="nav-link color">Login</a>
+              <?php }
+              else if($_SESSION['firstname']) { ?>
+
+                      <div>
+                        <div class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <?php echo $_SESSION['firstname'] ; ?>
+                              </a>
+                                <div class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
+                                    <div class="dropdown-divider"></div>
+                                    <input type="submit" name="logout" formaction="php/logout.php" value="Logout">
+                                </div>
+                            </div>
+                      </div>
+               <?php  }  ?>
             </div>
         </div>
     </div>

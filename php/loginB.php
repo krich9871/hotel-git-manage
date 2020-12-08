@@ -45,13 +45,13 @@
        $_SESSION['id'] = $row_user['customer_id'] ;
        $_SESSION['firstname'] = $row_user['customer_firstname'] ;
        header('location: ../home.php') ;
-     }elseif ($row_staff['staff_email'] == $email) {
-       $_SESSION['id'] = $row_user['staff_id'] ;
-       $_SESSION['firstname'] = $row_user['staff_firstname'] ;
+     }else if ($row_staff['staff_email'] == $email) {
+       $_SESSION['id'] = $row_staff['staff_id'] ;
+       $_SESSION['firstname'] = $row_staff['staff_firstname'] ;
        header('location: ../staff.php') ;
      }else {
-       $_SESSION['id'] = $row_user['manager_id'] ;
-       $_SESSION['firstname'] = $row_user['managers_firstname'] ;
+       $_SESSION['id'] = $row_manager['manager_id'] ;
+       $_SESSION['firstname'] = $row_manager['managers_firstname'] ;
        header('location: ../manager.html') ;
      }
 
