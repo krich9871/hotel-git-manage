@@ -6,6 +6,10 @@
   $results = mysqli_query($db,$qstaff) ;
 
  ?>
+<?php
+require 'php/loginB.php' ;
+session_start() ;
+?>
 
 ﻿<!doctype html>
 <html lang="en">
@@ -189,7 +193,7 @@
         .padd{
            width:300px;
            height:200px;
-           items-align:left;
+           align-items:left;
         }
         .staff-tab{
            width:1000px;
@@ -236,7 +240,7 @@
         }
 
 
-        }
+        
         .staff-tab table td:nth-child(2),.staff-tab table td:nth-child(2){
             text-align:center;
             width: 80px;
@@ -293,7 +297,7 @@
             width:80px;
             background-color: #0F3A62;
             text-align:center;
-            items-align:center;
+            align-items:center;
             color:white;
             border-radius: 4rem;
             border:0px;
@@ -329,12 +333,29 @@
                 <a href="#" class="nav-link color">Contact Us</a>
             </div>
             <div class="col top_and_bottom">
-                <a href="#" class="nav-link color">Login</a>
-            </div>
+                <?php
+                if (empty($_SESSION['firstname'])){ ?>
+                         <a href="login.php" class="nav-link color">Login</a>
+                <?php }
+                else if($_SESSION['firstname']) { ?>
+  
+                        <div>
+                          <div class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <?php echo $_SESSION['firstname'] ; ?>
+                                </a>
+                                  <div class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
+  
+                                      <input type="submit" name="logout" class="btn btn-light" formaction="php/logout.php" value="Logout">
+                                  </div>
+                              </div>
+                        </div>
+                 <?php  }  ?>
+              </div>
         </div>
     </div>
     <div class="newstaff">
-            <a href="staffregister.html">
+            <a href="staffregister.php">
                 <button class="newbut"><i class="fas fa-plus" style="width:30px;height:auto;"></i></button>
             </a>
     </div>
@@ -349,7 +370,7 @@
         <div class="tabmenu">
             <span class="menubutt">
                 <span class="linkgray" >
-                    <a href="manager.html">
+                    <a href="manager.php">
                         Home
                     </a>
                 </span>

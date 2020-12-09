@@ -24,7 +24,7 @@
       if ($rows['staff_email'] == $staff_email) {
 
           $_SESSION["exists"] ="This Email is already exists." ;
-          header('location: ../manager.html') ;
+          header('location: ../manager.php') ;
         // echo "Email is exists";
       }
 
@@ -35,7 +35,7 @@
 
 
       if ($result8) {
-         header('location: ../manager.html') ;
+         header('location: ../manager.php') ;
       } else {
 
          echo "เกิดข้อผิดพลาดโดยไม่ทราบ".mysqli_error($db);

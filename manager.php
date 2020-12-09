@@ -184,7 +184,7 @@
         .padd{
            width:300px;
            height:200px;
-           items-align:left;
+           align-items:left;
         }
 
     </style>
