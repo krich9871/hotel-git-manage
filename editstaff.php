@@ -6,6 +6,12 @@
    $row = mysqli_fetch_array($res,MYSQLI_ASSOC) ;
    $staff_id = $_GET['staff_id'] ;
  ?>
+
+<?php
+    require 'php/loginB.php' ;
+    session_start() ;
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -188,7 +194,7 @@
         .padd{
            width:320px;
            height:200px;
-           items-align:left;
+           align-items:left;
         }
         .editbbox{
             width: 950px;
@@ -256,7 +262,7 @@
         }
         .servicetab label:hover{
             border: 1px solid #092947;
-            color:#092947s;
+            color:#092947;
         }
         .servicetab select{
             border: 1px solid #0F3A62;
@@ -438,7 +444,7 @@
             height:200px;
             width:200px;
             text-align:center;
-            items-align:center;
+            align-items:center;
             color: #0F3A62;
             margin: auto;
             border:0px;
@@ -451,13 +457,12 @@
             position: absolute;
             left: 295px;
         }
-        .circle:hover{
-            ;
-        }
+
     </style>
 
   </head>
   <body>
+
     <div class="container-fluid">
         <div class="row text-center align-items-center">
             <div class="col top_and_bottom border_right">
@@ -479,7 +484,24 @@
                 <a href="#" class="nav-link color">Contact Us</a>
             </div>
             <div class="col top_and_bottom">
-                <a href="#" class="nav-link color">Login</a>
+              <?php
+              if (empty($_SESSION['firstname'])){ ?>
+                       <a href="login.php" class="nav-link color">Login</a>
+              <?php }
+              else if($_SESSION['firstname']) { ?>
+
+                      <div>
+                        <div class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <?php echo $_SESSION['firstname'] ; ?>
+                              </a>
+                                <div class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
+
+                                    <input type="submit" name="logout" class="btn btn-light" formaction="php/logout.php" value="Logout">
+                                </div>
+                            </div>
+                      </div>
+               <?php  }  ?>
             </div>
         </div>
     </div>
@@ -530,7 +552,7 @@
 
                                 <input type="text" name="staff_firstname" value="<?php echo $row['staff_firstname'] ?>" style="width: 195px;"><input type="text" name="staff_lastname" value="<?php echo $row['staff_lastname'] ?>" style="width: 198px;"><br>
                                 <input type="email" name="staff_email"value="<?php echo $row['staff_email'] ?>"><br>
-                                <input type="password" name="staff_password" placeholder="Password"><br>
+                                <input type="password" name="staff_password" placeholder="Password" pattern="(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])[A-Za-z0-9]{8,32}" title="Password length must be 8-32 and contain at least one 'A-Z', 'a-z' and 'number'. (exclude special characters.)" required><br>
                                 <input type="tel" name="staff_phone" value="<?php echo $row['staff_phone'] ?>"><br>
                                 <input type="text" name="staff_address" value="<?php echo $row['staff_address'] ?>"><br>
                                 <input type="hidden" name="staff_id" value="<?php echo $staff_id ;?>"><br>
