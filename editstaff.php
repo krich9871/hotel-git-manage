@@ -553,7 +553,7 @@
                                 <input type="text" name="staff_firstname" value="<?php echo $row['staff_firstname'] ?>" style="width: 195px;"><input type="text" name="staff_lastname" value="<?php echo $row['staff_lastname'] ?>" style="width: 198px;"><br>
                                 <input type="email" name="staff_email"value="<?php echo $row['staff_email'] ?>"><br>
                                 <input type="password" name="staff_password" placeholder="Password" pattern="(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])[A-Za-z0-9]{8,32}" title="Password length must be 8-32 and contain at least one 'A-Z', 'a-z' and 'number'. (exclude special characters.)" required><br>
-                                <input type="tel" name="staff_phone" value="<?php echo $row['staff_phone'] ?>"><br>
+                                <input type="tel" name="staff_phone" value="<?php echo $row['staff_phone'] ?>" pattern="[0-9]{1,}" title="Phone Number must be only number." required><br>
                                 <input type="text" name="staff_address" value="<?php echo $row['staff_address'] ?>"><br>
                                 <input type="hidden" name="staff_id" value="<?php echo $staff_id ;?>"><br>
 

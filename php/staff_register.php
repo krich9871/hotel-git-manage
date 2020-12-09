@@ -24,8 +24,8 @@
       if ($rows['staff_email'] == $staff_email) {
 
           $_SESSION["exists"] ="This Email is already exists." ;
-          header('location: ../manager.php') ;
-        // echo "Email is exists";
+          header('location: ../staffregister.php') ;
+          // echo "Email is exists";
       }
 
      else {

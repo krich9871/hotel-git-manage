@@ -1,7 +1,8 @@
 ﻿<?php
-require 'php/loginB.php' ;
-session_start() ;
+require 'php/staff_register.php' ;
+session_start();
 ?>
+
 
 <!doctype html>
 <html lang="en">
@@ -539,7 +540,7 @@ session_start() ;
                                 <input type="text" name="staff_firstname" placeholder="Name" style="width: 195px;"><input type="text" name="staff_lastname" placeholder="Lastname" style="width: 198px;"><br>
                                 <input type="email" name="staff_email" placeholder="E-mail"><br>
                                 <input type="password"  name="staff_password" placeholder="Password" pattern="(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])[A-Za-z0-9]{8,32}" title="Password length must be 8-32 and contain at least one 'A-Z', 'a-z' and 'number'. (exclude special characters.)" required><br>
-                                <input type="tel" name="staff_phone" placeholder="Tel."><br>
+                                <input type="tel" name="staff_phone" placeholder="Tel." pattern="[0-9]{1,}" title="Phone Number must be only number." required><br>
                                 <input type="text" name="staff_address" placeholder="Address"><br>
 
 
