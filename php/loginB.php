@@ -49,10 +49,10 @@
        $_SESSION['id'] = $row_staff['staff_id'] ;
        $_SESSION['firstname'] = $row_staff['staff_firstname'] ;
        header('location: ../staff.php') ;
-     }else {
+     }else if ($row_manager['manager_email'] == $email) {
        $_SESSION['id'] = $row_manager['manager_id'] ;
-       $_SESSION['firstname'] = $row_manager['managers_firstname'] ;
-       header('location: ../manager.html') ;
+       $_SESSION['firstname'] = $row_manager['manager_firstname'] ;
+       header('location: ../manager.php') ;
      }
 
  } else{
