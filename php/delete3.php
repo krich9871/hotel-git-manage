@@ -11,7 +11,7 @@
 
     if ($resultd) {
 
-      header('location: ../manager.html') ;
+      header('location: ../manager.php') ;
 
     }else {
       echo "ไม่่สามารถแก้ไขได้ได้";
