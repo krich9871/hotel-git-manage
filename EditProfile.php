@@ -51,9 +51,9 @@
                 <h1 class="mb-4 ">Profile</h1>
                 <div class="mb-2 row " style="padding: 1%; align-items: center">
                     <div class="col-md-2 text-right"><label for="name">First Name:</label></div>
-                    <div class="col-md-3 text-left" ><input class="coolip" name="customer_firstname" type="name" id="name" require style="width: 220px; "required></div> <div class="col-1"></div>
+                    <div class="col-md-3 text-left" ><input class="coolip" name="customer_firstname" value="<?php echo $_SESSION['firstname']; ?>" type="name" id="name" require style="width: 220px; "required></div> <div class="col-1"></div>
                     <div class="col-md-2 text-right"><label for="name" >Last Name:</label></div>
-                    <div class="col-md-3 text-left"> <input class="coolip" name="customer_lastname" type="name" id="name" require  style="width: 220px;"required></div>
+                    <div class="col-md-3 text-left"> <input class="coolip" name="customer_lastname"  value="<?php echo $_SESSION['lastname']; ?>" type="name" id="name" require  style="width: 220px;"required></div>
                 </div>
                 <div class="mb-2 row" style="padding: 1%; align-items: center">
                     <div class="col-md-2 text-right"><label for="Email"></label>Email:</label></div>
@@ -63,7 +63,7 @@
                 </div>
                 <div class="mb-2 row" style="padding: 1%; align-items: center;">
                     <div class="col-md-2 text-right"><label for="Email"></label>Phone Number:</label></div>
-                    <div class="col-md-3 text-left"><input class="coolip" name="customer_phone" type="name" id="name" style="width: 220px;" pattern="[0-9]{1,}" title="Phone Number must be only number." required></div> <div class="col-1"></div>
+                    <div class="col-md-3 text-left"><input class="coolip" name="customer_phone" value="<?php echo $_SESSION['phone']; ?>" type="name" id="name" style="width: 220px;" pattern="[0-9]{1,}" title="Phone Number must be only number." required></div> <div class="col-1"></div>
                     <input type="hidden" name="customer_id" value="<?php echo $_SESSION['id']; ?>">
                 </div>
                 <div class="mb-2 row" style="padding: 5%;">

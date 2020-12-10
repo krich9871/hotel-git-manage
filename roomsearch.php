@@ -125,9 +125,7 @@
 
           $summary1 = $summaryre*$row1['price_room'] ;
           if ($row1['count_room'] == 0) {
-            echo '<script type="text/javascript">';
-            echo ' alert("ห้องเต็มแล้ว")';
-            echo '</script>';
+
           }else{
    ?>
 
@@ -196,9 +194,7 @@
       $summary1 = $summaryre*$row2['price_room'] ;
 
       if ($row2['count_room'] == 0) {
-        echo '<script type="text/javascript">';
-        echo ' alert("ห้องเต็มแล้ว")';
-        echo '</script>';
+       
       }else{
 
     ?>

@@ -2,6 +2,10 @@
  require 'php/loginB.php' ;
  session_start() ;
 
+if (!isset($_SESSION['firstname'])) {
+  header('location: login.php') ;
+}
+
 ?>
 
 
@@ -101,8 +105,8 @@
                                 <input type="submit" name="profile" formaction="php/profileB.php" value="Profile" class="btn btn_light">
 
 
-                                  <div class="dropdown-divider"></div>
-                                  <input type="submit" name="logout" formaction="php/logout.php" value="Logout">
+                                  <div class="dropdown-divider  "></div>
+                                  <input type="submit" name="logout" class="btn btn_light" formaction="php/logout.php" value="Logout">
 
                                 </div>
 

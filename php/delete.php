@@ -5,7 +5,7 @@
 
    $booking_id = $_GET['booking_id'] ;
 
-
+   
        $qb = "SELECT * FROM bookings WHERE booking_id LIKE $booking_id" ;
        $reb = mysqli_query($db,$qb) ;
        $rowb = mysqli_fetch_array($reb,MYSQLI_ASSOC) ;

@@ -133,7 +133,9 @@ $result1 = mysqli_query($db,$qroom1) ;
 
      while ($row1 = mysqli_fetch_array($result1,MYSQLI_ASSOC)) {
 
+       if ($row1['fh_count'] == 0) {
 
+       }else{
 
 
      ?>
@@ -180,7 +182,10 @@ $result1 = mysqli_query($db,$qroom1) ;
         </div>
     </div>
     <?php
-  }
+  } }
+
+  mysqli_free_result($result1) ;
+
      ?>
 
 
