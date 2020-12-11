@@ -521,6 +521,10 @@ session_start();
         <div class="menubody">
             <div class="editbbox">
                 <table>
+                <h1><?php  if (isset($_SESSION['exists'])) :
+                  echo $_SESSION['exists'];
+                  unset($_SESSION['exists']) ;
+                   endif ?></h1>
                     <tr>
                         <td style="width:435px;">
                             <div class="al-right register-left">
