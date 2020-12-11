@@ -1,5 +1,6 @@
 <?php
-
+require 'restaurantsearch.php' ;
+session_start() ;
 
 
 $fh_name = $_POST['fh_name'] ;
@@ -44,7 +45,7 @@ $fh_price3 = $fh_price*4 ;
 }
 
 .back_color_blues {
-    background-color: rgba(129, 213, 228, 0.658);
+    background-color: rgb(129, 213, 228);
     color: white;
     padding-top: 30px;
     padding-bottom: 30px;
