@@ -17,7 +17,7 @@
    $summary=floor($calculate / 86400);
 
    $summarytest = $summary ;
-   if ($summarytest>0) {
+   if ($summarytest>=0) {
          header('location: reservation.php') ;
    } else {
        $summaryre = abs($summary) ;
