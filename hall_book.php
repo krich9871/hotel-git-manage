@@ -18,7 +18,7 @@
 
      require 'php/loginB.php' ;
      session_start() ;
-    
+
 
 
  ?>
@@ -232,9 +232,9 @@
                     <img src="image/<?php echo $fh_image; ?>" width="100%px">
                   </div>
                   <div class="col">
-                    <h6>ประเภทห้อง: ><?php echo $fh_name; ?></h6>
+                    <h6>ประเภทห้อง: <?php echo $fh_name; ?></h6>
                     <h6>จำนวนห้องที่เหลือ: <?php echo $fh_count; ?> ห้อง</h6>
-                    <h6>สำหรับผู้เข้าพัก: <?php echo $fh_number_guest; ?> คน</h6>
+                    <h6>สำหรับจำนวนคน: <?php echo $fh_number_guest; ?> คน</h6>
                     <h6>จำนวนเงิน: <?php echo $fh_price; ?> THB</h6>
                   </div>
               </div>
