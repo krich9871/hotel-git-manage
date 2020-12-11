@@ -335,7 +335,7 @@ session_start() ;
             <div class="col top_and_bottom">
               <form  method="post">
 
-          
+
                 <?php
                 if (empty($_SESSION['firstname'])){ ?>
                          <a href="login.php" class="nav-link color">Login</a>
@@ -359,7 +359,10 @@ session_start() ;
     </div>
     <div class="newstaff">
             <a href="staffregister.php">
-                <button class="newbut"><i class="fas fa-plus" style="width:30px;height:auto;"></i></button>
+               <div class="newbut">
+                     <i class="fas fa-plus pt-3" style="width:30px;height:auto;"></i>
+               </div>
+
             </a>
     </div>
     <div class="container-fluid staffhead" style="text-align: center;" >

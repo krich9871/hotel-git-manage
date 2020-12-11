@@ -44,7 +44,7 @@
                 <a href="#" class="nav-link color">Contact Us</a>
             </div>
             <div class="col top_and_bottom">
-                <a href="#" class="nav-link color">Login</a>
+                <a href="login.php" class="nav-link color">Login</a>
             </div>
         </div>
     </div>

@@ -5,10 +5,9 @@ session_start();
  if (isset($_POST['logout'])) {
 
      unset($_SESSION['firstname']) ;
+
      header('location: ../home.php') ;
 
- }else {
-    header('location: ../home.php') ;
  }
 
 

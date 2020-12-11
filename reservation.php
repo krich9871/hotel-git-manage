@@ -10,9 +10,6 @@ if (empty($_POST['customer_id'])) {
  session_start() ;
 
 
-   if (!isset($idcus)) {
-     header('location: login.php') ;
-   }
 
 
 

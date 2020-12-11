@@ -1,5 +1,6 @@
 
 <?php
+
   $fh_name = $_POST['fh_name'] ;
   $fh_price = $_POST['fh_price'] ;
   $fh_count = $_POST['fh_count'] ;
@@ -79,13 +80,13 @@
   <form method="post">
     <div class="container">
         <div class="row text-center align-items-center">
-            <div class="col top_and_bottom border_right back_select">
+            <div class="col top_and_bottom border_right">
                 <a href="#" class="nav-link color">Room</a>
             </div>
             <div class="col top_and_bottom border_right">
                 <a href="#" class="nav-link color">Restaurant</a>
             </div>
-            <div class="col top_and_bottom">
+            <div class="col top_and_bottom back_select">
                 <a href="#" class="nav-link color">Hall</a>
             </div>
             <div class="col top_and_bottom">
@@ -168,12 +169,12 @@
 <form action="php/booking_bhall.php" method="post">
 
       <div class="container text-center mt-5 mb-5 border p-5 set_width">
-          <h1 class="text-left"><?php echo $fh_name; ?></h1>
+          <h1 class="text-left"><?php echo $fh_name ; ?></h1>
           <div class="row mt-3 p-1">
               <div class="col border-right text-left p-3">
 
-                <h6>จำนวนห้องที่เหลือ : <?php echo $fh_count; ?> </h6>
-                <h6>สำหรับจำนวนคน : <?php echo $fh_number_guest ?></h6>
+                <h6>จำนวนห้องที่เหลือ : <?php echo $fh_count ; ?> </h6>
+                <h6>สำหรับจำนวนคน : <?php echo $fh_number_guest ; ?></h6>
               </div>
               <div class="col text-left p-3">
                 <h5>Special Request</h5>

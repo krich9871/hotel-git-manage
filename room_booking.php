@@ -231,7 +231,7 @@ session_start() ;
             <div class="modal-body">
               <div class="row align-items-center">
                   <div class="col">
-                    <img src="image/Room1.jpg" width="100%px">
+                    <img src="image/<?php echo $image; ?>" width="100%px">
                   </div>
                   <div class="col">
                     <h6>ประเภทห้อง: <?php echo $room; ?></h6>

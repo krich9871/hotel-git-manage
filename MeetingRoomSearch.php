@@ -84,7 +84,7 @@
     </style>
   </head>
   <body>
-  <form method="post">
+
     <div class="container">
         <div class="row text-center align-items-center">
             <div class="col top_and_bottom border_right">
@@ -117,12 +117,15 @@
                                 <?php echo $_SESSION['firstname'] ; ?>
                               </a>
                               <div class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
-
+                           <form method="post">
                                 <input type="hidden" name="customer_id" value="<?php echo $_SESSION['id']; ?>">
                                 <input type="submit" name="profile" formaction="php/profileB.php" value="Profile" class="btn btn_light">
 
                                   <div class="dropdown-divider  "></div>
                                   <input type="submit" name="logout" class="btn btn_light" formaction="php/logout.php" value="Logout">
+
+
+                                  </form>
                                 </div>
                             </div>
                       </div>
@@ -167,7 +170,7 @@
      <div class="alert back_color_green">
          <h1><?php echo $row1['fh_name']; ?></h1>
      </div>
-
+    <form  action="hall_book.php" method="post">
     <div class="container width_2 text-center align-items-center" style="margin-bottom :50px">
         <div class="row justify-content-md-center border">
             <div class="col-auto">
@@ -182,7 +185,10 @@
                     <div class="col">
                         <h2><?php echo $row1['fh_price']; ?> THB</h2>
                     </div>
+
+
                     <div class="col pt-1">
+
                             <input type="hidden" name="fh_name" value="<?php echo $row1['fh_name']; ?>">
                             <input type="hidden" name="fh_price" value="<?php echo $row1['fh_price']; ?>">
                             <input type="hidden" name="fh_count" value="<?php echo $row1['fh_count']; ?>">
@@ -193,13 +199,15 @@
                             <input type="hidden" name="checkin" value="<?php echo $checkin; ?>">
                             <input type="hidden" name="time_s" value="<?php echo $time_s; ?>">
                             <input type="hidden" name="customer_id" value="<?php echo $idcus; ?>">
-                            <button type="submit" class="btn btn-light rounded" style="width: 200px;border-radius: .9rem!important;" formaction="hall_book.php">More Detail</button>
+                            <button type="submit" class="btn btn-light rounded" style="width: 200px;border-radius: .9rem!important;" >More Detail</button>
 
                     </div>
+
                 </div>
             </div>
         </div>
     </div>
+    </form>
 
     <?php
 }  }
