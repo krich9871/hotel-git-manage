@@ -1,11 +1,8 @@
 
 <?php
   require 'php/profileB.php';
-
-
-
-
  ?>
+ 
 <!doctype html>
 <html lang="en">
   <head>
