@@ -4,9 +4,18 @@ $checkin = $_POST['checkin'] ;
 $time_s = $_POST['time_s'] ;
 $idcus =$_POST['customer_id'] ;
 
+
+   if (!isset($idcus)) {
+     header('location: login.php') ;
+   }
+
+
+
 $qroom1 = " SELECT * FROM food_and_hall  WHERE fh_type LIKE 2 " ; //สามารถ SELECT room.roomid,roomtype.roomtype
 
 $result1 = mysqli_query($db,$qroom1) ;
+
+
 
 
  ?>
@@ -121,9 +130,7 @@ $result1 = mysqli_query($db,$qroom1) ;
                       <option><?php echo $time_s ?></option>
                       </select>
                     </div>
-                    <div class="col-auto">
-                        <a href="food.php" class="btn btn-light">Back</a>
-                    </div>
+                  
                 </div>
             </form>
         </div>
@@ -145,13 +152,13 @@ $result1 = mysqli_query($db,$qroom1) ;
     </div>
 
     <div class="container width_2 text-center align-items-center" style="margin-bottom :50px">
-        <div class="row justify-content-md-center" style="border-style:solid; border-color:gray">
+        <div class="row justify-content-md-center border">
             <div class="col-auto">
-                <img src="image/buff1.jpg" width="400px">
+                <img src="image/<?php echo $row1['fh_image']; ?>" width="400px">
             </div>
             <div class="col-auto p-2 text-left">
                 <h3><?php echo $row1['fh_name'] ?></h3>
-                <h5>จำนวนนั่งคง่เหลือ: <?php echo $row1['fh_count']; ?></h5>
+                <h5>จำนวนนั่งคงเหลือ: <?php echo $row1['fh_count']; ?></h5>
                 <h5>สำหรับผู้จอง: <?php echo $row1['fh_number_guest']; ?> คน</h5>
 
                 <div class="row pt-5">

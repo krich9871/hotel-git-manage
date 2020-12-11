@@ -13,6 +13,11 @@
   $image1 = $_POST['image1'] ;
   $image2 = $_POST['image2'] ;
 
+     if (!isset($idcus)) {
+       header('location: login.php') ;
+     }
+
+
 
  ?>
 
@@ -100,10 +105,7 @@
                         <b><label for="checkout">CHECK OUT</label></b>
                         <input type="date" id="checkout" class="form_field" value="<?php echo $checkout ; ?>">
                     </div>
-                    <div class="col-auto">
-                      <a href="reservation.php" class="btn btn-light">Back</a>
 
-                    </div>
                 </div>
             </form>
         </div>

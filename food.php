@@ -1,5 +1,12 @@
 <?php
 $idcus = $_POST['customer_id']  ;
+
+
+   if (!isset($idcus)) {
+     header('location: login.php') ;
+   }
+
+
  ?>
 
 <!doctype html>

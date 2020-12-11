@@ -4,6 +4,9 @@
    $checkout = $_POST['checkout'] ;
    $idcus =$_POST['customer_id'] ;
 
+
+
+
    $qroom1 = " SELECT room_type.room , type.typename , room_type.person_amount , room_type.count_room , room_type.image , room_type.price_room, room_type.image1, room_type.image2 FROM room_type  INNER JOIN type ON room_type.type_id11 = type.type_id11 WHERE room_type.type_id11 LIKE 1 " ; //สามารถ SELECT room.roomid,roomtype.roomtype
 
    $result1 = mysqli_query($db,$qroom1) ;
@@ -17,11 +20,17 @@
    $summary=floor($calculate / 86400);
 
    $summarytest = $summary ;
-   if ($summarytest>0) {
-         header('location: reservation.php') ;
+   if ($summarytest>=0) {
+         header('location: home.php ') ;
    } else {
        $summaryre = abs($summary) ;
    }
+
+  if (!isset($idcus)) {
+     header('location: login.php') ;
+   }
+
+
 
 
 
@@ -106,10 +115,7 @@
                         <b><label for="checkout">CHECK OUT</label></b>
                         <input type="date" id="checkout" class="form_field" value="<?php echo $checkout ; ?>">
                     </div>
-                    <div class="col-auto">
-                      <a href="reservation.html" class="btn btn-light">Back</a>
 
-                    </div>
                 </div>
             </form>
         </div>
@@ -194,7 +200,7 @@
       $summary1 = $summaryre*$row2['price_room'] ;
 
       if ($row2['count_room'] == 0) {
-       
+
       }else{
 
     ?>
@@ -225,7 +231,7 @@
                           <input type="hidden" id="checkin" name="summary1"  value="<?php echo $summary1 ; ?>">
                           <input type="hidden" id="checkin"name="checkin1" value="<?php echo $checkin ; ?>">
                           <input type="hidden" id="checkout" class="form_field"name="checkout1" value="<?php echo $checkout ; ?>">
-                          <input type="hidden" name="customer_id" value="<?php echo $idcus; ?>">
+                          <input type="text" name="customer_id" value="<?php echo $idcus; ?>">
                           <input type="hidden" name="room_t" value="<?php echo $row2['room']; ?>">
                           <input type="hidden" name="number_of_guest" value="<?php echo $row2['person_amount']; ?>">
                           <input type="hidden" name="count" value="<?php echo $row2['count_room']; ?>">

@@ -12,6 +12,13 @@
   $idcus= $_POST['customer_id'] ;
 
 
+     if (!isset($idcus)) {
+       header('location: login.php') ;
+     }
+
+
+
+
  ?>
 <!doctype html>
 <html lang="en">
@@ -107,10 +114,7 @@
                       <option><?php echo $time_s ?></option>
                       </select>
                     </div>
-                    <div class="col-auto">
-                      <a href="reservation.php" class="btn btn-light">Back</a>
-
-                    </div>
+                  
                 </div>
             </form>
         </div>
@@ -119,13 +123,13 @@
     <div id="carouselExampleControls" class="carousel slide pt-5" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="image/hallre1.jpg" class="d-block w-100 top_bottom">
+            <img src="image/<?php echo $fh_image; ?>" class="d-block w-100 top_bottom">
           </div>
           <div class="carousel-item">
-            <img src="image/hallre1_1.jpg" class="d-block w-100 top_bottom" >
+            <img src="image/<?php echo $fh_image1; ?>" class="d-block w-100 top_bottom" >
           </div>
           <div class="carousel-item">
-            <img src="image/hallre1_2.jpg" class="d-block w-100 top_bottom" >
+            <img src="image/<?php echo $fh_image2; ?>" class="d-block w-100 top_bottom" >
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -202,7 +206,7 @@
             <div class="modal-body">
               <div class="row align-items-center">
                   <div class="col">
-                    <img src="image/Room1.jpg" width="100%px">
+                    <img src="image/<?php echo $fh_image; ?>" width="100%px">
                   </div>
                   <div class="col">
                     <h6>ประเภทห้อง: ><?php echo $fh_name; ?></h6>

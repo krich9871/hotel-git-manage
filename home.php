@@ -2,9 +2,6 @@
  require 'php/loginB.php' ;
  session_start() ;
 
-if (!isset($_SESSION['firstname'])) {
-  header('location: login.php') ;
-}
 
 ?>
 
@@ -65,17 +62,17 @@ if (!isset($_SESSION['firstname'])) {
 
             <div class="col top_and_bottom border_right ">
                <input type="hidden" name="customer_id" value="<?php echo $_SESSION['id']; ?>">
-               <button type="submit" class="nav-link color btn btn_light" formaction="reservation.php" name="button">Room</button>
+               <button type="submit" class="color btn btn_light" formaction="reservation.php" name="button">Room</button>
             </div>
 
         <div class="col top_and_bottom border_right">
           <input type="hidden" name="customer_id" value="<?php echo $_SESSION['id']; ?>">
-          <button type="submit" class="nav-link color btn btn_light" formaction="food.php"  name="button">Restaurant</button>
+          <button type="submit" class="color btn btn_light" formaction="food.php"  name="button">Restaurant</button>
         </div>
 
-          <div class="col top_and_bottom border_right">
+          <div class="col top_and_bottom">
              <input type="hidden" name="customer_id" value="<?php echo $_SESSION['id']; ?>">
-             <button type="submit" class="nav-link color btn btn_light" formaction="hallreservation.php" name="button">Hall</button>
+             <button type="submit" class="color btn btn_light" formaction="hallreservation.php" name="button">Hall</button>
           </div>
 
             <div class="col top_and_bottom">

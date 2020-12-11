@@ -1,9 +1,17 @@
 <?php
 if (empty($_POST['customer_id'])) {
 
+
 }else {
   $idcus = $_POST['customer_id']  ;
+
 }
+
+
+   if (!isset($idcus)) {
+     header('location: login.php') ;
+   }
+
 
 
  ?>

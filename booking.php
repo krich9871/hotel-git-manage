@@ -489,18 +489,7 @@ $result1 = mysqli_query($db,$qroom1) ;
 
         </div>
     </div>
-    <div class="container-fluid" style="background-color:gray;">
-        <div class="tabmenu" style="background-color:gray;padding: 10px;">
-            <div class="searchbox">
-                <form onsubmit="#" role="search_booking" style="width: 100%;">
-                    <input id="search" type="search" placeholder="Reservation Search" autofocus required style="width: 95%;" />
-                    <button class="searchbt">
-                        <i class="fas fa-search"></i>
-                    </button>
-                  </form>
-            </div>
-        </div>
-    </div>
+  
     <div class="fl clear">
 
         <div class="fl-left" >
@@ -579,7 +568,7 @@ $result1 = mysqli_query($db,$qroom1) ;
 
 
                      ?>
-         
+
                     <tr class="center">
                       <td><?php echo $row['booking_id']; ?></td>
                       <td><?php echo $row['customer_id']; ?></td>
@@ -607,7 +596,7 @@ $result1 = mysqli_query($db,$qroom1) ;
                 </table>
 
             </div>
-            <p style="font-family:Cordia New;font-size:20px;color:gray;text-align:center;">หน้า 1 จาก 5</p>
+
         </div>
     </div>
     <div class="text-center bottom_page" style="padding-top: 20px;padding-bottom: 20px;">

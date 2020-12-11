@@ -22,6 +22,7 @@
       $rescount = mysqli_query($db,$qcount) ;
 
 
+
       $query = "INSERT INTO bookings(Price_r,number_of_guest,room_t,special_req1,special_req2,special_req3,special_req4,checkin,checkout,customer_id) VALUES('$summaryprice','$number_of_guest','$room','$car','$food','$pahom','$mon','$checkin','$checkout','$idcus')" ;
 
       $result = mysqli_query($db,$query) ;

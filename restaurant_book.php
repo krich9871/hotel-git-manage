@@ -13,9 +13,17 @@ $checkin = $_POST['checkin'] ;
 $time_s = $_POST['time_s'] ;
 $idcus= $_POST['customer_id'] ;
 
+
+   if (!isset($idcus)) {
+     header('location: login.php') ;
+   }
+
+
+
 $fh_price1 = $fh_price*2 ;
 $fh_price2 = $fh_price*3 ;
 $fh_price3 = $fh_price*4 ;
+
 
  ?>
 
@@ -108,9 +116,7 @@ $fh_price3 = $fh_price*4 ;
                       <option><?php echo $time_s ?></option>
                       </select>
                     </div>
-                    <div class="col-auto">
-                          <a href="food.php" class="btn btn-light">Back</a>
-                    </div>
+                  
                 </div>
             </form>
         </div>
@@ -119,13 +125,13 @@ $fh_price3 = $fh_price*4 ;
     <div id="carouselExampleControls" class="carousel slide pt-5" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="image/Restaurant1.jpg" class="d-block w-100 top_bottom">
+            <img src="image/<?php echo $fh_image; ?>" class="d-block w-100 top_bottom">
           </div>
           <div class="carousel-item">
-            <img src="image/buff1.jpg" class="d-block w-100 top_bottom" >
+            <img src="image/<?php echo $fh_image1; ?>" class="d-block w-100 top_bottom" >
           </div>
           <div class="carousel-item">
-            <img src="image/buff3.jpg" class="d-block w-100 top_bottom" >
+            <img src="image/<?php echo $fh_image2; ?>" class="d-block w-100 top_bottom" >
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -201,7 +207,7 @@ $fh_price3 = $fh_price*4 ;
             <div class="modal-body">
               <div class="row align-items-center">
                   <div class="col">
-                    <img src="image/buff1.jpg" width="100%px">
+                    <img src="image/<?php echo $fh_image; ?>" width="100%px">
                   </div>
                   <div class="col">
                     <h6>จำนวนที่นั่งคงเหลือ :<?php echo $fh_count; ?></h6>
