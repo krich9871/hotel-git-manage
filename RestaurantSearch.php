@@ -14,15 +14,13 @@ $idcus =$_POST['customer_id'] ;
 $qroom1 = " SELECT * FROM food_and_hall  WHERE fh_type LIKE 2 " ; //สามารถ SELECT room.roomid,roomtype.roomtype
 
 $result1 = mysqli_query($db,$qroom1) ;
-
+require 'php/loginB.php';
+session_start();
 
 
 
  ?>
- <?php
-require 'php/loginB.php' ;
-session_start() ;
-?>
+
 
 <!doctype html>
 <html lang="en">
@@ -94,7 +92,7 @@ session_start() ;
     </style>
   </head>
   <body>
-  <form method="post">
+    <form method="post">
     <div class="container">
         <div class="row text-center align-items-center">
             <div class="col top_and_bottom border_right">
@@ -199,6 +197,7 @@ session_start() ;
                         <h2><?php echo $row1['fh_price']; ?> THB</h2>
                     </div>
                     <div class="col pt-1">
+                    <form  action="restaurant_book.php" method="post">
                         <input type="hidden" name="fh_name" value="<?php echo $row1['fh_name']; ?>">
                         <input type="hidden" name="fh_price" value="<?php echo $row1['fh_price']; ?>">
                         <input type="hidden" name="fh_price1" value="<?php echo $row1['fh_price']*2; ?>">
@@ -212,16 +211,20 @@ session_start() ;
                         <input type="hidden" name="checkin" value="<?php echo $checkin; ?>">
                         <input type="hidden" name="time_s" value="<?php echo $time_s; ?>">
                         <input type="hidden" name="customer_id" value="<?php echo $idcus; ?>">
-                        <button type="submit" class="btn btn-light rounded" formaction="restaurant_book.php" style="width: 200px;border-radius: .9rem!important;" >More Detail</button>
+                        <button type="submit" class="btn btn-light rounded" style="width: 200px;border-radius: .9rem!important;">More Detail</button>
+                      </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+ 
     <?php
   } }
 
-  mysqli_free_result($result1) ;
+  mysqli_free_result($result1) ; 
+  
+  
 
      ?>
 

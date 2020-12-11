@@ -23,8 +23,13 @@ $idcus= $_POST['customer_id'] ;
 $fh_price1 = $fh_price*2 ;
 $fh_price2 = $fh_price*3 ;
 $fh_price3 = $fh_price*4 ;
+<<<<<<< HEAD
 
 
+=======
+require 'php/loginB.php';
+session_start();
+>>>>>>> b5d2ba44c9653469cbc12a10898ae2e06d8b9b9f
  ?>
 
 <!doctype html>
@@ -52,7 +57,7 @@ $fh_price3 = $fh_price*4 ;
 }
 
 .back_color_blues {
-    background-color: rgba(129, 213, 228, 0.658);
+    background-color: rgb(129, 213, 228);
     color: white;
     padding-top: 30px;
     padding-bottom: 30px;
@@ -76,6 +81,7 @@ $fh_price3 = $fh_price*4 ;
     </style>
   </head>
   <body>
+    <form method="post">
     <div class="container">
         <div class="row text-center align-items-center">
             <div class="col top_and_bottom border_right">
@@ -97,7 +103,35 @@ $fh_price3 = $fh_price*4 ;
                 <a href="#" class="nav-link color">Contact Us</a>
             </div>
             <div class="col top_and_bottom">
-                <a href="#" class="nav-link color">Login</a>
+              <?php if (empty($_SESSION['firstname'])){ ?>
+                       <a href="login.php" class="nav-link color">Login</a>
+              <?php }else if($_SESSION['firstname']) { ?>
+
+                      <div >
+
+                        <div class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <?php echo $_SESSION['firstname'] ; ?>
+                              </a>
+                              <div class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
+
+                                <input type="hidden" name="customer_id" value="<?php echo $_SESSION['id']; ?>">
+                                <input type="submit" name="profile" formaction="php/profileB.php" value="Profile" class="btn btn_light">
+
+
+                                  <div class="dropdown-divider"></div>
+                                  <input type="submit" name="logout" formaction="php/logout.php" value="Logout">
+
+                                </div>
+
+
+
+                            </div>
+
+
+                      </div>
+               <?php  }  ?>
+
             </div>
         </div>
     </div>
