@@ -25,6 +25,12 @@
    } else {
        $summaryre = abs($summary) ;
    }
+
+
+      if (!isset($idcus)) {
+        header('location: login.php') ;
+      }
+
    require 'php/loginB.php' ;
    session_start() ;
 
@@ -110,7 +116,7 @@
 
 
                                   <div class="dropdown-divider"></div>
-                                  <input type="submit" name="logout" formaction="php/logout.php" value="Logout">
+                                  <input type="submit" name="logout" class="btn btn_light" formaction="php/logout.php" value="Logout">
 
                                 </div>
 
@@ -139,15 +145,11 @@
                         <b><label for="checkout">CHECK OUT</label></b>
                         <input type="date" id="checkout" class="form_field" value="<?php echo $checkout ; ?>">
                     </div>
-<<<<<<< HEAD
-=======
-                    <div class="col-auto">
-                      <a href="reservation.php" class="btn btn-light">Back</a>
->>>>>>> ca7165e6f9fdb1b54b55897b4189930bc3895d71
 
-                </div>
             </form>
         </div>
+    </div>
+
     </div>
 
     <div class="alert back_color_blue">
@@ -260,7 +262,7 @@
                           <input type="hidden" id="checkin" name="summary1"  value="<?php echo $summary1 ; ?>">
                           <input type="hidden" id="checkin"name="checkin1" value="<?php echo $checkin ; ?>">
                           <input type="hidden" id="checkout" class="form_field"name="checkout1" value="<?php echo $checkout ; ?>">
-                          <input type="text" name="customer_id" value="<?php echo $idcus; ?>">
+                          <input type="hidden" name="customer_id" value="<?php echo $idcus; ?>">
                           <input type="hidden" name="room_t" value="<?php echo $row2['room']; ?>">
                           <input type="hidden" name="number_of_guest" value="<?php echo $row2['person_amount']; ?>">
                           <input type="hidden" name="count" value="<?php echo $row2['count_room']; ?>">
@@ -287,6 +289,8 @@
 
 
       ?>
+
+
 
 
     <div class="container-fluid text-center bottom_page padding_top">

@@ -131,7 +131,7 @@ session_start();
 
 
                                   <div class="dropdown-divider"></div>
-                                  <input type="submit" name="logout" formaction="php/logout.php" value="Logout">
+                                  <input type="submit" name="logout" class="btn btn_light" formaction="php/logout.php" value="Logout">
 
                                 </div>
 
@@ -161,7 +161,7 @@ session_start();
                       <option><?php echo $time_s ?></option>
                       </select>
                     </div>
-                  
+
                 </div>
             </form>
         </div>
@@ -218,13 +218,13 @@ session_start();
             </div>
         </div>
     </div>
- 
+
     <?php
   } }
 
-  mysqli_free_result($result1) ; 
-  
-  
+  mysqli_free_result($result1) ;
+
+
 
      ?>
 

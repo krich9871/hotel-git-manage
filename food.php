@@ -5,7 +5,9 @@ $idcus = $_POST['customer_id']  ;
    if (!isset($idcus)) {
      header('location: login.php') ;
    }
-   s
+
+   require 'php/loginB.php' ;
+   session_start() ;
 
  ?>
 

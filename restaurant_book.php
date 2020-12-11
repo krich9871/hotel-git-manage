@@ -23,13 +23,9 @@ $idcus= $_POST['customer_id'] ;
 $fh_price1 = $fh_price*2 ;
 $fh_price2 = $fh_price*3 ;
 $fh_price3 = $fh_price*4 ;
-<<<<<<< HEAD
 
-
-=======
 require 'php/loginB.php';
 session_start();
->>>>>>> b5d2ba44c9653469cbc12a10898ae2e06d8b9b9f
  ?>
 
 <!doctype html>
@@ -120,7 +116,7 @@ session_start();
 
 
                                   <div class="dropdown-divider"></div>
-                                  <input type="submit" name="logout" formaction="php/logout.php" value="Logout">
+                                  <input type="submit" name="logout" class="btn btn_light" formaction="php/logout.php" value="Logout">
 
                                 </div>
 
@@ -150,7 +146,7 @@ session_start();
                       <option><?php echo $time_s ?></option>
                       </select>
                     </div>
-                  
+
                 </div>
             </form>
         </div>

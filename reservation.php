@@ -69,7 +69,7 @@ if (empty($_POST['customer_id'])) {
 
 
                                   <div class="dropdown-divider"></div>
-                                  <input type="submit" name="logout" formaction="php/logout.php" value="Logout">
+                                  <input type="submit" name="logout" class="btn btn_light" formaction="php/logout.php" value="Logout">
 
                                 </div>
 
@@ -87,7 +87,7 @@ if (empty($_POST['customer_id'])) {
 
     <div class="container-fluid img_2">
         <div class="container text-center top_pad_1">
-            
+
                 <div class="row justify-content-md-center align-items-center">
                     <div class="col-auto">
                         <b><label for="checkin">CHECK IN</label></b>

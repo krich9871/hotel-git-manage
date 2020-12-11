@@ -108,7 +108,7 @@ session_start() ;
 
 
                                   <div class="dropdown-divider"></div>
-                                  <input type="submit" name="logout" formaction="php/logout.php" value="Logout">
+                                  <input type="submit" name="logout" class="btn btn_light" formaction="php/logout.php" value="Logout">
 
                                 </div>
 
