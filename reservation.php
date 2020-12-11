@@ -79,7 +79,7 @@ if (empty($_POST['customer_id'])) {
 
     <div class="container-fluid img_2">
         <div class="container text-center top_pad_1">
-            <form action="roomsearch.php" method="post" >
+            
                 <div class="row justify-content-md-center align-items-center">
                     <div class="col-auto">
                         <b><label for="checkin">CHECK IN</label></b>
@@ -91,10 +91,9 @@ if (empty($_POST['customer_id'])) {
                        <input type="hidden" name="customer_id" value="<?php echo $idcus; ?>">
                     </div>
                     <div class="col-auto">
-                        <button type="submit" class="btn btn-light" >SEARCH</button>
+                        <button type="submit" class="btn btn-light" formaction="roomsearch.php">SEARCH</button>
                     </div>
                 </div>
-            </form>
         </div>
     </div>
 

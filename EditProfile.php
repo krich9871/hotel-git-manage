@@ -39,8 +39,16 @@
             <a href="#" class="nav-link color">Contact Us</a>
         </div>
         <div class="col top_and_bottom">
-            <a href="#" class="nav-link color">Login</a>
-        </div>
+              <?php if (empty($_SESSION['firstname'])){ ?>
+                       <a href="login.php" class="nav-link color">Login</a>
+              <?php }else if($_SESSION['firstname']) { ?>
+                      <div>
+                        <div class="nav-item dropdown">                       
+                                <?php echo $_SESSION['firstname'] ; ?>
+                       </div>
+                      </div>
+               <?php  }  ?>
+            </div>
     </div>
 </div>
 <div class="container-fluid img_1 top_pad" style="padding-bottom: 138px;">

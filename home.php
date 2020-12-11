@@ -117,9 +117,6 @@ if (!isset($_SESSION['firstname'])) {
 
                       </div>
                <?php  }  ?>
-
-
-
             </div>
         </div>
 
