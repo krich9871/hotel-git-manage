@@ -2,7 +2,7 @@
 <?php
   require 'php/profileB.php';
  ?>
- 
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -27,7 +27,7 @@
             <a href="#" class="nav-link color">Hall</a>
         </div>
         <div class="col top_and_bottom">
-            <a href="#" class="nav-link color"><b>POGINITY HOTEL</b></a>
+            <a href="home.php" class="nav-link color"><b>POGINITY HOTEL</b></a>
         </div>
         <div class="col top_and_bottom border_right">
             <a href="#" class="nav-link color">About Us</a>
@@ -40,7 +40,7 @@
                        <a href="login.php" class="nav-link color">Login</a>
               <?php }else if($_SESSION['firstname']) { ?>
                       <div>
-                        <div class="nav-item dropdown">                       
+                        <div class="nav-item dropdown">
                                 <?php echo $_SESSION['firstname'] ; ?>
                        </div>
                       </div>

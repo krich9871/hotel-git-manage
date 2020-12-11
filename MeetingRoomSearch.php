@@ -95,7 +95,7 @@
                 <a href="#" class="nav-link color back_select">Hall</a>
             </div>
             <div class="col top_and_bottom">
-                <a href="#" class="nav-link color"><b>POGINITY HOTEL</b></a>
+                <a href="home.php" class="nav-link color"><b>POGINITY HOTEL</b></a>
             </div>
             <div class="col top_and_bottom border_right">
                 <a href="#" class="nav-link color">About Us</a>
@@ -124,7 +124,7 @@
                       </select>
                     </div>
 
-              
+
                 </div>
 
         </div>

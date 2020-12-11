@@ -103,7 +103,7 @@ session_start()
              <a href="#" class="nav-link color">Hall</a>
          </div>
          <div class="col top_and_bottom">
-             <a href="#" class="nav-link color"><b>POGINITY HOTEL</b></a>
+             <a href="home.php" class="nav-link color"><b>POGINITY HOTEL</b></a>
          </div>
          <div class="col top_and_bottom border_right">
              <a href="#" class="nav-link color">About Us</a>

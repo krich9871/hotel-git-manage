@@ -34,7 +34,7 @@ if (empty($_POST['customer_id'])) {
     <div class="container">
         <div class="row text-center align-items-center">
             <div class="col top_and_bottom border_right back_select">
-                <a href="#" class="nav-link color">Room</a>
+                <a href="reservation.php" class="nav-link color">Room</a>
             </div>
             <div class="col top_and_bottom border_right">
                 <a href="#" class="nav-link color">Restaurant</a>
@@ -43,7 +43,7 @@ if (empty($_POST['customer_id'])) {
                 <a href="#" class="nav-link color">Hall</a>
             </div>
             <div class="col top_and_bottom">
-                <a href="#" class="nav-link color"><b>POGINITY HOTEL</b></a>
+                <a href="home.php" class="nav-link color"><b>POGINITY HOTEL</b></a>
             </div>
             <div class="col top_and_bottom border_right">
                 <a href="#" class="nav-link color">About Us</a>

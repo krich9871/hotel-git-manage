@@ -34,7 +34,7 @@
               <a href="#" class="nav-link color">Hall</a>
           </div>
           <div class="col top_and_bottom">
-              <a href="#" class="nav-link color"><b>POGINITY HOTEL</b></a>
+              <a href="home.php" class="nav-link color"><b>POGINITY HOTEL</b></a>
           </div>
           <div class="col top_and_bottom border_right">
               <a href="#" class="nav-link color">About Us</a>
@@ -82,7 +82,7 @@
     </div>
 
     <div class="container-fluid no-padding">
-        <img src="image/hallre1.jpg" alt="" width="100%">
+        <img src="image/hallree1.jpg" alt="" width="100%">
     </div>
 
     <div class="alert back_color_green2">
@@ -90,7 +90,7 @@
     </div>
 
     <div class="container-fluid no-padding bottom_height">
-        <img src="image/hallre2.jpg" alt="" width="100%">
+        <img src="image/hallree2.jpg" alt="" width="100%">
     </div>
 
     <div class="alert back_color_green3">
@@ -98,7 +98,7 @@
     </div>
 
     <div class="container-fluid no-padding bottom_height">
-        <img src="image/hallre3.jpg" alt="" width="100%">
+        <img src="image/hallree3.jpg" alt="" width="100%">
     </div>
 
     <div class="container-fluid text-center bottom_page padding_top">
