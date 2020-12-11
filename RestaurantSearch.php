@@ -7,13 +7,11 @@ $idcus =$_POST['customer_id'] ;
 $qroom1 = " SELECT * FROM food_and_hall  WHERE fh_type LIKE 2 " ; //สามารถ SELECT room.roomid,roomtype.roomtype
 
 $result1 = mysqli_query($db,$qroom1) ;
-
+require 'php/loginB.php';
+session_start();
 
  ?>
-<?php
-require 'php/loginB.php';
-session_start()
-?>
+
 
 <!doctype html>
 <html lang="en">
@@ -85,7 +83,7 @@ session_start()
     </style>
   </head>
   <body>
-
+    <form method="post">
     <div class="container">
         <div class="row text-center align-items-center">
             <div class="col top_and_bottom border_right">
@@ -122,12 +120,20 @@ session_start()
                                 <input type="hidden" name="customer_id" value="<?php echo $_SESSION['id']; ?>">
                                 <input type="submit" name="profile" formaction="php/profileB.php" value="Profile" class="btn btn_light">
 
-                                  <div class="dropdown-divider  "></div>
-                                  <input type="submit" name="logout" class="btn btn_light" formaction="php/logout.php" value="Logout">
+
+                                  <div class="dropdown-divider"></div>
+                                  <input type="submit" name="logout" formaction="php/logout.php" value="Logout">
+
                                 </div>
+
+
+
                             </div>
+
+
                       </div>
                <?php  }  ?>
+
             </div>
         </div>
     </div>
@@ -209,7 +215,9 @@ session_start()
     <?php
   } }
 
-  mysqli_free_result($result1) ;
+  mysqli_free_result($result1) ; 
+  
+  
 
      ?>
 
