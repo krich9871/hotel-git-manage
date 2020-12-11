@@ -21,17 +21,12 @@
 
    $summarytest = $summary ;
    if ($summarytest>=0) {
-         header('location: home.php ') ;
+         header('location: login.php') ;
    } else {
        $summaryre = abs($summary) ;
    }
-
-  if (!isset($idcus)) {
-     header('location: login.php') ;
-   }
-
-
-
+   require 'php/loginB.php' ;
+   session_start() ;
 
 
 
@@ -76,6 +71,7 @@
     </style>
   </head>
   <body>
+  <form  method="post">
     <div class="container">
         <div class="row text-center align-items-center">
             <div class="col top_and_bottom border_right back_select">
@@ -97,7 +93,35 @@
                 <a href="#" class="nav-link color">Contact Us</a>
             </div>
             <div class="col top_and_bottom">
-                <a href="#" class="nav-link color">Login</a>
+              <?php if (empty($_SESSION['firstname'])){ ?>
+                       <a href="login.php" class="nav-link color">Login</a>
+              <?php }else if($_SESSION['firstname']) { ?>
+
+                      <div >
+
+                        <div class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <?php echo $_SESSION['firstname'] ; ?>
+                              </a>
+                              <div class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
+
+                                <input type="hidden" name="customer_id" value="<?php echo $_SESSION['id']; ?>">
+                                <input type="submit" name="profile" formaction="php/profileB.php" value="Profile" class="btn btn_light">
+
+
+                                  <div class="dropdown-divider"></div>
+                                  <input type="submit" name="logout" formaction="php/logout.php" value="Logout">
+
+                                </div>
+
+
+
+                            </div>
+
+
+                      </div>
+               <?php  }  ?>
+
             </div>
         </div>
     </div>
@@ -115,6 +139,11 @@
                         <b><label for="checkout">CHECK OUT</label></b>
                         <input type="date" id="checkout" class="form_field" value="<?php echo $checkout ; ?>">
                     </div>
+<<<<<<< HEAD
+=======
+                    <div class="col-auto">
+                      <a href="reservation.php" class="btn btn-light">Back</a>
+>>>>>>> ca7165e6f9fdb1b54b55897b4189930bc3895d71
 
                 </div>
             </form>

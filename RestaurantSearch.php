@@ -19,6 +19,10 @@ $result1 = mysqli_query($db,$qroom1) ;
 
 
  ?>
+ <?php
+require 'php/loginB.php' ;
+session_start() ;
+?>
 
 <!doctype html>
 <html lang="en">
@@ -90,6 +94,7 @@ $result1 = mysqli_query($db,$qroom1) ;
     </style>
   </head>
   <body>
+  <form method="post">
     <div class="container">
         <div class="row text-center align-items-center">
             <div class="col top_and_bottom border_right">
@@ -111,7 +116,35 @@ $result1 = mysqli_query($db,$qroom1) ;
                 <a href="#" class="nav-link color">Contact Us</a>
             </div>
             <div class="col top_and_bottom">
-                <a href="#" class="nav-link color">Login</a>
+              <?php if (empty($_SESSION['firstname'])){ ?>
+                       <a href="login.php" class="nav-link color">Login</a>
+              <?php }else if($_SESSION['firstname']) { ?>
+
+                      <div >
+
+                        <div class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <?php echo $_SESSION['firstname'] ; ?>
+                              </a>
+                              <div class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
+
+                                <input type="hidden" name="customer_id" value="<?php echo $_SESSION['id']; ?>">
+                                <input type="submit" name="profile" formaction="php/profileB.php" value="Profile" class="btn btn_light">
+
+
+                                  <div class="dropdown-divider"></div>
+                                  <input type="submit" name="logout" formaction="php/logout.php" value="Logout">
+
+                                </div>
+
+
+
+                            </div>
+
+
+                      </div>
+               <?php  }  ?>
+
             </div>
         </div>
     </div>
@@ -166,7 +199,6 @@ $result1 = mysqli_query($db,$qroom1) ;
                         <h2><?php echo $row1['fh_price']; ?> THB</h2>
                     </div>
                     <div class="col pt-1">
-                      <form  action="restaurant_book.php" method="post">
                         <input type="hidden" name="fh_name" value="<?php echo $row1['fh_name']; ?>">
                         <input type="hidden" name="fh_price" value="<?php echo $row1['fh_price']; ?>">
                         <input type="hidden" name="fh_price1" value="<?php echo $row1['fh_price']*2; ?>">
@@ -180,9 +212,7 @@ $result1 = mysqli_query($db,$qroom1) ;
                         <input type="hidden" name="checkin" value="<?php echo $checkin; ?>">
                         <input type="hidden" name="time_s" value="<?php echo $time_s; ?>">
                         <input type="hidden" name="customer_id" value="<?php echo $idcus; ?>">
-                        <button type="submit" class="btn btn-light rounded" style="width: 200px;border-radius: .9rem!important;">More Detail</button>
-                      </form>
-
+                        <button type="submit" class="btn btn-light rounded" formaction="restaurant_book.php" style="width: 200px;border-radius: .9rem!important;" >More Detail</button>
                     </div>
                 </div>
             </div>

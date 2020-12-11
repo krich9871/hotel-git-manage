@@ -445,6 +445,7 @@ session_start();
 
   </head>
   <body>
+      <form method="post">
     <div class="container-fluid">
         <div class="row text-center align-items-center">
             <div class="col top_and_bottom border_right">
@@ -521,6 +522,10 @@ session_start();
         <div class="menubody">
             <div class="editbbox">
                 <table>
+                <h1><?php  if (isset($_SESSION['exists'])) :
+                  echo $_SESSION['exists'];
+                  unset($_SESSION['exists']) ;
+                   endif ?></h1>
                     <tr>
                         <td style="width:435px;">
                             <div class="al-right register-left">
@@ -533,7 +538,6 @@ session_start();
 
                             </div>
                         </td>
-                          <form action="php/staff_register.php" method="post">
                         <td class="registerform">
                             <br>
 
@@ -545,10 +549,9 @@ session_start();
 
 
                             <div class="al-right pt-3 text-center " style="margin-right: 10px;">
-                                <button type="submit" name="staffcheck" class="savebut" >Register</button>
+                                <button type="submit" name="staffcheck" class="savebut" formaction="php/staff_register.php">Register</button>
                             </div>
                         </td>
-                          </form>
                     </tr>
                 </table>
             </div>

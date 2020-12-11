@@ -6,6 +6,8 @@ if (empty($_POST['customer_id'])) {
   $idcus = $_POST['customer_id']  ;
 
 }
+ require 'php/loginB.php' ;
+ session_start() ;
 
 
    if (!isset($idcus)) {
@@ -28,6 +30,7 @@ if (empty($_POST['customer_id'])) {
     <title>reservation</title>
   </head>
   <body>
+    <form  method="post">
     <div class="container">
         <div class="row text-center align-items-center">
             <div class="col top_and_bottom border_right back_select">
@@ -49,14 +52,42 @@ if (empty($_POST['customer_id'])) {
                 <a href="#" class="nav-link color">Contact Us</a>
             </div>
             <div class="col top_and_bottom">
-                <a href="#" class="nav-link color">Login</a>
+              <?php if (empty($_SESSION['firstname'])){ ?>
+                       <a href="login.php" class="nav-link color">Login</a>
+              <?php }else if($_SESSION['firstname']) { ?>
+
+                      <div >
+
+                        <div class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <?php echo $_SESSION['firstname'] ; ?>
+                              </a>
+                              <div class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
+
+                                <input type="hidden" name="customer_id" value="<?php echo $_SESSION['id']; ?>">
+                                <input type="submit" name="profile" formaction="php/profileB.php" value="Profile" class="btn btn_light">
+
+
+                                  <div class="dropdown-divider"></div>
+                                  <input type="submit" name="logout" formaction="php/logout.php" value="Logout">
+
+                                </div>
+
+
+
+                            </div>
+
+
+                      </div>
+               <?php  }  ?>
+
             </div>
         </div>
     </div>
 
     <div class="container-fluid img_2">
         <div class="container text-center top_pad_1">
-            <form action="roomsearch.php" method="post" >
+            
                 <div class="row justify-content-md-center align-items-center">
                     <div class="col-auto">
                         <b><label for="checkin">CHECK IN</label></b>
@@ -68,10 +99,9 @@ if (empty($_POST['customer_id'])) {
                        <input type="hidden" name="customer_id" value="<?php echo $idcus; ?>">
                     </div>
                     <div class="col-auto">
-                        <button type="submit" class="btn btn-light" >SEARCH</button>
+                        <button type="submit" class="btn btn-light" formaction="roomsearch.php">SEARCH</button>
                     </div>
                 </div>
-            </form>
         </div>
     </div>
 

@@ -101,22 +101,12 @@
                                 <input type="hidden" name="customer_id" value="<?php echo $_SESSION['id']; ?>">
                                 <input type="submit" name="profile" formaction="php/profileB.php" value="Profile" class="btn btn_light">
 
-
                                   <div class="dropdown-divider  "></div>
                                   <input type="submit" name="logout" class="btn btn_light" formaction="php/logout.php" value="Logout">
-
                                 </div>
-
-
-
                             </div>
-
-
                       </div>
                <?php  }  ?>
-
-
-
             </div>
         </div>
 
