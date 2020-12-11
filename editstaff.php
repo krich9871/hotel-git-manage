@@ -462,7 +462,7 @@
 
   </head>
   <body>
-
+    <form method="post">
     <div class="container-fluid">
         <div class="row text-center align-items-center">
             <div class="col top_and_bottom border_right">
@@ -550,25 +550,22 @@
                                 <span class="descfont ">by Maranee Imphilomlak, Manager position</span>
 
                         </td>
-                        <form action="php/edit_staff.php" method="post">
                         <td class="registerform">
                             <br>
-
                                 <input type="text" name="staff_firstname" value="<?php echo $row['staff_firstname'] ?>" style="width: 195px;"><input type="text" name="staff_lastname" value="<?php echo $row['staff_lastname'] ?>" style="width: 198px;"><br>
                                 <input type="email" name="staff_email"value="<?php echo $row['staff_email'] ?>"><br>
                                 <input type="password" name="staff_password" placeholder="Password" pattern="(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])[A-Za-z0-9]{8,32}" title="Password length must be 8-32 and contain at least one 'A-Z', 'a-z' and 'number'. (exclude special characters.)" required><br>
                                 <input type="tel" name="staff_phone" value="<?php echo $row['staff_phone'] ?>" pattern="[0-9]{1,}" title="Phone Number must be only number." required><br>
                                 <input type="text" name="staff_address" value="<?php echo $row['staff_address'] ?>"><br>
                                 <input type="hidden" name="staff_id" value="<?php echo $staff_id ;?>"><br>
-
                             <div class="descfont">
 
                             </div><br>
                             <div class="al-right" style="margin-right: 10px;">
-                                <button type="submit" name="edits" class="savebut">Save</button>
+                                <button type="submit" name="edits" class="savebut" formaction="php/edit_staff.php">Save</button>
                             </div>
                         </td>
-                      </form>
+
                     </tr>
                 </table>
             </div>

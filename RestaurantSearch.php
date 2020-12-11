@@ -151,7 +151,7 @@ $result1 = mysqli_query($db,$qroom1) ;
             </div>
             <div class="col-auto p-2 text-left">
                 <h3><?php echo $row1['fh_name'] ?></h3>
-                <h5>จำนวนนั่งคง่เหลือ: <?php echo $row1['fh_count']; ?></h5>
+                <h5>จำนวนนั่งคงเหลือ: <?php echo $row1['fh_count']; ?></h5>
                 <h5>สำหรับผู้จอง: <?php echo $row1['fh_number_guest']; ?> คน</h5>
 
                 <div class="row pt-5">
